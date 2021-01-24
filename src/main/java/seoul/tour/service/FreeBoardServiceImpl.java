@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+import seoul.tour.domain.Criteria;
 import seoul.tour.domain.FreeBoardVO;
 import seoul.tour.mapper.FreeBoardMapper;
 
@@ -17,10 +18,10 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	private FreeBoardMapper mapper;
 	
 	@Override
-	public List<FreeBoardVO> getList() {
+	public List<FreeBoardVO> getList(Criteria cri) {
 		
-		log.info("FreeBoard getList... ");
-		return mapper.getList();
+		log.info("FreeBoard getList... " + cri);
+		return mapper.getListWithPaging(cri);
 	}	
 	
 	
@@ -55,5 +56,12 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		log.info("remove... "+ bno);
 		
 		return mapper.delete(bno) == 1;
+	}
+	
+	@Override
+	public int getTotal(Criteria cri) {
+		
+		log.info("get total count");
+		return mapper.getTotalCount(cri);
 	}
 }

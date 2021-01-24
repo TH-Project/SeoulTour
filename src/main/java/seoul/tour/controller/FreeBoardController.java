@@ -10,7 +10,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+import seoul.tour.domain.Criteria;
 import seoul.tour.domain.FreeBoardVO;
+import seoul.tour.domain.PageDTO;
 import seoul.tour.service.FreeBoardService;
 
 @Controller
@@ -22,10 +24,17 @@ public class FreeBoardController {
 private FreeBoardService service;
 	
 	@GetMapping("/list")
-	public void list(Model model) {
+	public void list(Criteria cri, Model model) {
 		
-		log.info("freeboard list");
-		model.addAttribute("list", service.getList());
+		log.info("freeboard list" + cri);
+		model.addAttribute("list", service.getList(cri));
+		
+		int total = service.getTotal(cri);
+		
+		log.info("total: " + total) ;
+		
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
+		
 	}
 	
 	@PostMapping("/register")

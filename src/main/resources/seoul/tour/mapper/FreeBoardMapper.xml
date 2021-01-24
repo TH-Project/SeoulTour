@@ -18,7 +18,7 @@ select * from tbl_freeboard where bno > 0
 <insert id="insertSelectKey">
 	<selectKey keyProperty="bno" order="BEFORE"
 	resultType="long">
-	select seq_board.nextval from dual
+	select seq_freeboard.nextval from dual
 	</selectKey>
 		insert into tbl_freeboard (bno, title, content, writer)
 	values (#{bno}, #{title}, #{content}, #{writer})
@@ -40,6 +40,26 @@ select * from tbl_freeboard where bno > 0
 	modified_date = sysdate
 	where bno = #{bno}
 </update>
+
+<select id="getListWithPaging" resultType="seoul.tour.domain.FreeBoardVO">
+	<![CDATA[
+	select
+		bno, title, content, writer, created_date, modified_date
+	from
+		(
+		select /*+INDEX_DESC(tbl_freeboard pk_freeboard) */
+			rownum rn, bno, title, content, writer, created_date, modified_date
+		from
+			tbl_freeboard
+		where rownum <= #{pageNum} * #{amount}
+		)
+		where rn > (#{pageNum} -1) * #{amount}
+		]]> 
+</select>
+
+<select id="getTotalCount" resultType="int">
+	select count(*) from tbl_freeboard where bno > 0
+</select>
 
 
 </mapper>

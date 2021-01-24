@@ -2,11 +2,14 @@ package seoul.tour.mapper;
 
 import java.util.List;
 
+import seoul.tour.domain.Criteria;
 import seoul.tour.domain.FreeBoardVO;
 
 public interface FreeBoardMapper {
 
 	public List<FreeBoardVO> getList();
+	
+	public List<FreeBoardVO> getListWithPaging(Criteria cri);
 	
 	public void insert(FreeBoardVO board);
 	
@@ -17,4 +20,6 @@ public interface FreeBoardMapper {
 	public int delete(Long bno);
 	
 	public int update(FreeBoardVO board);
+	
+	public int getTotalCount(Criteria cri);
 }
