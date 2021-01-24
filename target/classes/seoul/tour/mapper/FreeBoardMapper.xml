@@ -10,4 +10,36 @@ select * from tbl_freeboard where bno > 0
 ]]>
 </select>
 
+<insert id="insert">
+	insert into tbl_freeboard (bno, title, content, writer)
+	values (seq_board.nextval, #{title}, #{content}, #{writer})
+</insert>
+
+<insert id="insertSelectKey">
+	<selectKey keyProperty="bno" order="BEFORE"
+	resultType="long">
+	select seq_board.nextval from dual
+	</selectKey>
+		insert into tbl_freeboard (bno, title, content, writer)
+	values (#{bno}, #{title}, #{content}, #{writer})
+</insert>
+	
+<select id="read" resultType="seoul.tour.domain.FreeBoardVO">
+	select * from tbl_freeboard where bno = #{bno}
+</select>
+
+<delete id ="delete" >
+	delete tbl_freeboard where bno = #{bno}
+</delete>
+
+<update id="update">
+	update tbl_freeboard
+	set title= #{title},
+	content=#{content},
+	writer = #{writer},
+	modified_date = sysdate
+	where bno = #{bno}
+</update>
+
+
 </mapper>

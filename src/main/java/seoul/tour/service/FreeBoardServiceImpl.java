@@ -22,4 +22,38 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		log.info("FreeBoard getList... ");
 		return mapper.getList();
 	}	
+	
+	
+
+	@Override
+	public void register(FreeBoardVO board) {
+		
+		log.info("register... "+ board);
+		
+		mapper.insertSelectKey(board);
+
+	}
+	
+	@Override
+	public FreeBoardVO get(Long bno) {
+		
+		log.info("get... "+ bno);
+		return mapper.read(bno);
+	}
+
+	@Override
+	public boolean modify(FreeBoardVO board) {
+		
+		log.info("modify... "+ board);
+		
+		return mapper.update(board) == 1;
+	}
+
+	@Override
+	public boolean remove(Long bno) {
+		
+		log.info("remove... "+ bno);
+		
+		return mapper.delete(bno) == 1;
+	}
 }
