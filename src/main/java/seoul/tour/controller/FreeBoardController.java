@@ -3,6 +3,7 @@ package seoul.tour.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,23 +51,27 @@ private FreeBoardService service;
 	}
 	
 	@PostMapping("/modify") // 등록과 유사
-	public String modify(FreeBoardVO board, RedirectAttributes rttr) {
+	public String modify(FreeBoardVO board, Criteria cri,
+			RedirectAttributes rttr) {
 		log.info("modify:" + board);
 		
 		if (service.modify(board)) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		return "redirect:/freeboard/list";
+	
+		return "redirect:/freeboard/list" + cri.getListLink();
 	}
 	
 	@PostMapping("/remove")
-	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
+	public String remove(@RequestParam("bno") Long bno, Criteria cri,
+			RedirectAttributes rttr) {
 		
 		log.info("remove..." + bno);
 		if (service.remove(bno)) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		return "redirect:/freeboard/list";
+		
+		return "redirect:/freeboard/list" + cri.getListLink();
 	}
 	
 	@GetMapping("/register")
