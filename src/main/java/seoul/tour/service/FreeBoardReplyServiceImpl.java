@@ -5,58 +5,79 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import seoul.tour.domain.Criteria;
 import seoul.tour.domain.FreeBoardReplyVO;
+import seoul.tour.domain.ReplyPageDTO;
 import seoul.tour.mapper.FreeBoardReplyMapper;
+
 
 
 @Service
 @Log4j
+@AllArgsConstructor
 public class FreeBoardReplyServiceImpl implements FreeBoardReplyService {
-	
-	@Setter(onMethod_ = @Autowired)
-	private FreeBoardReplyMapper mapper;
 
-	@Override
-	public int register(FreeBoardReplyVO vo) {
-		
-		log.info("register....." + vo);
-		
-		return mapper.insert(vo);
-	}
+  
+  private FreeBoardReplyMapper mapper;
 
-	@Override
-	public FreeBoardReplyVO get(Long rno) {
-		
-		log.info("get....." + rno);
-		
-		return mapper.read(rno);
-	}
+  
+  
+  @Override
+  public int register(FreeBoardReplyVO vo) {
 
-	@Override
-	public int modify(FreeBoardReplyVO vo) {
-		
-		log.info("modify....." + vo);
-		
-		return mapper.update(vo);
-	}
+    log.info("register......" + vo);
 
-	@Override
-	public int remove(Long rno) {
-		
-		log.info("remove....." + rno);
-		
-		return mapper.delete(rno);
-	}
+    return mapper.insert(vo);
 
-	@Override
-	public List<FreeBoardReplyVO> getList(Criteria cri, Long bno) {
-		
-		log.info("get FreeBoardReply List of a FreeBoard " + bno);
-		
-		return mapper.getListWithPaging(cri, bno);
-	}
-	
+  }
+
+  @Override
+  public FreeBoardReplyVO get(Long rno) {
+
+    log.info("get......" + rno);
+
+    return mapper.read(rno);
+
+  }
+
+  @Override
+  public int modify(FreeBoardReplyVO vo) {
+
+    log.info("modify......" + vo);
+
+    return mapper.update(vo);
+
+  }
+
+  @Override
+  public int remove(Long rno) {
+
+    log.info("remove...." + rno);
+
+    return mapper.delete(rno);
+
+  }
+
+  @Override
+  public List<FreeBoardReplyVO> getList(Criteria cri, Long bno) {
+
+    log.info("get Reply List of a Board " + bno);
+
+    return mapper.getListWithPaging(cri, bno);
+
+  }
+  
+  @Override
+  public ReplyPageDTO
+  getListPage(Criteria cri, Long bno) {
+       
+    return new ReplyPageDTO(
+        mapper.getCountByBno(bno), 
+        mapper.getListWithPaging(cri, bno));
+  }
+
+
 }

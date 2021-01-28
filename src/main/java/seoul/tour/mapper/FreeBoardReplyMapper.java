@@ -10,15 +10,15 @@ import seoul.tour.domain.FreeBoardReplyVO;
 public interface FreeBoardReplyMapper {
 
 	public int insert(FreeBoardReplyVO vo);
-	
+
 	public FreeBoardReplyVO read(Long bno);
-	
-	public int delete (Long rno);
-	
+
+	public int delete(Long bno);
+
 	public int update(FreeBoardReplyVO reply);
-	
-	public List<FreeBoardReplyVO> getListWithPaging(
-			@Param("cri") Criteria cri,
-			@Param("bno") Long bno);
+
+	public List<FreeBoardReplyVO> getListWithPaging(@Param("cri") Criteria cri, @Param("bno") Long bno);
+
+	public int getCountByBno(Long bno);
 	
 }

@@ -11,7 +11,7 @@ public class FreeBoardReplyVO {
 	private Long bno;
 	
 	private String reply;
-	private String replayer;
+	private String replyer;
 	private Date created_date;
 	private Date modified_date;
 

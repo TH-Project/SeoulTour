@@ -135,7 +135,7 @@
               </div>
               <div class="form-group">
                 <label>Reply Date</label> 
-                <input class="form-control" name='replyDate' value='2018-01-01 13:13'>
+                <input class="form-control" name='created_date' value='2018-01-01 13:13'>
               </div>
       
             </div>
@@ -153,7 +153,7 @@
 
 
 
-<script type="text/javascript" src="/resources/js/reply.js"></script>
+<script type="text/javascript" src="/resources/js/freeboardreply.js"></script>
 
 <script>
 
@@ -191,7 +191,7 @@ function showList(page){
        str +="  <div><div class='header'><strong class='primary-font'>["
     	   +list[i].rno+"] "+list[i].replyer+"</strong>"; 
        str +="    <small class='pull-right text-muted'>"
-           +replyService.displayTime(list[i].replyDate)+"</small></div>";
+           +replyService.displayTime(list[i].created_date)+"</small></div>";
        str +="    <p>"+list[i].reply+"</p></div></li>";
      }
      
@@ -275,7 +275,7 @@ function showList(page){
        for (var i = 0, len = list.length || 0; i < len; i++) {
            str +="<li class='left clearfix' data-rno='"+list[i].rno+"'>";
            str +="  <div><div class='header'><strong class='primary-font'>"+list[i].replyer+"</strong>"; 
-           str +="    <small class='pull-right text-muted'>"+replyService.displayTime(list[i].replyDate)+"</small></div>";
+           str +="    <small class='pull-right text-muted'>"+replyService.displayTime(list[i].created_date)+"</small></div>";
            str +="    <p>"+list[i].reply+"</p></div></li>";
          }
 
@@ -289,7 +289,7 @@ function showList(page){
     var modal = $(".modal");
     var modalInputReply = modal.find("input[name='reply']");
     var modalInputReplyer = modal.find("input[name='replyer']");
-    var modalInputReplyDate = modal.find("input[name='replyDate']");
+    var modalInputcreated_date = modal.find("input[name='created_date']");
     
     var modalModBtn = $("#modalModBtn");
     var modalRemoveBtn = $("#modalRemoveBtn");
@@ -303,7 +303,7 @@ function showList(page){
     $("#addReplyBtn").on("click", function(e){
       
       modal.find("input").val("");
-      modalInputReplyDate.closest("div").hide();
+      modalInputcreated_date.closest("div").hide();
       modal.find("button[id !='modalCloseBtn']").hide();
       
       modalRegisterBtn.show();
@@ -344,7 +344,7 @@ function showList(page){
       
         modalInputReply.val(reply.reply);
         modalInputReplyer.val(reply.replyer);
-        modalInputReplyDate.val(replyService.displayTime( reply.replyDate))
+        modalInputcreated_date.val(replyService.displayTime( reply.created_date))
         .attr("readonly","readonly");
         modal.data("rno", reply.rno);
         
@@ -358,6 +358,33 @@ function showList(page){
     });
   
     
+/*     modalModBtn.on("click", function(e){
+      
+      var reply = {rno:modal.data("rno"), reply: modalInputReply.val()};
+      
+      replyService.update(reply, function(result){
+            
+        alert(result);
+        modal.modal("hide");
+        showList(1);
+        
+      });
+      
+    });
+
+    modalRemoveBtn.on("click", function (e){
+    	  
+  	  var rno = modal.data("rno");
+  	  
+  	  replyService.remove(rno, function(result){
+  	        
+  	      alert(result);
+  	      modal.modal("hide");
+  	      showList(1);
+  	      
+  	  });
+  	  
+  	}); */
 
     modalModBtn.on("click", function(e){
     	  
@@ -396,6 +423,60 @@ function showList(page){
 
 
 <script>
+
+/* console.log("===============");
+console.log("JS TEST");
+
+var bnoValue = '<c:out value="${board.bno}"/>'; */
+
+//for replyService add test
+/* replyService.add(
+    
+    {reply:"JS Test", replyer:"tester", bno:bnoValue}
+    ,
+    function(result){ 
+      alert("RESULT: " + result);
+    }
+); */
+
+
+//reply List Test
+/* replyService.getList({bno:bnoValue, page:1}, function(list){
+    
+	  for(var i = 0,  len = list.length||0; i < len; i++ ){
+	    console.log(list[i]);
+	  }
+});
+ */
+
+ 
+/*  //17번 댓글 삭제 테스트 
+ replyService.remove(17, function(count) {
+
+   console.log(count);
+
+   if (count === "success") {
+     alert("REMOVED");
+   }
+ }, function(err) {
+   alert('ERROR...');
+ });
+ */
+ 
+
+//12번 댓글 수정 
+/* replyService.update({
+  rno : 12,
+  bno : bnoValue,
+  reply : "Modified Reply...."
+}, function(result) {
+
+  alert("수정 완료...");
+
+});  
+ */
+
+</script>  
 
 
 <script type="text/javascript">
