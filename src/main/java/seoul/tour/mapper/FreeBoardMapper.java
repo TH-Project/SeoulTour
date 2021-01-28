@@ -2,6 +2,8 @@ package seoul.tour.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import seoul.tour.domain.Criteria;
 import seoul.tour.domain.FreeBoardVO;
 
@@ -22,4 +24,6 @@ public interface FreeBoardMapper {
 	public int update(FreeBoardVO board);
 	
 	public int getTotalCount(Criteria cri);
+	
+	public void updateReplyCnt(@Param("bno") Long bno, @Param("amount") int amount);
 }

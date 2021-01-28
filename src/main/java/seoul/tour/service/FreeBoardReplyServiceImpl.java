@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -11,24 +12,31 @@ import lombok.extern.log4j.Log4j;
 import seoul.tour.domain.Criteria;
 import seoul.tour.domain.FreeBoardReplyVO;
 import seoul.tour.domain.ReplyPageDTO;
+import seoul.tour.mapper.FreeBoardMapper;
 import seoul.tour.mapper.FreeBoardReplyMapper;
 
 
 
 @Service
 @Log4j
-@AllArgsConstructor
 public class FreeBoardReplyServiceImpl implements FreeBoardReplyService {
 
   
-  private FreeBoardReplyMapper mapper;
+	@Setter(onMethod_ = @Autowired)
+	private FreeBoardReplyMapper mapper;
+	
+
+	@Setter(onMethod_ = @Autowired)
+	private FreeBoardMapper boardMapper;
 
   
-  
+  @Transactional
   @Override
   public int register(FreeBoardReplyVO vo) {
 
     log.info("register......" + vo);
+    
+    boardMapper.updateReplyCnt(vo.getBno(), 1);
 
     return mapper.insert(vo);
 
@@ -52,11 +60,15 @@ public class FreeBoardReplyServiceImpl implements FreeBoardReplyService {
 
   }
 
+  @Transactional
   @Override
   public int remove(Long rno) {
 
     log.info("remove...." + rno);
+    
+    FreeBoardReplyVO vo = mapper.read(rno);
 
+    boardMapper.updateReplyCnt(vo.getBno(), -1);
     return mapper.delete(rno);
 
   }

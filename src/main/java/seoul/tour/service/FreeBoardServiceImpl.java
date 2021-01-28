@@ -2,9 +2,12 @@ package seoul.tour.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.AllArgsConstructor;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import seoul.tour.domain.Criteria;
 import seoul.tour.domain.FreeBoardVO;
@@ -24,8 +27,6 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		return mapper.getListWithPaging(cri);
 	}	
 	
-	
-
 	@Override
 	public void register(FreeBoardVO board) {
 		

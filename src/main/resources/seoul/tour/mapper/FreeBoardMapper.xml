@@ -64,11 +64,11 @@ select * from tbl_freeboard where bno > 0
 <select id="getListWithPaging" resultType="seoul.tour.domain.FreeBoardVO">
 	<![CDATA[
 	select
-		bno, title, content, writer, created_date, modified_date
+		bno, title, content, writer, created_date, modified_date, reply_cnt
 	from
 		(
 		select /*+INDEX_DESC(tbl_freeboard pk_freeboard) */
-			rownum rn, bno, title, content, writer, created_date, modified_date
+			rownum rn, bno, title, content, writer, created_date, modified_date, reply_cnt
 		from
 			tbl_freeboard
 		where
@@ -90,6 +90,10 @@ select * from tbl_freeboard where bno > 0
 	
 	bno > 0
 </select>
+
+<update id="updateReplyCnt">
+	update tbl_freeboard set reply_cnt = reply_cnt + #{amount} where bno = #{bno}
+</update>
 
 
 </mapper>

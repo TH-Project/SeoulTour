@@ -14,8 +14,8 @@ public class FreeBoardVO {
 	private Date created_date;
 	private Date modified_date ;
 	private int hit_content;
-	private int replyCnt;
+	
+	private int reply_cnt;
 	private int recommend;
 	
-	//private List<BoardAttachVO> attachList;
 }
