@@ -3,6 +3,7 @@ package seoul.tour.service;
 import java.util.List;
 
 import seoul.tour.domain.Criteria;
+import seoul.tour.domain.FreeBoardAttachVO;
 import seoul.tour.domain.FreeBoardVO;
 
 public interface FreeBoardService {
@@ -20,5 +21,7 @@ public interface FreeBoardService {
 	public boolean remove(Long bno);
 	
 	public int getTotal(Criteria cri);
+	
+	public List<FreeBoardAttachVO> getAttachList(Long bno);
 	
 }

@@ -1,6 +1,7 @@
 package seoul.tour.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -17,5 +18,7 @@ public class FreeBoardVO {
 	
 	private int reply_cnt;
 	private int recommend;
+	
+	private List<FreeBoardAttachVO> attachList;
 	
 }
