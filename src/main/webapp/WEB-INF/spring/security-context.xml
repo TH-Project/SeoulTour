@@ -9,13 +9,17 @@
 
 	<bean id="customAccessDenied"
 		class="seoul.tour.security.CustomAccessDeniedHandler"></bean>
-	<bean id="customLoginSuccess"
-		class="seoul.tour.security.CustomLoginSuccessHandler"></bean>
 
-	<!-- <bean id="customPasswordEncoder" class="seoul.tour.security.CustomNoOpPasswordEncoder"></bean> -->
-
+	<!-- <bean id="customLoginSuccess" class="seoul.tour.security.CustomLoginSuccessHandler"></bean> -->
+	<!-- <bean id="customPasswordEncoder" class="seoul.tour.security.CustomNoOpPasswordEncoder"></bean>
+	
+	이거 주석처리
+	
 	<bean id="bcryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+		
+		 -->
+		
 
 	<bean id="customUserDetailsService"
 		class="seoul.tour.security.CustomUserDetailsService"></bean>
@@ -35,8 +39,10 @@
 		<security:access-denied-handler
 			ref="customAccessDenied" />
 
-		<security:form-login login-page="/customLogin"
-			authentication-success-handler-ref="customLoginSuccess" />
+		<!-- <security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess" 
+			/> -->
+
+		<security:form-login login-page="/customLogin" />
 
 		<!-- <security:csrf disabled="true"/> -->
 
@@ -74,8 +80,8 @@
 		<security:authentication-provider
 			user-service-ref="customUserDetailsService">
 
-			<security:password-encoder
-				ref="bcryptPasswordEncoder" />
+	<!-- 		<security:password-encoder
+				ref="bcryptPasswordEncoder" />  -->
 
 		</security:authentication-provider>
 
