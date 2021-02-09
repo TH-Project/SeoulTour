@@ -7,7 +7,7 @@
 <%@include file="../includes/header.jsp"%>
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Tables</h1>
+		<h1 class="page-header">자유 게시판</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -16,22 +16,34 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">
-				Board List Page
-				<button id='regBtn' type="button" class="btn btn-xs pull-right">Register
-					New Board</button>
+			<div class="panel-default" style="align-content: 'left''">
+			<div class = "img_contbox clear" style="align-content: left">
+			<img src="/resources/img/freeboard.PNG" width="700px" height="250px" align="left"
+			style="margin-left: 30px; margin-bottom: 20px; margin-top: 20px"/>
+			
+			<br>
+			<br>
+			&nbsp; 서울 여행에 관한 모든 내용에 대해서 대화하는 게시판 입니다
+			<br><br><br><br>
+			
+			&nbsp;&nbsp; ※불량사용자 신고 및 문의사항은 버튼을 눌러주세요 &nbsp;&nbsp;<button id='inquery' type="button" class=""> 관리자 문의
+		
+			
+			</div>
+		
 			</div>
 
 			<!-- /.panel-heading -->
 			<div class="panel-body">
-				<table class="table table-striped table-bordered table-hover">
-					<thead>
+				<table class="table table-bordered table-hover">
+					<thead >
 						<tr>
-							<th>#번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성일</th>
-							<th>수정일</th>
+							<th><b>번호</b></th> 
+							<th><b>제목</b></th>
+							<th><b>글쓴이</b></th>
+							<th><b>작성일</b></th>
+							<th><b>조회</b></th>
+							<th><b>추천</b></th>
 						</tr>
 					</thead>
 
@@ -43,10 +55,10 @@
                   <c:out value="${board.title}" />   <b>[  <c:out value="${board.reply_cnt}" />  ]</b>
                   </a>
               <td><c:out value="${board.writer}" /></td>
-              <td><fmt:formatDate pattern="yyyy-MM-dd"
+              <td><fmt:formatDate pattern="MM-dd / hh:mm"
                   value="${board.created_date}" /></td>
-              <td><fmt:formatDate pattern="yyyy-MM-dd"
-                  value="${board.modified_date}" /></td>
+              <td><c:out value="${board.hit_content}" /></td>
+              <td><c:out value="${board.recommend}" /></td>
             </tr>
           </c:forEach>
 
@@ -82,7 +94,9 @@
 								value='<c:out value="${pageMaker.cri.amount}"/>' />
 							<button class='btn btn-default'>Search</button>
 						</form>
+						<button id='regBtn' type="button" class="btn btn-success pull-right">새 글 등록
 					</div>
+					</button>
 				</div>
 
 
