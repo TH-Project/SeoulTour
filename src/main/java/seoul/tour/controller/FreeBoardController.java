@@ -36,7 +36,6 @@ private FreeBoardService service;
 	
 
 @GetMapping("/register")
-
 public void register() {
 
 }
@@ -59,7 +58,6 @@ public void list(Criteria cri, Model model) {
 
 
 @PostMapping("/register")
-
 public String register(FreeBoardVO board, RedirectAttributes rttr) {
 
 	log.info("==========================");

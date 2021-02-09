@@ -16,6 +16,7 @@ import seoul.tour.mapper.FreeBoardMapper;
 import seoul.tour.mapper.FreeBoardReplyMapper;
 
 
+
 @Service
 @Log4j
 public class FreeBoardReplyServiceImpl implements FreeBoardReplyService {
