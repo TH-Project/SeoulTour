@@ -29,10 +29,6 @@
 		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
 		
 		</beans:bean>
-
-
-	<security:global-method-security
-		pre-post-annotations="enabled" secured-annotations="enabled" />
 	
 	
 </beans:beans>
