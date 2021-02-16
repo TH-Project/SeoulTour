@@ -11,6 +11,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import seoul.tour.service.QuestionsBoardService;
 
+
+//주석추가
 @Controller
 @Log4j
 @RequestMapping("/seoulTour/*")
