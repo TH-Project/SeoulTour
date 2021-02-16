@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
-import seoul.tour.service.QuestionsBoardService;
 
+
+// 실험실험실험
 @Controller
 @Log4j
 @RequestMapping("/seoulTour/*")

@@ -12,30 +12,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import seoul.tour.domain.EmailDTO;
 import seoul.tour.service.EmailService;
 
-// Ãß°¡
-@Controller // ÄÁÆ®·Ñ·¯ ¾î³ëÅ×ÀÌ¼Ç ¼±¾ð
-@RequestMapping("email/*") // °øÅëÀûÀÎ ¸ÅÇÎ ÁÖ¼Ò
+// ï¿½ß°ï¿½
+@Controller // ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+@RequestMapping("email/*") // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½
 public class EmailController {
  
     @Inject
-    EmailService emailService; // ¼­ºñ½º¸¦ È£ÃâÇÏ±âÀ§ÇÑ ÀÇÁ¸¼º ÁÖÀÔ
+    EmailService emailService; // ï¿½ï¿½ï¿½ñ½º¸ï¿½ È£ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  
-    @RequestMapping("write.do") // ÀÌ¸ÞÀÏ ¾²±â¸¦ ´©¸£¸é ÀÌ ¸Þ¼Òµå·Î ¸ÊÇÎµÇ¾î¼­
+    @RequestMapping("write.do") // ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Þ¼Òµï¿½ï¿½ ï¿½ï¿½ï¿½ÎµÇ¾î¼­
     public String write() {
-        return "/email/write"; // ´Ù½Ã write jsp ÆäÀÌÁö·Î ÀÌµ¿ÇÏ°í jspÆäÀÌÁö¿¡¼­ ³»¿ëÀ» ´Ù Ã¤¿î µÚ¿¡ È®ÀÎ ¹öÆ°À» ´©¸£¸é send.do·Î ³Ñ¾î°¨
+        return "/email/write"; // ï¿½Ù½ï¿½ write jsp ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï°ï¿½ jspï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¤ï¿½ï¿½ ï¿½Ú¿ï¿½ È®ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ send.doï¿½ï¿½ ï¿½Ñ¾î°¨
     }
  
-    @RequestMapping("send.do") // È®ÀÎ (¸ÞÀÏ¹ß¼Û) ¹öÆ°À» ´©¸£¸é ¸ÊÇÎµÇ´Â ¸Þ¼Òµå
+    @RequestMapping("send.do") // È®ï¿½ï¿½ (ï¿½ï¿½ï¿½Ï¹ß¼ï¿½) ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÎµÇ´ï¿½ ï¿½Þ¼Òµï¿½
     public String send(@ModelAttribute EmailDTO dto, Model model) {
         try {
  
-            emailService.sendMail(dto); // dto (¸ÞÀÏ°ü·Ã Á¤º¸)¸¦ sendMail¿¡ ÀúÀåÇÔ
-            model.addAttribute("message", "ÀÌ¸ÞÀÏÀÌ ¹ß¼ÛµÇ¾ú½À´Ï´Ù."); // ÀÌ¸ÞÀÏÀÌ ¹ß¼ÛµÇ¾ú´Ù´Â ¸Þ½ÃÁö¸¦ Ãâ·Â½ÃÅ²´Ù.
+            emailService.sendMail(dto); // dto (ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ sendMailï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            model.addAttribute("message", "ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¼ÛµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½."); // ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¼ÛµÇ¾ï¿½ï¿½Ù´ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â½ï¿½Å²ï¿½ï¿½.
  
         } catch (Exception e) {
             e.printStackTrace();
-            model.addAttribute("message", "ÀÌ¸ÞÀÏ ¹ß¼Û ½ÇÆÐ..."); // ÀÌ¸ÞÀÏ ¹ß¼ÛÀÌ ½ÇÆÐµÇ¾ú´Ù´Â ¸Þ½ÃÁö¸¦ Ãâ·Â
+            model.addAttribute("message", "ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ß¼ï¿½ ï¿½ï¿½ï¿½ï¿½..."); // ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ß¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÐµÇ¾ï¿½ï¿½Ù´ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         }
-        return "/email/write"; // ½ÇÆÐÇßÀ¸¹Ç·Î ´Ù½Ã write jsp ÆäÀÌÁö·Î ÀÌµ¿ÇÔ
+        return "/email/write"; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½Ù½ï¿½ write jsp ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½
     }
 }
