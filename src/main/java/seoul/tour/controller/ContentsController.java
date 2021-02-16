@@ -11,11 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
 
-<<<<<<< HEAD
-// 실험실험실험
-=======
-//�ּ��߰�
->>>>>>> branch 'master' of https://github.com/TH-Project/SeoulTour.git
+
 @Controller
 @Log4j
 @RequestMapping("/seoulTour/*")
