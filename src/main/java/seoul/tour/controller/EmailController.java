@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import seoul.tour.domain.EmailDTO;
 import seoul.tour.service.EmailService;
 
+// 추가
 @Controller // 컨트롤러 어노테이션 선언
 @RequestMapping("email/*") // 공통적인 매핑 주소
 public class EmailController {
