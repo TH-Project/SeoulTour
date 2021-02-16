@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class FreeBoardVO {
+public class QuestionsBoardVO {
 
 	private Long  bno;
 	private String title;
@@ -19,6 +19,6 @@ public class FreeBoardVO {
 	private int reply_cnt;
 	private int recommend;
 	
-	private List<FreeBoardAttachVO> attachList;
+	private List<QuestionsBoardAttachVO> attachList;
 	
 }

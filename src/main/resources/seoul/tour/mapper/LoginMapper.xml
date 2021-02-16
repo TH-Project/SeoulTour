@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="seoul.tour.mapper.LoginMapper">
+<!-- 
+<select id="getList" resultType="seoul.tour.domain.LoginVO">
+<![CDATA[
+select *from tbl_user
+]]>
+</select>
+
+<insert id="insert">
+insert into tbl_user (LOGIN_ID,USER_TYPE,NAME,PASSWORD,BIRTH,GENDER,MOBILE_NUMBER,EMAIL,USER_CONDITION,MODIFIED_DATE,CREATED_DATE)
+values (seq_user.nextval,#{LOGIN_ID},)
+</insert>
+-->
+<!-- 
+<select id="getUserInfo" resultType="seoul.tour.domain.LoginVO">
+
+select login_ID, name, password, email, created_date from tbl_user where login_ID=#{login_ID}
+
+</select>
+
+<select id="getUserList">
+
+select login_ID, name, password, email, created_date from tbl_user
+
+</select>
+
+<insert id="insertUser" parameterType="seoul.tour.domain.LoginVO">
+
+insert into tbl_user (login_ID, user_type, name, password, birth, gender, mobile_number, email, user_condition, modified_date, created_date)
+values (#{login_ID}, #{user_type}, #{name}, #{password}, #{birth}, #{gender}, #{mobile_number}, #{email}, #{user_condition}, #{modified_date}, now())
+
+</insert>
+
+<update id="updateUser" parameterType="seoul.tour.domain.LoginVO">
+
+update tbl_user set user_type=#{user_type}, name=#{name}, password=#{password}, mobile_number=#{mobile_number}, email=#{email}, user_condition=#{user_condition}, modified_date=now() where login_ID=#{login_ID}
+
+</update>
+
+<delete id="deleteUser" parameterType="int">
+
+delete from tbl_user where login_ID=#{login_ID}
+
+</delete>
+-->
+
+
+
+<insert id="register">
+	INSERT INTO TBL_USER(LOGIN_ID, NAME, PASSWORD, EMAIL, GENDER, MOBILE_NUMBER, CREATED_DATE, MODIFIED_DATE, USER_TYPE, EMAIL_CONDITION)
+	VALUES(#{login_ID},#{name},#{password},#{email},#{gender},#{mobile_number}, sysdate, sysdate, 'A', 'N')
+</insert>
+
+<select id="getUserList" resultType="seoul.tour.domain.LoginVO">
+
+SELECT LOGIN_ID, NAME, EMAIL, GENDER, MOBILE_NUMBER, CREATED_DATE, MODIFIED_DATE, EMAIL_CONDITION, USER_TYPE, PASSWORD FROM TBL_USER
+
+</select>
+
+<update id="memberUpdate">
+
+UPDATE TBL_USER SET
+NAME=#{name}, PASSWORD=#{password}, MOBILE_NUMBER=#{mobile_number}, EMAIL=#{email} WHERE LOGIN_ID=#{login_ID}
+
+</update>
+
+<update id="modifyDate">
+
+UPDATE TBL_USER SET
+MODIFIED_DATE=sysdate WHERE LOGIN_ID=#{login_ID}
+
+</update>
+
+<select id="idCheck" resultType ="int">
+
+SELECT COUNT(*) FROM TBL_USER WHERE LOGIN_ID=#{login_ID}
+
+</select>
+
+<select id="idAuth" resultType="seoul.tour.domain.LoginVO">
+
+SELECT LOGIN_ID, PASSWORD FROM TBL_USER
+WHERE LOGIN_ID=#{login_ID} AND PASSWORD=#{password}
+
+</select>
+
+<select id="login" resultType="seoul.tour.domain.LoginVO">
+
+	SELECT LOGIN_ID, PASSWORD, NAME FROM TBL_USER WHERE LOGIN_ID=#{login_ID} AND PASSWORD = #{password}
+
+</select>
+
+</mapper>

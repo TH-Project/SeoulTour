@@ -5,19 +5,19 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import seoul.tour.domain.Criteria;
-import seoul.tour.domain.FreeBoardReplyVO;
+import seoul.tour.domain.QuestionsBoardReplyVO;
 
-public interface FreeBoardReplyMapper {
+public interface QuestionsBoardReplyMapper {
 
-	public int insert(FreeBoardReplyVO vo);
+	public int insert(QuestionsBoardReplyVO vo);
 
-	public FreeBoardReplyVO read(Long bno);
+	public QuestionsBoardReplyVO read(Long bno);
 
 	public int delete(Long bno);
 
-	public int update(FreeBoardReplyVO reply);
+	public int update(QuestionsBoardReplyVO reply);
 
-	public List<FreeBoardReplyVO> getListWithPaging(@Param("cri") Criteria cri, @Param("bno") Long bno);
+	public List<QuestionsBoardReplyVO> getListWithPaging(@Param("cri") Criteria cri, @Param("bno") Long bno);
 
 	public int getCountByBno(Long bno);
 	

@@ -5,25 +5,27 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import seoul.tour.domain.Criteria;
-import seoul.tour.domain.FreeBoardVO;
+import seoul.tour.domain.QuestionsBoardVO;
 
-public interface FreeBoardMapper {
+public interface QuestionsBoardMapper {
 
-	public List<FreeBoardVO> getList();
+	public List<QuestionsBoardVO> getList();
 	
-	public List<FreeBoardVO> getListWithPaging(Criteria cri);
+	public List<QuestionsBoardVO> getListWithPaging(Criteria cri);
 	
-	public void insert(FreeBoardVO board);
+	public void insert(QuestionsBoardVO board);
 	
-	public void insertSelectKey(FreeBoardVO board);
+	public void insertSelectKey(QuestionsBoardVO board);
 	
-	public FreeBoardVO read(Long bno);
+	public QuestionsBoardVO read(Long bno);
 	
 	public int delete(Long bno);
 	
-	public int update(FreeBoardVO board);
+	public int update(QuestionsBoardVO board);
 	
 	public int getTotalCount(Criteria cri);
 	
 	public void updateReplyCnt(@Param("bno") Long bno, @Param("amount") int amount);
+	
+	public int boardHit(Long bno);
 }

@@ -16,8 +16,8 @@ import org.springframework.stereotype.Component;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
-import seoul.tour.domain.FreeBoardAttachVO;
-import seoul.tour.mapper.FreeBoardAttachMapper;
+import seoul.tour.domain.QuestionsBoardAttachVO;
+import seoul.tour.mapper.QuestionsBoardAttachMapper;
 
 // 첨부파일의 유효성 검사를 하는 클래스입니다.
 
@@ -27,7 +27,7 @@ import seoul.tour.mapper.FreeBoardAttachMapper;
 public class FileCheckTask {
 
 	@Setter(onMethod_ = { @Autowired })
-	private FreeBoardAttachMapper attachMapper;
+	private QuestionsBoardAttachMapper attachMapper;
 
 	private String getFolderYesterDay() {
 
@@ -48,7 +48,7 @@ public class FileCheckTask {
 		log.warn("File Check Task run.................");
 		log.warn(new Date());
 		// file list in database
-		List<FreeBoardAttachVO> fileList = attachMapper.getOldFiles();
+		List<QuestionsBoardAttachVO> fileList = attachMapper.getOldFiles();
 
 		// ready for check file in directory with database file list
 		List<Path> fileListPaths = fileList.stream()

@@ -3,25 +3,27 @@ package seoul.tour.service;
 import java.util.List;
 
 import seoul.tour.domain.Criteria;
-import seoul.tour.domain.FreeBoardAttachVO;
-import seoul.tour.domain.FreeBoardVO;
+import seoul.tour.domain.QuestionsBoardAttachVO;
+import seoul.tour.domain.QuestionsBoardVO;
 
-public interface FreeBoardService {
+public interface QuestionsBoardService {
 	
 	//public List<FreeBoardVO> getList();
 	
-	public List<FreeBoardVO> getList (Criteria cri);
+	public List<QuestionsBoardVO> getList (Criteria cri);
 	
-	public void register(FreeBoardVO board);
+	public void register(QuestionsBoardVO board);
 	
-	public FreeBoardVO get(Long bno);
+	public QuestionsBoardVO get(Long bno);
 	
-	public boolean modify(FreeBoardVO board);
+	public boolean modify(QuestionsBoardVO board);
 	
 	public boolean remove(Long bno);
 	
 	public int getTotal(Criteria cri);
 	
-	public List<FreeBoardAttachVO> getAttachList(Long bno);
+	public List<QuestionsBoardAttachVO> getAttachList(Long bno);
+	
+	public int boardHit(Long bno);
 	
 }

@@ -17,20 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import seoul.tour.domain.Criteria;
-import seoul.tour.domain.FreeBoardReplyVO;
-import seoul.tour.domain.FreeBoardVO;
+import seoul.tour.domain.QuestionsBoardReplyVO;
+import seoul.tour.domain.QuestionsBoardVO;
 import seoul.tour.domain.ReplyPageDTO;
-import seoul.tour.service.FreeBoardReplyService;
+import seoul.tour.service.QuestionsBoardReplyService;
 
-@RequestMapping("/freeboardreplies/")
+@RequestMapping("/questionsboardreplies/")
 @RestController
 @Log4j
 @AllArgsConstructor
-public class FreeBoardReplyController {
-	private FreeBoardReplyService service;
+public class QuestionsBoardReplyController {
+	private QuestionsBoardReplyService service;
 
 	@PostMapping(value = "/new", consumes = "application/json", produces = { MediaType.TEXT_PLAIN_VALUE })
-	public ResponseEntity<String> create(@RequestBody FreeBoardReplyVO vo) {
+	public ResponseEntity<String> create(@RequestBody QuestionsBoardReplyVO vo) {
 
 		log.info("ReplyVO: " + vo);
 
@@ -46,7 +46,7 @@ public class FreeBoardReplyController {
 	@GetMapping(value = "/{rno}", 
 			produces = { MediaType.APPLICATION_XML_VALUE, 
 					     MediaType.APPLICATION_JSON_UTF8_VALUE })
-	public ResponseEntity<FreeBoardReplyVO> get(@PathVariable("rno") Long rno) {
+	public ResponseEntity<QuestionsBoardReplyVO> get(@PathVariable("rno") Long rno) {
 
 		log.info("get: " + rno);
 
@@ -57,7 +57,7 @@ public class FreeBoardReplyController {
 			RequestMethod.PATCH }, value = "/{rno}", consumes = "application/json", produces = {
 					MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> modify(
-			 @RequestBody FreeBoardReplyVO vo, 
+			 @RequestBody QuestionsBoardReplyVO vo, 
 			 @PathVariable("rno") Long rno) {
 
 		vo.setRno(rno);

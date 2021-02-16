@@ -2,17 +2,17 @@ package seoul.tour.mapper;
 
 import java.util.List;
 
-import seoul.tour.domain.FreeBoardAttachVO;
+import seoul.tour.domain.QuestionsBoardAttachVO;
 
-public interface FreeBoardAttachMapper {
+public interface QuestionsBoardAttachMapper {
 	
-	public void insert(FreeBoardAttachVO vo);
+	public void insert(QuestionsBoardAttachVO vo);
 	
 	public void delete(String uuid);
 	
-	public List<FreeBoardAttachVO> findByBno(Long bno);
+	public List<QuestionsBoardAttachVO> findByBno(Long bno);
 	
 	public void deleteAll(Long bno);
 	
-	public List<FreeBoardAttachVO> getOldFiles();
+	public List<QuestionsBoardAttachVO> getOldFiles();
 }

@@ -4,6 +4,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -21,18 +26,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import seoul.tour.domain.Criteria;
-import seoul.tour.domain.FreeBoardAttachVO;
-import seoul.tour.domain.FreeBoardVO;
+import seoul.tour.domain.QuestionsBoardAttachVO;
+import seoul.tour.domain.QuestionsBoardVO;
 import seoul.tour.domain.PageDTO;
-import seoul.tour.service.FreeBoardService;
+import seoul.tour.service.QuestionsBoardService;
 
 @Controller
 @Log4j
-@RequestMapping("freeboard/*")
+@RequestMapping("questionsboard/*")
 @AllArgsConstructor
-public class FreeBoardController {
+public class QuestionsBoardController {
 	
-private FreeBoardService service;
+private QuestionsBoardService service;
 	
 
 @GetMapping("/register")
@@ -58,7 +63,7 @@ public void list(Criteria cri, Model model) {
 
 
 @PostMapping("/register")
-public String register(FreeBoardVO board, RedirectAttributes rttr) {
+public String register(QuestionsBoardVO board, RedirectAttributes rttr) {
 
 	log.info("==========================");
 
@@ -76,7 +81,7 @@ public String register(FreeBoardVO board, RedirectAttributes rttr) {
 
 	rttr.addFlashAttribute("result", board.getBno());
 
-	return "redirect:/freeboard/list";
+	return "redirect:/questionsboard/list";
 }
 
 
@@ -89,7 +94,7 @@ public void get(@RequestParam("bno") Long bno, @ModelAttribute("cri") Criteria c
 
 
 @PostMapping("/modify")
-public String modify(FreeBoardVO board, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
+public String modify(QuestionsBoardVO board, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
 	log.info("modify:" + board);
 
 	if (service.modify(board)) {
@@ -101,7 +106,7 @@ public String modify(FreeBoardVO board, @ModelAttribute("cri") Criteria cri, Red
 	rttr.addAttribute("type", cri.getType());
 	rttr.addAttribute("keyword", cri.getKeyword());
 
-	return "redirect:/freeboard/list";
+	return "redirect:/questionsboard/list";
 }
 
 
@@ -110,7 +115,7 @@ public String remove(@RequestParam("bno") Long bno, Criteria cri, RedirectAttrib
 
 	log.info("remove..." + bno);
 
-	List<FreeBoardAttachVO> attachList = service.getAttachList(bno);
+	List<QuestionsBoardAttachVO> attachList = service.getAttachList(bno);
 
 	if (service.remove(bno)) {
 
@@ -119,10 +124,10 @@ public String remove(@RequestParam("bno") Long bno, Criteria cri, RedirectAttrib
 
 		rttr.addFlashAttribute("result", "success");
 	}
-	return "redirect:/freeboard/list" + cri.getListLink();
+	return "redirect:/questionsboard/list" + cri.getListLink();
 }
 
-private void deleteFiles(List<FreeBoardAttachVO> attachList) {
+private void deleteFiles(List<QuestionsBoardAttachVO> attachList) {
     
     if(attachList == null || attachList.size() == 0) {
       return;
@@ -155,7 +160,7 @@ private void deleteFiles(List<FreeBoardAttachVO> attachList) {
 @GetMapping(value = "/getAttachList",
 		    produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 @ResponseBody
-public ResponseEntity<List<FreeBoardAttachVO>> getAttachList(Long bno) {
+public ResponseEntity<List<QuestionsBoardAttachVO>> getAttachList(Long bno) {
 
 	log.info("getAttachList " + bno);
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -8,7 +10,10 @@
 	
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="/resources/css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="/resources/css/style1.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="/resources/css/style1.css"> <!-- Resource style -->   
+    
+	<link href="/resources/css/sb-admin-2.min.css" rel="stylesheet">
+	<link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,13 +39,19 @@
     <!-- Custom Fonts -->
     <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     
+     <!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="/resources/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	 	
+        <link rel="stylesheet" href="/resources/css/style2.css"/>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 	
 	<script src="/resources/js/owl.carousel.min.js"></script>
 	<script src="/resources/js/modernizr-custom.js"></script>
-	<script src="/resources/js/main.js"></script> <!-- Resource jQuery -->
-	
+	<script src="/resources/js/main.js"></script> <!-- Resource jQuery -->	
 	
 	<style>
 	img{ overflow: hidden; background-repeat: no-repeat; alt=""; margin : auto;display : block;
@@ -52,21 +63,17 @@
   background: #177DB5;
   color: #f1f1f1;
 }
-
 .content {
   padding: 16px;
 }
-
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
 }
-
 .sticky + .content {
   padding-top: 102px;
 }
-
 	</style>
     <title>I SEOUL YOU</title>
 </head>
@@ -94,15 +101,30 @@
                 <li>
 					<a href="tab4.html">서울여행 가이드북</a>
 				</li>
-				<li>
-					<a href="sign_Up.html">회원가입</a>
-				</li>
-				<li>
-					<a href="myInfo.html">내 정보</a>
-				</li>
 				<li class="has-dropdown links" data-content="게시판">
 					<a href="#0">게시판</a>
 				</li>
+				<!-- <li>
+					<a href="/member/register">회원가입</a>
+				</li> -->
+				<li>
+					<c:if test="${member != null }">
+                    	<div>
+                    		<a href="/member/logout">로그아웃</a>
+                    		<p>${member.login_ID}님 환영합니다.</p>                    	
+                    	</div>
+                    </c:if>
+                    <c:if test="${member == null }">
+                    	<div>
+                    		<a href="/member/login">로그인</a>                  	
+                    	</div>
+                    </c:if>					
+				</li>
+				
+                    
+                    
+                  	
+				
 			</ul>
 		</nav>
 		
@@ -215,6 +237,16 @@
 							</ul>
 						</div>
 					</li>
+					<li id="사용자" class="dropdown button">
+						<a href="#0" class="label">Contact</a>						
+						<div class="content">	
+							<ul class="links-list">                                
+								<li><a href="/member/idAuth">내정보</a></li>
+								<li><a href="">내활동</a></li>
+								<li><a href="/member/logout">로그아웃</a></li>								
+							</ul>
+						</div>
+					</li>
 					<li id="게시판" class="dropdown links">
 						<a href="#0" class="label">게시판</a>
 						
@@ -245,3 +277,48 @@
  	
 
 </header>
+
+<%-- <!-- header -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+
+<link href="/resources/vendor/bootstrap/css/bootstraps.css" rel="stylesheet">
+
+ <!-- Custom styles for this template-->
+<link href="/resources/css/simple-sidebar.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+<link rel="stylesheet" href="/resources/css/reset.css"> <!-- CSS reset -->
+<link rel="stylesheet" href="/resources/css/style1.css"> <!-- Resource style -->
+
+<!-- Favicon-->
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+<!-- Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+<!-- Third party plugin CSS-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="/resources/css/styles.css" rel="stylesheet" />      
+        
+        
+
+<title>I SEOUL YOU</title>
+
+</head> --%>
+
+
+

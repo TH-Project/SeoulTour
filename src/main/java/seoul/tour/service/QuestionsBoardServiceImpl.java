@@ -10,23 +10,23 @@ import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import seoul.tour.domain.Criteria;
-import seoul.tour.domain.FreeBoardAttachVO;
-import seoul.tour.domain.FreeBoardVO;
-import seoul.tour.mapper.FreeBoardAttachMapper;
-import seoul.tour.mapper.FreeBoardMapper;
+import seoul.tour.domain.QuestionsBoardAttachVO;
+import seoul.tour.domain.QuestionsBoardVO;
+import seoul.tour.mapper.QuestionsBoardAttachMapper;
+import seoul.tour.mapper.QuestionsBoardMapper;
 
 @Log4j
 @Service
-public class FreeBoardServiceImpl implements FreeBoardService {
+public class QuestionsBoardServiceImpl implements QuestionsBoardService {
 
 	@Setter(onMethod_ = @Autowired)
-	private FreeBoardMapper mapper;
+	private QuestionsBoardMapper mapper;
 	
 	@Setter(onMethod_ = @Autowired)
-	private FreeBoardAttachMapper attachMapper;
+	private QuestionsBoardAttachMapper attachMapper;
 	
 	@Override
-	public List<FreeBoardVO> getList(Criteria cri) {
+	public List<QuestionsBoardVO> getList(Criteria cri) {
 		
 		log.info("FreeBoard getList... " + cri);
 		return mapper.getListWithPaging(cri);
@@ -34,7 +34,7 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	
 	@Transactional
 	@Override
-	public void register(FreeBoardVO board) {
+	public void register(QuestionsBoardVO board) {
 		
 		log.info("register... "+ board);
 		
@@ -52,16 +52,20 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 
 	}
 	
+	@Transactional
 	@Override
-	public FreeBoardVO get(Long bno) {
+	public QuestionsBoardVO get(Long bno) {
 		
 		log.info("get... "+ bno);
+		
+		mapper.boardHit(bno);
+		
 		return mapper.read(bno);
 	}
 
 	@Transactional
 	@Override
-	public boolean modify(FreeBoardVO board) {
+	public boolean modify(QuestionsBoardVO board) {
 
 		log.info("modify......" + board);
 
@@ -100,10 +104,19 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	}
 
 	@Override
-	public List<FreeBoardAttachVO> getAttachList(Long bno) {
+	public List<QuestionsBoardAttachVO> getAttachList(Long bno) {
 		
 		log.info("get Attach list by bno" + bno);
 		
 		return attachMapper.findByBno(bno);
+	}
+
+	@Override
+	public int boardHit(Long bno) {
+		
+		log.info("update hit + 1");
+		
+		return mapper.boardHit(bno);
+		
 	}
 }

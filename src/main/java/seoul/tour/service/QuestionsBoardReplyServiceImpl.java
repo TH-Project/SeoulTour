@@ -10,29 +10,29 @@ import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import seoul.tour.domain.Criteria;
-import seoul.tour.domain.FreeBoardReplyVO;
+import seoul.tour.domain.QuestionsBoardReplyVO;
 import seoul.tour.domain.ReplyPageDTO;
-import seoul.tour.mapper.FreeBoardMapper;
-import seoul.tour.mapper.FreeBoardReplyMapper;
+import seoul.tour.mapper.QuestionsBoardMapper;
+import seoul.tour.mapper.QuestionsBoardReplyMapper;
 
 
 
 @Service
 @Log4j
-public class FreeBoardReplyServiceImpl implements FreeBoardReplyService {
+public class QuestionsBoardReplyServiceImpl implements QuestionsBoardReplyService {
 
   
 	@Setter(onMethod_ = @Autowired)
-	private FreeBoardReplyMapper mapper;
+	private QuestionsBoardReplyMapper mapper;
 	
 
 	@Setter(onMethod_ = @Autowired)
-	private FreeBoardMapper boardMapper;
+	private QuestionsBoardMapper boardMapper;
 
   
   @Transactional
   @Override
-  public int register(FreeBoardReplyVO vo) {
+  public int register(QuestionsBoardReplyVO vo) {
 
     log.info("register......" + vo);
     
@@ -43,7 +43,7 @@ public class FreeBoardReplyServiceImpl implements FreeBoardReplyService {
   }
 
   @Override
-  public FreeBoardReplyVO get(Long rno) {
+  public QuestionsBoardReplyVO get(Long rno) {
 
     log.info("get......" + rno);
 
@@ -52,7 +52,7 @@ public class FreeBoardReplyServiceImpl implements FreeBoardReplyService {
   }
 
   @Override
-  public int modify(FreeBoardReplyVO vo) {
+  public int modify(QuestionsBoardReplyVO vo) {
 
     log.info("modify......" + vo);
 
@@ -66,7 +66,7 @@ public class FreeBoardReplyServiceImpl implements FreeBoardReplyService {
 
     log.info("remove...." + rno);
     
-    FreeBoardReplyVO vo = mapper.read(rno);
+    QuestionsBoardReplyVO vo = mapper.read(rno);
 
     boardMapper.updateReplyCnt(vo.getBno(), -1);
     return mapper.delete(rno);
@@ -74,7 +74,7 @@ public class FreeBoardReplyServiceImpl implements FreeBoardReplyService {
   }
 
   @Override
-  public List<FreeBoardReplyVO> getList(Criteria cri, Long bno) {
+  public List<QuestionsBoardReplyVO> getList(Criteria cri, Long bno) {
 
     log.info("get Reply List of a Board " + bno);
 

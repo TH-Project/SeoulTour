@@ -3,7 +3,7 @@ package seoul.tour.domain;
 import lombok.Data;
 
 @Data
-public class FreeBoardAttachVO {
+public class QuestionsBoardAttachVO {
 
 	private String uuid;
 	private String uploadPath;

@@ -3,20 +3,20 @@ package seoul.tour.service;
 import java.util.List;
 
 import seoul.tour.domain.Criteria;
-import seoul.tour.domain.FreeBoardReplyVO;
+import seoul.tour.domain.QuestionsBoardReplyVO;
 import seoul.tour.domain.ReplyPageDTO;
 
-public interface FreeBoardReplyService {
+public interface QuestionsBoardReplyService {
 	
-	public int register(FreeBoardReplyVO vo);
+	public int register(QuestionsBoardReplyVO vo);
 
-	public FreeBoardReplyVO get(Long rno);
+	public QuestionsBoardReplyVO get(Long rno);
 
-	public int modify(FreeBoardReplyVO vo);
+	public int modify(QuestionsBoardReplyVO vo);
 
 	public int remove(Long rno);
 
-	public List<FreeBoardReplyVO> getList(Criteria cri, Long bno);
+	public List<QuestionsBoardReplyVO> getList(Criteria cri, Long bno);
 	
 	public ReplyPageDTO getListPage(Criteria cri, Long bno);
 	

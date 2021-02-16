@@ -34,7 +34,7 @@ import seoul.tour.domain.AttachFileDTO;
 
 @Controller
 @Log4j
-public class FreeBoardUploadController {
+public class QuestionsBoardUploadController {
 
 	@GetMapping("/uploadForm")
 	public void uploadForm() {

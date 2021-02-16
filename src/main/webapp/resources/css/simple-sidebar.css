@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+ #wrapper {
+    overflow-x: hidden;
+    background: url("/resources/img/main_1.jpg");
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-attachment: scroll;
+    display : inline-block;     
+ }
+
+ #wrapper a{
+  padding: 10px; 
+  text-transform:uppercase;
+  color: rgb(250, 248, 248);
+  font-size: 1rem;
+  text-decoration: none;
+  display: block;
+ }
+
+ #wrapper a:hover{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 1px rgba(255, 255, 255, 0.3);
+  color: rgb(248, 247, 247);
+  border:1px solid transparent;
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  display:inline-block;
+  border:10px solid transparent;
+  
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  color: rgb(250, 248, 248);
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+  padding-top:3rem;
+}
+
+#sidebar-wrapper .sidebar-heading .list-group a{
+  padding: 18px; 
+  text-transform:uppercase;
+  color: rgb(250, 248, 248);
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: block;
+}
+
+#sidebar-wrapper .sidebar-heading .nav-item .nav-link{
+  font-size:0.3rem;
+}
+
+/* #sidebar-wrapper .sidebar-heading .nav-item .collapse .collapse-inner a{
+  padding: 1px; 
+  text-transform:uppercase;
+  color: rgb(248, 247, 247);
+  font-size: 0.5rem;
+  text-decoration: none;
+  display: block;  
+} */
+
+#sidebar-wrapper .sidebar-heading .list-group a:hover{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 1px rgba(255, 255, 255, 0.3);
+  color: rgb(248, 247, 247);
+}
+
+/* #sidebar-wrapper .sidebar-heading .nav-item .collapse .collapse-inner a:hover{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 1px rgba(255, 255, 255, 0.3);
+  color: rgb(240, 240, 240);
+} */
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#page-content-wrapper .navbar {
+  height: 7rem;
+}
+
+/* #page-content-wrapper .navbar{
+  
+} */
+
+.bg-light{
+  opacity: 50%;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+#page-content-wrapper #mainNav {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: rgb(228, 139, 139);
+  transition: background-color 0.2s ease;
+}
+#page-content-wrapper #mainNav .navbar-brand {
+  /* font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700; */
+  color: #212529;
+}
+#page-content-wrapper #mainNav .navbar-nav .nav-item .nav-link {
+  color: #2387df;
+  /* font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  font-size: 0.9rem; */
+  padding: 0.75rem 0;
+}
+#page-content-wrapper #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
+  color: #3a5cf4;
+}
+#page-content-wrapper #mainNav .navbar-nav .nav-item .nav-link.active {
+  color: #3a5cf4 !important;
+}
+@media (min-width: 992px) {
+  #page-content-wrapper #mainNav {
+    box-shadow: none;
+    background-color: transparent;
+  }
+  #page-content-wrapper #mainNav .navbar-brand {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  #page-content-wrapper #mainNav .navbar-brand:hover {
+    color: #fff;
+  }
+  #page-content-wrapper #mainNav .navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 1rem;
+  }
+  #page-content-wrapper #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: #fff;
+  }
+  #page-content-wrapper #mainNav .navbar-nav .nav-item:last-child .nav-link {
+    padding-right: 0;
+  }
+  #page-content-wrapper #mainNav.navbar-scrolled {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+  }
+  #page-content-wrapper #mainNav.navbar-scrolled .navbar-brand {
+    color: #212529;
+  }
+  #page-content-wrapper #mainNav.navbar-scrolled .navbar-brand:hover {
+    color: #f4623a;
+  }
+  #page-content-wrapper #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
+    color: #212529;
+  }
+  #page-content-wrapper  #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+    color: #f4623a;
+  }
+}
