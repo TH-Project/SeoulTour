@@ -35,25 +35,25 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#HanyangDosung">서울 한양도성</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Culture">서울과 문화</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#GuideBooks">서울 여행 가이드북</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="questionsboard/list">문의사항</a></li>                        
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">문의사항</a></li>                        
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Join us</a></li> -->
                      <li>    
 					<c:if test="${member != null}">
 					<c:if test="${member.login_ID == 'admin' }">
 						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="/member/getUserList">관리자</a></li>
-						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="/member/logout">Logout</a></li>
+						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="/logout">Logout</a></li>
                     		 <p style="color: white;">${member.name}님 환영합니다.</p>
 					</c:if>
 					<c:if test="${member.login_ID != 'admin' }">											
                     		 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/member/idAuth">MyAccount</a></li>
-                    		 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/member/logout">Logout</a></li>
+                    		 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/logout">Logout</a></li>
                     		 <p style="color: white;">${member.name}님 환영합니다.</p>
                     </c:if>                    	  	
                     	
                     </c:if>                    
                     <c:if test="${member == null }">
                     	
-                    		<li class="nav-item"><a class="nav-link js-scroll-trigger" href="/member/login">Join us</a>                  	
+                    		<li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Join us</a>                  	
                     	
                     </c:if>					
 				</li>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 font-weight-light mb-5">-Start your journey in Seoul with TH-</p>
-                        <a class="btn btn-info btn-xl js-scroll-trigger" href="/member/login">Sign In</a>
+                        <a class="btn btn-info btn-xl js-scroll-trigger" href="/login">Sign In</a>
                     </div>
                 </div>
             </div>

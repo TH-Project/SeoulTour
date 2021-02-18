@@ -7,7 +7,7 @@ var replyService = (function() {
 
 		$.ajax({
 			type : 'post',
-			url : '/freeboardreplies/new',
+			url : '/questionsboardreplies/new',
 			data : JSON.stringify(reply),
 			contentType : "application/json; charset=utf-8",
 			success : function(result, status, xhr) {
@@ -29,7 +29,7 @@ var replyService = (function() {
 	    var bno = param.bno;
 	    var page = param.page || 1;
 	    
-	    $.getJSON("/freeboardreplies/pages/" + bno + "/" + page + ".json",
+	    $.getJSON("/questionsboardreplies/pages/" + bno + "/" + page + ".json",
 	        function(data) {
 	    	
 	          if (callback) {
@@ -47,7 +47,7 @@ var replyService = (function() {
 	function remove(rno, callback, error) {
 		$.ajax({
 			type : 'delete',
-			url : '/freeboardreplies/' + rno,
+			url : '/questionsboardreplies/' + rno,
 			success : function(deleteResult, status, xhr) {
 				if (callback) {
 					callback(deleteResult);
@@ -67,7 +67,7 @@ var replyService = (function() {
 
 		$.ajax({
 			type : 'put',
-			url : '/freeboardreplies/' + reply.rno,
+			url : '/questionsboardreplies/' + reply.rno,
 			data : JSON.stringify(reply),
 			contentType : "application/json; charset=utf-8",
 			success : function(result, status, xhr) {
@@ -85,7 +85,7 @@ var replyService = (function() {
 
 	function get(rno, callback, error) {
 
-		$.get("/freeboardreplies/" + rno + ".json", function(result) {
+		$.get("/questionsboardreplies/" + rno + ".json", function(result) {
 
 			if (callback) {
 				callback(result);

@@ -1,4 +1,4 @@
-
+<!-- 회원가입 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
@@ -44,9 +44,72 @@ a:hover {
 :focus {
   outline: none; }
 
+/* 메일 영역 */
+.mail_wrap{
+	width: 100%;
+    margin-top: 10px;
+}
+
+.mail_input_box{
+	border: 1px solid black;
+	height:20px;
+	padding: 7px 9px;	
+	
+}
+.mail_input{
+	width:100%;
+	height:100%;
+	border:none;
+	font-size:6px;
+}
+.mail_check_wrap{
+	margin-top: 10px;	
+}
+.mail_check_input_box{
+	border: 1px solid black;
+    height: 31px;
+    padding: 7px 9px;
+    width: 61%;
+    float: left;
+}
+#mail_check_input_box_false{
+	background-color:#ebebe4;
+}
+#mail_check_input_box_true{
+	background-color:white;
+}
+.mail_check_input{
+	width:100%;
+	height:100%;
+	border:none;
+	font-size:15px;
+}
+.mail_check_button{
+    border: 1px solid black;
+    height: 30px;
+    width: 30%;
+    float: right;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 900;
+    background-color: #ececf7;
+    cursor: pointer;
+}
+.correct{
+	color : green;
+}
+.incorrect{
+	color : red;
+}
+
 </style>
 
     <script type="text/javascript">
+    
+    var mailnumCheck = false;		// 이메일 인증번호 확인
+	
+    
     $(document).ready(function(){
 		// 취소
 		$(".cencle").on("click", function(){
@@ -95,6 +158,12 @@ a:hover {
 			if(!fn_pwdCheck()){
 				return false;
 			}
+			if(mailnumCheck==false){
+				alert("이메일 인증을 진행해주세요.");
+				$("#email").focus();
+				return false;
+			}
+			
 		});
 	})
 
@@ -207,7 +276,7 @@ a:hover {
 				<div class="image-holder">
 					<img src ="/resources/img/TH_3.JPG">
 				</div>
-				<form action="/member/register" method="post">
+				<form id="signUp" action="/member/register" method="post">
 					<h3>회원가입</h3>
 					<div class="form-wrapper">
                         <label class="control-label" for="name">성명</label>
@@ -216,16 +285,29 @@ a:hover {
 					<div class="form-wrapper">
                         <label class="control-label" for="login_ID">아이디</label>                     
 						<input class="form-control" type="text" placeholder="ID를 입력해주세요." id="login_ID" name="login_ID" />
-						<button class="btn btn-info btn-sm" type="button" id="idCheck" onclick="fn_idCheck();" value="N">중복확인</button>
+						<button class="btn btn-xs btn-link" type="button" id="idCheck" onclick="fn_idCheck();" value="N">중복확인</button>
 					</div>
-					<div class="form-wrapper">
-                        <label class="control-label" for="email">이메일</label>
-						<input class="form-control" type="text" placeholder="Email을 입력해주세요." id="email" name="email"/>
-						<i class="zmdi zmdi-email"></i>
+			<div class="mail_wrap">
+				<label class="control-label" for="email">이메일</label>
+				<div class="form-control">
+					<input class="mail_input" type="text" id="email" name="email"/>
+				</div>
+				<span class="final_mail_ck">이메일을 입력해주세요.</span>
+				<sapn class="mail_input_box_warn"></sapn>
+				<div class="mail_check_wrap">
+					<div class="mail_check_input_box" id="mail_check_input_box_false">
+						<input class="mail_check_input" disabled="disabled">
+					</div>
+					<div class="mail_check_button">
+						<span>인증번호 전송</span>
+					</div>
+					<div class="clearfix"></div>
+					<span id="mail_check_input_box_warn"></span>
+				</div>	
 					</div>
 					<div class="form-wrapper">					
 						<select name="gender" id="gender" class="form-control">
-							<option value="" disabled selected>성별</option>
+							<option value="N" disabled selected>성별</option>
 							<option value="M">남자</option>
 							<option value="F">여자</option>
 						</select>
@@ -256,6 +338,77 @@ a:hover {
 			</div>
         </div>
         </section>
+        
+        
+ <script>
+ 
+ var code = "";				//이메일전송 인증번호 저장위한 코드
+
+ /* 인증번호 이메일 전송 */
+ $(".mail_check_button").click(function(){
+ 	
+ 	var email = $(".mail_input").val();			// 입력한 이메일
+ 	var cehckBox = $(".mail_check_input");		// 인증번호 입력란
+ 	var boxWrap = $(".mail_check_input_box");	// 인증번호 입력란 박스
+ 	var warnMsg = $(".mail_input_box_warn");	// 이메일 입력 경고글
+ 	
+ 	/* 이메일 형식 유효성 검사 */
+ 	if(mailFormCheck(email)){
+ 		warnMsg.html("이메일이 전송 되었습니다. 이메일을 확인해주세요.");
+ 		warnMsg.css("display", "inline-block");
+ 	} else {
+ 		warnMsg.html("올바르지 못한 이메일 형식입니다.");
+ 		warnMsg.css("display", "inline-block");
+ 		return false;
+ 	}	
+ 	
+ 	$.ajax({
+ 		
+ 		type:"GET",
+ 		url:"mailCheck?email=" + email,
+ 		success:function(data){
+ 			
+ 			//console.log("data : " + data);
+ 			cehckBox.attr("disabled",false);
+ 			boxWrap.attr("id", "mail_check_input_box_true");
+ 			code = data;
+ 			
+ 		}
+ 				
+ 	});
+ 	
+ });
+ 
+ /* 인증번호 비교 */
+ $(".mail_check_input").blur(function(){
+ 	
+ 	var inputCode = $(".mail_check_input").val();		// 입력코드	
+ 	var checkResult = $("#mail_check_input_box_warn");	// 비교 결과 	
+ 	
+ 	if(inputCode == code){							// 일치할 경우
+ 		checkResult.html("인증번호가 일치합니다.");
+ 		checkResult.attr("class", "correct");		
+ 		mailnumCheck = true;
+ 	} else {											// 일치하지 않을 경우
+ 		checkResult.html("인증번호를 다시 확인해주세요.");
+ 		checkResult.attr("class", "incorrect");
+ 		mailnumCheck = false;
+ 	}	
+ 	
+ });
+ 	
+ 
+ 
+ /* 입력 이메일 형식 유효성 검사 */
+ function mailFormCheck(email){
+	var form = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	return form.test(email);
+}
+
+ 
+ 
+ </script>       
+        
         
 	<%@include file="../includes/footer_detail.jsp"%>
 

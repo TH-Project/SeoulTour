@@ -7,16 +7,14 @@
 <%@include file="../includes/header.jsp"%>
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">자유 게시판</h1>
-	</div>
-	<!-- /.col-lg-12 -->
+		<h1 class="page-header">문의사항</h1>
+	</div>	
 </div>
-<!-- /.row -->
 
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-default" style="align-content: 'left''">
+			<div class="panel-default" style="align-content: 'left'">
 			<div class = "img_contbox clear" style="align-content: left">
 			<img src="/resources/img/questionsboard.jpg" width="700px" height="250px" align="left"
 			style="margin-left: 30px; margin-bottom: 20px; margin-top: 20px"/>
@@ -29,13 +27,9 @@
 			&nbsp;&nbsp; ※불량사용자 신고 및 문의사항은 하단 버튼을 눌러주세요 &nbsp;&nbsp;
 			<br>
  
- <button type="button" class="btn btn-success" onClick="location.href='/email/write.do'"> 문의 메일
-
-
-		
+ 			<button type="button" class="btn btn-success" onClick="location.href='/email/write.do'"> 문의 메일</button>
 			
-			</div>
-		
+			</div>		
 			</div>
 
 			<!-- /.panel-heading -->
@@ -105,21 +99,6 @@
 
 				<div class='pull-right'>
 					<ul class="pagination">
-
-						<%--             <c:if test="${pageMaker.prev}">
-              <li class="paginate_button previous"><a href="#">Previous</a>
-              </li>
-            </c:if>
-
-            <c:forEach var="num" begin="${pageMaker.startPage}"
-              end="${pageMaker.endPage}">
-              <li class="paginate_button"><a href="#">${num}</a></li>
-            </c:forEach>
-
-            <c:if test="${pageMaker.next}">
-              <li class="paginate_button next"><a href="#">Next</a></li>
-            </c:if> --%>
-
 						<c:if test="${pageMaker.prev}">
 							<li class="paginate_button previous"><a
 								href="${pageMaker.startPage -1}">Previous</a></li>
@@ -136,8 +115,6 @@
 							<li class="paginate_button next"><a
 								href="${pageMaker.endPage +1 }">Next</a></li>
 						</c:if>
-
-
 					</ul>
 				</div>
 				<!--  end Pagination -->
@@ -151,10 +128,7 @@
 					value='<c:out value="${ pageMaker.cri.type }"/>'> <input
 					type='hidden' name='keyword'
 					value='<c:out value="${ pageMaker.cri.keyword }"/>'>
-
-
 			</form>
-
 
 			<!-- Modal  추가 -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -179,7 +153,6 @@
 				<!-- /.modal-dialog -->
 			</div>
 			<!-- /.modal -->
-
 
 		</div>
 		<!--  end panel-body -->
