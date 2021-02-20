@@ -43,6 +43,8 @@ public class HomeController {
 	public String postLogin(LoginVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
 		logger.info("post login");
 		
+		String ip = req.getRemoteAddr();
+		
 		HttpSession session = req.getSession();
 		LoginVO login = loginService.login(vo);			
 					
@@ -51,16 +53,18 @@ public class HomeController {
 			rttr.addFlashAttribute("msg", false);
 		}else {
 			session.setAttribute("member", login);				
+			rttr.addFlashAttribute("msg", true);
 		}
 		
 		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout(HttpSession session) throws Exception{
+	public String logout(HttpSession session,  RedirectAttributes rttr) throws Exception{
 		
+		rttr.addFlashAttribute("logout", true);
 		session.invalidate();
-		
+				
 		return "redirect:/";
 	}
 }

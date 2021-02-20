@@ -63,7 +63,7 @@ public void list(Criteria cri, Model model) {
 
 
 @PostMapping("/register")
-public String register(QuestionsBoardVO board, RedirectAttributes rttr) {
+public String register(QuestionsBoardVO board, RedirectAttributes rttr, Model model, Criteria cri) {
 
 	log.info("==========================");
 
@@ -80,6 +80,10 @@ public String register(QuestionsBoardVO board, RedirectAttributes rttr) {
 	service.register(board);
 
 	rttr.addFlashAttribute("result", board.getBno());
+	
+	int total = service.getTotal(cri);
+	
+	model.addAttribute("pageMaker", new PageDTO(cri, total));
 
 	return "redirect:/questionsboard/list";
 }

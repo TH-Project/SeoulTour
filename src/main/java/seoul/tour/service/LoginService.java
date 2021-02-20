@@ -1,6 +1,6 @@
 package seoul.tour.service;
 
-//회원가입
+//�쉶�썝媛��엯
 
 //import java.util.List;
 import seoul.tour.domain.LoginVO;
@@ -21,4 +21,5 @@ public interface LoginService {
 	public LoginVO idAuth(LoginVO vo) throws Exception;
 	public LoginVO login(LoginVO vo) throws Exception;
 	public void modifyDate(LoginVO vo) throws Exception;
+	public void memberDelete(LoginVO vo) throws Exception;
 }

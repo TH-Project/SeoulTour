@@ -1,6 +1,6 @@
 package seoul.tour.service;
 
-//회원가입
+//�쉶�썝媛��엯
 
 import java.util.List;
 //import javax.inject.Inject;
@@ -69,6 +69,10 @@ public class LoginServiceImpl implements LoginService{
 	@Override
 	public void modifyDate(LoginVO vo) throws Exception{
 		mapper.modifyDate(vo);
+	}
+	@Override
+	public void memberDelete(LoginVO vo) throws Exception{
+		mapper.memberDelete(vo);
 	}
 
 }

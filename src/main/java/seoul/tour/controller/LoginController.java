@@ -1,6 +1,6 @@
 package seoul.tour.controller;
 
-//회원가입
+//�쉶�썝媛��엯
 
 import java.util.HashMap;
 import java.util.Random;
@@ -145,6 +145,17 @@ public class LoginController {
 			
 			return num;
 			
+		}
+		
+		// 회원 탈퇴 post
+		@RequestMapping(value="/memberDelete", method = RequestMethod.POST)
+		public String memberDelete(LoginVO vo, HttpSession session, RedirectAttributes rttr) throws Exception{
+			
+			logger.info("회원 탈퇴 : " + vo);
+			rttr.addFlashAttribute("msg", true);
+			
+			loginService.memberDelete(vo);
+			return "redirect:/member/getUserList";
 		}
 	  
 	
