@@ -4,6 +4,8 @@ package seoul.tour.service;
 
 //import java.util.List;
 import seoul.tour.domain.LoginVO;
+import seoul.tour.domain.WishVO;
+
 import java.util.List;
 
 public interface LoginService {
@@ -21,4 +23,6 @@ public interface LoginService {
 	public LoginVO idAuth(LoginVO vo) throws Exception;
 	public LoginVO login(LoginVO vo) throws Exception;
 	public void modifyDate(LoginVO vo) throws Exception;
+	public void wishRegister(String user_id) throws Exception;
+	public void wishUpdate_heohyun(String user_id) throws Exception;
 }

@@ -18,6 +18,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import seoul.tour.domain.LoginVO;
+import seoul.tour.domain.WishVO;
 import seoul.tour.service.LoginService;
 
 @Controller
@@ -44,7 +46,7 @@ public class LoginController {
 	public void getRegister() throws Exception{}
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public String postRegister(LoginVO vo) throws Exception{
+	public String postRegister(LoginVO vo,HttpServletRequest request) throws Exception{
 		int result = loginService.idCheck(vo);
 		try {
 			if(result==1) {
@@ -52,6 +54,9 @@ public class LoginController {
 			}
 			else if(result==0) {
 				loginService.register(vo);
+				String user_id= request.getParameter("login_ID");
+				loginService.wishRegister(user_id);
+				
 			}
 		}catch(Exception e) {
 			throw new RuntimeException();
@@ -76,6 +81,13 @@ public class LoginController {
 		loginService.modifyDate(vo);
 		return "index";
 	}
+	
+	/*
+	 * @ResponseBody
+	 * 
+	 * @RequestMapping(value="/wishRegister", method=RequestMethod.POST) public void
+	 * wishRegister(WishVO vo) throws Exception{ loginService.wishRegister(vo); }
+	 */
 	
 	@ResponseBody
 	@RequestMapping(value="/idCheck", method=RequestMethod.POST)

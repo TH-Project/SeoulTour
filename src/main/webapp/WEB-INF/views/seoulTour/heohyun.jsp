@@ -2,10 +2,18 @@
     pageEncoding="UTF-8"%>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
-
 <%@include file="../includes/header_detail.jsp"%>
+
+
 <body>
 
+<%
+		if(session.getAttribute("member")==null)
+		{
+			response.sendRedirect("/login");
+		}
+		
+	%>
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
@@ -101,7 +109,8 @@
             </li>            
           </ul>
         </div>
-      </nav>
+      </nav>       
+      
 
       <div class="cd-main-content">           
 <p style="text-align:left; font-size:2em; color: #E5DC92; padding:15px">&emsp;회현동&emsp;

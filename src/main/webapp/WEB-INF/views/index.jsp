@@ -35,7 +35,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#HanyangDosung">서울 한양도성</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Culture">서울과 문화</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#GuideBooks">서울 여행 가이드북</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">문의사항</a></li>                        
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/questionsboard/list">문의사항</a></li>                        
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Join us</a></li> -->
                      <li>    
 					<c:if test="${member != null}">
@@ -72,7 +72,16 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 font-weight-light mb-5">-Start your journey in Seoul with TH-</p>
-                        <a class="btn btn-info btn-xl js-scroll-trigger" href="/login">Sign In</a>
+                        <c:if test="${member != null}">					                   	  	
+                    	
+                    		<a class="btn btn-info btn-xl js-scroll-trigger" href="">WishList</a>
+                    	
+                    	</c:if>                    
+                    	<c:if test="${member == null }">
+                    	
+                    		<a class="btn btn-info btn-xl js-scroll-trigger" href="/login">Sign In</a>                 	
+                    	
+                    	</c:if>                        
                     </div>
                 </div>
             </div>

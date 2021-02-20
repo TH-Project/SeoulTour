@@ -50,7 +50,8 @@ public class HomeController {
 			session.setAttribute("member", null);
 			rttr.addFlashAttribute("msg", false);
 		}else {
-			session.setAttribute("member", login);				
+			session.setAttribute("member", login);
+			session.setAttribute("uid", login.getLogin_ID());
 		}
 		
 		return "redirect:/";

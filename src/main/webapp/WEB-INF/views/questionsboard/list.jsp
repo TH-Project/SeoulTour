@@ -1,10 +1,105 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+    pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
 
+<%@include file="../includes/header_board.jsp"%>
 
-<%@include file="../includes/header.jsp"%>
+<style>
+.cd-main-content {
+  min-height: 100vh;
+  width:90%;
+  margin: 5px auto;
+  background-color: seashell;
+  opacity: 0.9;
+  border-radius: 0.5rem;
+  margin-top : 3rem;
+  margin-bottom : 3rem;
+  /* background: rgba(133, 130, 130, 0.3);  padding: 300px;
+  border-radius: 0.5em;
+}
+
+</style>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <div class="sidebar-heading">
+        <a href="/">See You In Seoul</a>
+      </div>
+           
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeasons"
+            aria-expanded="true" aria-controls="collapseSeasons">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>서울의 사계절</span>
+        </a>
+        <div id="collapseSeasons" class="collapse" aria-labelledby="headingTwo" data-parent="#sidebar-wrapper">
+            <div class="bg-light py-2 collapse-inner rounded">                
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/spring">Spring</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/summer">Summer</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/autumn">Autumn</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/winter">Winter</a>
+            </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDosung"
+            aria-expanded="true" aria-controls="collapseDosung">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>한양도성</span>
+        </a>
+        <div id="collapseDosung" class="collapse" aria-labelledby="headingTwo" data-parent="#sidebar-wrapper">
+            <div class="bg-light py-2 collapse-inner rounded">                
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/beautiDosung">도성소개</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/heohyun">성곽마을</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/inwang">도성구간안내</a>
+            </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCultures"
+            aria-expanded="true" aria-controls="collapseCultures">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>서울 & 문화</span>
+        </a>
+        <div id="collapseCultures" class="collapse" aria-labelledby="headingTwo" data-parent="#sidebar-wrapper">
+            <div class="bg-light py-2 collapse-inner rounded">               
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/itaewonClass">이태원 클라쓰</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/theKing">더 킹</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/deluna">호텔 델루나</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/kingdom">킹덤</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/parasite">기생충</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/goblin">도깨비</a>
+            </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGuide"
+            aria-expanded="true" aria-controls="collapseGuide">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>서울 여행 가이드북</span>
+        </a>
+        <div id="collapseGuide" class="collapse" aria-labelledby="headingTwo" data-parent="#sidebar-wrapper">
+            <div class="bg-light py-2 collapse-inner rounded">                
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="buttons.html">서울 관광가이드</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="buttons.html">한류 관광</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="cards.html">서울 BEST100</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="cards.html">서울 도보관광</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="cards.html">서울 속 세계여행</a>
+                <a class="nav-link form-control-sm text-dark font-weight-bold" href="cards.html">서울 골목길 명소</a>
+            </div>
+        </div>
+      </li>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+    <div class="cd-main-content">
 <div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">문의사항</h1>
@@ -50,7 +145,7 @@
               <td><c:out value="${board.bno}" /></td>
                <td>
                   <a class='move' href='<c:out value="${board.bno}"/>'>
-                  <c:out value="${board.title}" />   <b>[  <c:out value="${board.reply_cnt}" />  ]</b>
+                  <span style="color:black">${board.title}  <b>[  <c:out value="${board.reply_cnt}" />  ]</b>
                   </a>
               <td><c:out value="${board.writer}" /></td>
               <td><fmt:formatDate pattern="MM-dd / hh:mm"
@@ -161,6 +256,8 @@
 </div>
 </div>
 <!-- /.row -->
+</div>
+</div>
 
 
 
@@ -265,4 +362,4 @@
 
 
 
-<%@include file="../includes/footer.jsp"%>
+<%@include file="../includes/footer_board.jsp"%>

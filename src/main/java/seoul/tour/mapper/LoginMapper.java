@@ -3,6 +3,7 @@ package seoul.tour.mapper;
 //회원가입
 
 import seoul.tour.domain.LoginVO;
+
 import java.util.List;
 
 public interface LoginMapper {

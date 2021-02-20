@@ -2,13 +2,19 @@ package seoul.tour.controller;
 
 import java.util.Locale;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+import seoul.tour.service.LoginService;
 
 
 
@@ -17,6 +23,11 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/seoulTour/*")
 @AllArgsConstructor
 public class ContentsController {
+	
+	@Inject
+	private LoginService loginService;
+	
+	
 	@RequestMapping(value = "/autumn", method = RequestMethod.GET)
 	public String autumn(Locale locale, Model model) {
 		
@@ -83,8 +94,12 @@ public class ContentsController {
 		return "seoulTour/hanokVlg";	
 	}
 	
+	
 	@RequestMapping(value = "/heohyun", method = RequestMethod.GET)
-	public String heohyun(Locale locale, Model model) {
+	public String heohyun(Locale locale, Model model, HttpSession session) throws Exception{		
+			
+		String user_id=(String) session.getAttribute("uid");
+		loginService.wishUpdate_heohyun(user_id);
 		
 		return "seoulTour/heohyun";	
 	}

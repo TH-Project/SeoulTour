@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import seoul.tour.domain.LoginVO;
+import seoul.tour.domain.WishVO;
 import seoul.tour.mapper.LoginMapper;
+import seoul.tour.mapper.WishMapper;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -24,6 +26,9 @@ public class LoginServiceImpl implements LoginService{
 	
 	@Setter(onMethod_ = @Autowired)
 	private LoginMapper mapper;
+	
+	@Setter(onMethod_ = @Autowired)
+	private WishMapper mappers;
 	
 	/*
 	 * @Override public List<LoginVO> getUserList() throws Exception{ return
@@ -69,6 +74,14 @@ public class LoginServiceImpl implements LoginService{
 	@Override
 	public void modifyDate(LoginVO vo) throws Exception{
 		mapper.modifyDate(vo);
+	}
+	@Override
+	public void wishRegister(String user_id) throws Exception{
+		mappers.wishRegister(user_id);
+	}
+	@Override
+	public void wishUpdate_heohyun(String user_id) throws Exception{
+		mappers.updateWish_heohyun(user_id);
 	}
 
 }

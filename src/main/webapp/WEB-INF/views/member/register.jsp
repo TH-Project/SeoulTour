@@ -162,8 +162,7 @@ a:hover {
 				alert("이메일 인증을 진행해주세요.");
 				$("#email").focus();
 				return false;
-			}
-			
+			}			
 		});
 	})
 
@@ -183,6 +182,43 @@ a:hover {
 			}
 		})
 	}
+    
+    function fn_wishRegister(){
+		$.ajax({
+			url : "/member/wishRegister",
+			type : "post",
+			dataType : "json",
+			data : {
+					"ANSAN" : 0,
+					"DONGGYO" : 0, 
+					"BIGPARK" : 0,
+					"YANGHWA" : 0,
+					"HYUNCHUNG" : 0,
+					"BAEKSASIL" : 0,
+					"WORLDCUP" : 0,
+					"YONGMA" : 0,
+					"BULAM" : 0,
+					"CHANGGYUNG" : 0,
+					"WESTSEOUL" : 0,
+					"SALGOJI" : 0,
+					"SEOCHOPARK" : 0,
+					"YANGJAE" : 0,
+					"NAMSAN" : 0,
+					"SEOSUNRA" : 0,
+					"ACHA" : 0,
+					"HANEUL" : 0,
+					"MONGCHON" : 0,
+					"GAEHWA" : 0,
+					"HOEHYUN" : 0,
+					"BUKJUNG" : 0,
+					"BUAM" : 0,
+					"WESTKYUNGBOK" : 0},
+			success : function(data){
+				alert("위시리스트를 만들었습니다.");
+			}
+		})
+	}
+    
 	function fn_pwdCheck(){ 
 		var password1 = $("#password").val(); 
 		var password2 = $("#re_password").val(); 
@@ -285,14 +321,14 @@ a:hover {
 					<div class="form-wrapper">
                         <label class="control-label" for="login_ID">아이디</label>                     
 						<input class="form-control" type="text" placeholder="ID를 입력해주세요." id="login_ID" name="login_ID" />
-						<button class="btn btn-xs btn-link" type="button" id="idCheck" onclick="fn_idCheck();" value="N">중복확인</button>
+						<button class="btn btn-xs btn-link" type="button" id="idCheck" onclick="fn_idCheck();" value="N">중복확인</button>						
 					</div>
 			<div class="mail_wrap">
 				<label class="control-label" for="email">이메일</label>
 				<div class="form-control">
-					<input class="mail_input" type="text" id="email" name="email"/>
+					<input class="mail_input" type="text" placeholder="이메일을 입력해주세요." id="email" name="email"/>
 				</div>
-				<span class="final_mail_ck">이메일을 입력해주세요.</span>
+				<!-- <span class="final_mail_ck">이메일을 입력해주세요.</span> -->
 				<sapn class="mail_input_box_warn"></sapn>
 				<div class="mail_check_wrap">
 					<div class="mail_check_input_box" id="mail_check_input_box_false">
