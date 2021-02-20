@@ -1,6 +1,6 @@
 package seoul.tour.mapper;
 
-//회원가입
+//�쉶�썝媛��엯
 
 import seoul.tour.domain.LoginVO;
 
@@ -14,4 +14,5 @@ public interface LoginMapper {
 	public LoginVO idAuth(LoginVO vo) throws Exception;
 	public LoginVO login(LoginVO vo) throws Exception;
 	public void modifyDate(LoginVO vo) throws Exception;
+	public void memberDelete(LoginVO vo) throws Exception;
 }

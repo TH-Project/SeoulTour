@@ -162,7 +162,9 @@ a:hover {
 				alert("이메일 인증을 진행해주세요.");
 				$("#email").focus();
 				return false;
-			}			
+
+			}
+			alert("회원가입이 완료되었습니다. 감사합니다.");
 		});
 	})
 

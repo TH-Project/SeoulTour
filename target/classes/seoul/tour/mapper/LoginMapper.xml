@@ -49,4 +49,14 @@ WHERE LOGIN_ID=#{login_ID} AND PASSWORD=#{password}
 
 </select>
 
+<delete id="memberDelete">
+
+	DELETE FROM TBL_USER
+	WHERE LOGIN_ID = #{login_ID}
+
+</delete>
+
+
+
+
 </mapper>

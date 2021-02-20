@@ -4,6 +4,33 @@
 
 <%@include file="../includes/header.jsp"%>
 
+<c:if test="${msg==true}">
+<script>
+    alert("처리가 완료되었습니다.");
+</script>
+</c:if>
+
+
+<br><br><br>
+
+
+<div class="container">
+  <div class="col-sm-6">
+    <div class="card">
+     <div class="row-fluid">
+        <h5 class="card-title">회원 강제 탈퇴</h5>
+        <form action ="/member/memberDelete" method = "post">
+        <p class="card-text">아이디를 입력하시고 버튼을 누르면 해당하는 id의 회원이 탈퇴됩니다.</p>
+        <input class ="form-control" type = "text" name="login_ID" placeholder="  탈퇴시킬 회원의 아이디를 입력하세요. ">
+		<button class="btn btn-primary" type = "submit" name = "submit">강제 탈퇴</button>
+		
+		</form>
+      </div>
+    </div>
+  </div>  
+</div>
+
+
 <div id="content">
 	<div class="container-fluid">
 		<h1 class="h3 mb-2 text-gray-800">유저 리스트</h1>
@@ -42,7 +69,7 @@
 			<th>비밀번호</th> 
 		</tr> 
 	</thead>
-                                    
+		                                
                                     <tbody>
                                        <c:choose> 
 			<c:when test="${empty userList }" > 
