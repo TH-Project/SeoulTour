@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -40,6 +41,8 @@ public class LoginController {
 	private LoginService loginService;
 	@Inject
 	private JavaMailSender mailSender;
+	@Inject
+	BCryptPasswordEncoder pwdEncoder;
 	
 	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
@@ -53,10 +56,11 @@ public class LoginController {
 				return "/member/register";
 			}
 			else if(result==0) {
-				loginService.register(vo);
-				String user_id= request.getParameter("login_ID");
-				loginService.wishRegister(user_id);
+				String inputPass = vo.getPassword();
+				String pwd = pwdEncoder.encode(inputPass);
+				vo.setPassword(pwd);
 				
+				loginService.register(vo);
 			}
 		}catch(Exception e) {
 			throw new RuntimeException();
@@ -77,6 +81,11 @@ public class LoginController {
 	
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public String postmemberUpdate(LoginVO vo) throws Exception{
+		
+		String inputPass = vo.getPassword();
+		String pwd = pwdEncoder.encode(inputPass);
+		vo.setPassword(pwd);
+		
 		loginService.memberUpdate(vo);
 		loginService.modifyDate(vo);
 		return "index";
