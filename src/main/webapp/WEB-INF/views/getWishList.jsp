@@ -2,19 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 
-<%@include file="../includes/header_detail.jsp"%>
-
-<c:if test="${msg==true}">
-<script>
-    alert("처리가 완료되었습니다.");
-</script>
-</c:if>
-<c:if test="${member.login_ID != 'admin' }">
-<script>
-    alert("관리자만 이용가능합니다.");
-    location.href = "/";
-</script>
-</c:if>
+<%@include file="/WEB-INF/views/includes/header_detail.jsp"%>
 
 <body>
 <div class="d-flex" id="wrapper">
@@ -90,74 +78,41 @@
       </li>
     </div>
     <!-- /#sidebar-wrapper -->
+   
 
 <div id="content">
 	<div class="container-fluid">
-		<h1 class="h3 mb-2 text-gray-800">유저 리스트</h1>
-		<p class="mb-4">유저의 상태를 확인 가능합니다.</p>
+		<h1 class="h3 mb-2 text-gray-800">위시 리스트</h1>
+		<p class="mb-4">희망하는 여행장소 목록입니다.</p>
 		
 		<div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">회원정보</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">${member.name}님의 가고싶은 여행장소</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <colgroup> 
-					<col style="width:8%;" /> 
-					<col style="width:8%;" /> 
-					<col style="width:15%;" /> 
-					<col style="width:5%;" /> 
-					<col style="width:10%;" />
-					<col style="width:15%;" />
-					<col style="width:15%;" />
-					<col style="width:5%;" />
-					<col style="width:5%;" />
-					<col style="width:auto;" /> 
+					<col style="width:50%;" /> 					
+					 
 				</colgroup> 
 	<thead> 
-		<tr> 
-			<th>이름</th> 
-			<th>ID</th> 
-			<th>이메일</th>
-			<th>성별</th>
-			<th>전화번호</th>
-			<th>생성일자</th>
-			<th>수정일자</th>
-			<th>이메일 인증상태</th>
-			<th>회원등급</th>
-			<th>비밀번호</th>
-			<th>회원탈퇴</th> 
+		<tr> 			
+			<th>WishPlaces</th> 			
 		</tr> 
 	</thead>
 		                                
                                     <tbody>
                                        <c:choose> 
-			<c:when test="${empty userList }" > 
+			<c:when test="${empty wishList }" > 
 				<tr>
 					<td colspan="5" align="center">데이터가 없습니다.</td>
 				</tr> 
 			</c:when> 
-			<c:when test="${!empty userList}"> 
-				<c:forEach var="list" items="${userList}"> 
+			<c:when test="${!empty wishList}"> 
+				<c:forEach var="list" items="${wishList}"> 
 					<tr> 
-						<td><c:out value="${list.name}"/></td> 
-						<td><c:out value="${list.login_ID}"/></td>						
-						<td><c:out value="${list.email}"/></td>
-						<td><c:out value="${list.gender}"/></td>
-						<td><c:out value="${list.mobile_number}"/></td>
-						<td><c:out value="${list.created_date}"/></td>
-						<td><c:out value="${list.modified_date}"/></td>
-						<td><c:out value="${list.email_condition}"/></td>
-						<td><c:out value="${list.user_type}"/></td>
-						<td><c:out value="${list.password}"/></td>						
-						<td>
-						<form action ="/member/memberDelete" method = "post">       					
-        					<input type = "hidden" id="login_ID" name="login_ID" value="${list.login_ID}">        					
-							<button class="btn btn-primary" type = "submit" name = "submit">강제 탈퇴</button>		
-						</form>				
-						</td>
-						
+						<td><c:out value="${list.column_name}"/></td> 
 					</tr> 
 				</c:forEach> 
 			</c:when> 
@@ -171,4 +126,4 @@
                 </div>
 	</div>
 </div>
-<%@include file="../includes/footer_detail.jsp"%>    
+ <%@include file="/WEB-INF/views/includes/footer_detail.jsp"%>

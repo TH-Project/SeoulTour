@@ -298,9 +298,9 @@ a:hover {
     <!-- /#sidebar-wrapper -->
     
     <section id="container">
-		<div class="wrapper">
-			<div class="inner">
-				
+      <div class="wrapper">
+         <div class="inner">
+            
 <div class="row">
   <div class="col-lg-12">
     <h1 class="page-header">Board Read</h1>
@@ -338,7 +338,7 @@ a:hover {
             value='<c:out value="${board.writer }"/>' readonly="readonly">
         </div>
 
-<%-- 		<button data-oper='modify' class="btn btn-default">
+<%--       <button data-oper='modify' class="btn btn-default">
         <a href="/questionsboard/modify?bno=<c:out value="${board.bno}"/>">Modify</a></button>
         <button data-oper='list' class="btn btn-info">
         <a href="/questionsboard/list">List</a></button> --%>
@@ -480,10 +480,10 @@ a:hover {
       </div>
       <!-- /.panel .chat-panel -->
 
-	<div class="panel-footer"></div>
+   <div class="panel-footer"></div>
 
 
-		</div>
+      </div>
   </div>
   <!-- ./ end row -->
 </div>
@@ -541,8 +541,8 @@ $(document).ready(function () {
     showList(1);
     
     function showList(page){
-    	
-    	console.log("show list " + page);
+       
+       console.log("show list " + page);
         
         replyService.getList({bno:bnoValue,page: page|| 1 }, function(replyCnt, list) {
           
@@ -565,7 +565,7 @@ $(document).ready(function () {
          for (var i = 0, len = list.length || 0; i < len; i++) {
            str +="<li class='left clearfix' data-rno='"+list[i].rno+"'>";
            str +="  <div><div class='header'><strong class='primary-font'>["
-        	   +list[i].rno+"] "+list[i].replyer+"</strong>"; 
+              +list[i].rno+"] "+list[i].replyer+"</strong>"; 
            str +="    <small class='pull-right text-muted'>"
                +replyService.displayTime(list[i].created_date)+"</small></div>";
            str +="    <p>"+list[i].reply+"</p></div></li>";
@@ -674,8 +674,8 @@ $(document).ready(function () {
     var modalRegisterBtn = $("#modalRegisterBtn");
     
     $("#modalCloseBtn").on("click", function(e){
-    	
-    	modal.modal('hide');
+       
+       modal.modal('hide');
     });
     
     $("#addReplyBtn").on("click", function(e){
@@ -751,47 +751,47 @@ $(document).ready(function () {
     });
 
     modalRemoveBtn.on("click", function (e){
-    	  
-  	  var rno = modal.data("rno");
-  	  
-  	  replyService.remove(rno, function(result){
-  	        
-  	      alert(result);
-  	      modal.modal("hide");
-  	      showList(1);
-  	      
-  	  });
-  	  
-  	}); */
+         
+       var rno = modal.data("rno");
+       
+       replyService.remove(rno, function(result){
+             
+           alert(result);
+           modal.modal("hide");
+           showList(1);
+           
+       });
+       
+     }); */
 
     modalModBtn.on("click", function(e){
-    	  
-   	  var reply = {rno:modal.data("rno"), reply: modalInputReply.val()};
-   	  
-   	  replyService.update(reply, function(result){
-   	        
-   	    alert(result);
-   	    modal.modal("hide");
-   	    showList(pageNum);
-   	    
-   	  });
-   	  
-   	});
+         
+        var reply = {rno:modal.data("rno"), reply: modalInputReply.val()};
+        
+        replyService.update(reply, function(result){
+              
+          alert(result);
+          modal.modal("hide");
+          showList(pageNum);
+          
+        });
+        
+      });
 
 
-   	modalRemoveBtn.on("click", function (e){
-   	  
-   	  var rno = modal.data("rno");
-   	  
-   	  replyService.remove(rno, function(result){
-   	        
-   	      alert(result);
-   	      modal.modal("hide");
-   	      showList(pageNum);
-   	      
-   	  });
-   	  
-   	});
+      modalRemoveBtn.on("click", function (e){
+        
+        var rno = modal.data("rno");
+        
+        replyService.remove(rno, function(result){
+              
+            alert(result);
+            modal.modal("hide");
+            showList(pageNum);
+            
+        });
+        
+      });
 
  
 });
@@ -821,9 +821,9 @@ var bnoValue = '<c:out value="${board.bno}"/>'; */
 //reply List Test
 /* replyService.getList({bno:bnoValue, page:1}, function(list){
     
-	  for(var i = 0,  len = list.length||0; i < len; i++ ){
-	    console.log(list[i]);
-	  }
+     for(var i = 0,  len = list.length||0; i < len; i++ ){
+       console.log(list[i]);
+     }
 });
  */
 
@@ -948,7 +948,7 @@ $(document).ready(function(){
   });
   
   function showImage(fileCallPath){
-	    
+       
     alert(fileCallPath);
     
     $(".bigPictureWrapper").css("display","flex").show();

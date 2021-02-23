@@ -104,6 +104,9 @@
       </nav>
 
       <div class="cd-main-content">
+      <form action ="/seoulTour/updatebukjung" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
         
    <br><br><img src="/resources/img/tab_2_2_4_1.jpg" style= "float:right; margin-left: 30px; margin-bottom: 10px; " />   
    <br><br><p style = "font-size:1em; line-height:1.5em; color : black;">

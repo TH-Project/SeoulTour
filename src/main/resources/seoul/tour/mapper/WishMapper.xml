@@ -12,12 +12,193 @@
 	VALUES(#{user_id},0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0)
 </insert>
 
+<update id="updateWish_ansan">
+
+UPDATE TBL_WISHLIST SET
+ANSAN=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_donggyo">
+
+UPDATE TBL_WISHLIST SET
+DONGGYO=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_bigpark">
+
+UPDATE TBL_WISHLIST SET
+BIGPARK=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_yanghwa">
+
+UPDATE TBL_WISHLIST SET
+YANGHWA=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_hyunchung">
+
+UPDATE TBL_WISHLIST SET
+HYUNCHUNG=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_baeksasil">
+
+UPDATE TBL_WISHLIST SET
+BAEKSASIL=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_worldcup">
+
+UPDATE TBL_WISHLIST SET
+WORLDCUP=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_westkyungbok">
+
+UPDATE TBL_WISHLIST SET
+WESTKYUNGBOK=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_yongma">
+
+UPDATE TBL_WISHLIST SET
+YONGMA=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_bulam">
+
+UPDATE TBL_WISHLIST SET
+BULAM=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_changgyung">
+
+UPDATE TBL_WISHLIST SET
+CHANGGYUNG=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_westseoul">
+
+UPDATE TBL_WISHLIST SET
+WESTSEOUL=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_salgoji">
+
+UPDATE TBL_WISHLIST SET
+SALGOJI=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_buam">
+
+UPDATE TBL_WISHLIST SET
+BUAM=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_seochopark">
+
+UPDATE TBL_WISHLIST SET
+SEOCHOPARK=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_yangjae">
+
+UPDATE TBL_WISHLIST SET
+YANGJAE=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_namsan">
+
+UPDATE TBL_WISHLIST SET
+NAMSAN=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_seosunra">
+
+UPDATE TBL_WISHLIST SET
+SEOSUNRA=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_acha">
+
+UPDATE TBL_WISHLIST SET
+ACHA=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_haneul">
+
+UPDATE TBL_WISHLIST SET
+HANEUL=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_mongchon">
+
+UPDATE TBL_WISHLIST SET
+MONGCHON=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
+<update id="updateWish_gaehwa">
+
+UPDATE TBL_WISHLIST SET
+GAEHWA=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+
 <update id="updateWish_heohyun">
 
 UPDATE TBL_WISHLIST SET
 HOEHYUN=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
 
 </update>
+
+<update id="updateWish_bukjung">
+
+UPDATE TBL_WISHLIST SET
+BUKJUNG=1 WHERE USER_ID=#{user_id, jdbcType=VARCHAR}
+
+</update>
+	
+<delete id="deleteWish">	
+	
+	DELETE FROM TBL_WISHLIST
+	WHERE USER_ID = #{user_id}		
+
+</delete>
+
+<select id="getWishList" resultType="seoul.tour.domain.WishVO">
+
+SELECT column_name
+  FROM TBL_WISHLIST
+ UNPIVOT (value FOR column_name IN 
+ ( ANSAN, DONGGYO, BIGPARK, YANGHWA, HYUNCHUNG, BAEKSASIL, WORLDCUP, YONGMA, BULAM, CHANGGYUNG, WESTSEOUL, SALGOJI, SEOCHOPARK, YANGJAE, NAMSAN, SEOSUNRA, ACHA, HANEUL, MONGCHON, GAEHWA, HOEHYUN, BUKJUNG, BUAM, WESTKYUNGBOK) )
+ WHERE value = 1 and user_id = #{user_id}
+
+</select>
+	
+
+
 
 
 </mapper>

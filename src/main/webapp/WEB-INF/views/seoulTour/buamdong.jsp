@@ -103,7 +103,10 @@
           </div>
       </nav>
 
-      <div class="cd-main-content">        
+      <div class="cd-main-content">
+      <form action ="/seoulTour/updatebuam" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>        
 <p style="text-align:left; font-size:2em; color: #E5DC92; padding:15px">&emsp;부암동&emsp;
  
    <br><img src="/resources/img/tab_2_2_2_1.jpg" style= "float:right; margin-left: 30px; margin-bottom: 10px; " />   

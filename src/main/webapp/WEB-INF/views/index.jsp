@@ -97,7 +97,7 @@
                         <p class="text-white-75 font-weight-light mb-5">-Start your journey in Seoul with TH-</p>
                         <c:if test="${member != null}">					                   	  	
                     	
-                    		<a class="btn btn-info btn-xl js-scroll-trigger" href="">WishList</a>
+                    		<a class="btn btn-info btn-xl js-scroll-trigger" href="/getWishList">WishList</a>
                     	
                     	</c:if>                    
                     	<c:if test="${member == null }">

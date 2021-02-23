@@ -1,12 +1,12 @@
-package seoul.tour.mapper;
+package seoul.tour.service;
 
 import java.util.List;
 
 import seoul.tour.domain.LoginVO;
 import seoul.tour.domain.WishVO;
 
-public interface WishMapper {
-	public void wishRegister(String user_id) throws Exception;
+public interface WishService {	
+	
 	public void updateWish_ansan(String user_id) throws Exception;
 	public void updateWish_donggyo(String user_id) throws Exception;
 	public void updateWish_bigpark(String user_id) throws Exception;
@@ -30,7 +30,7 @@ public interface WishMapper {
 	public void updateWish_heohyun(String user_id) throws Exception;
 	public void updateWish_bukjung(String user_id) throws Exception;
 	public void updateWish_buam(String user_id) throws Exception;
-	public void updateWish_westkyungbok(String user_id) throws Exception;
-	public void deleteWish(String user_id) throws Exception;	
+	public void updateWish_westkyungbok(String user_id) throws Exception;	
+	public void deleteWish(String user_id) throws Exception;
 	public List<WishVO> getWishList(String user_id) throws Exception;
 }

@@ -131,7 +131,10 @@
         꽃잎이 피어나 눈 앞에 살랑거려도 봄 사랑 벛꽃 말고♬</span>
           </a>
           </p><br><br>
-  
+  	
+  	<form action ="/seoulTour/updatehyunchung" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
     <p id="L1" style="text-align:left; font-size:1.5em; color: #f1d310"><span style="color:black">첫번째 명소</span>&nbsp; 숭고한 벚꽃, 국립현충원</p><br><br>
     <img src="/resources/img/tab_1_1_2_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
       <img src="/resources/img/tab_1_1_2_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>       
@@ -151,7 +154,10 @@
     </div>
     <br><br><br>
 
-    <div class="cd-main-content">                                       
+    <div class="cd-main-content">
+    <form action ="/seoulTour/updateyanghwa" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>                                       
       <p id="L2" style="text-align:left; font-size:1.5em; color: #f1d310"><span style="color:black">두번째 명소</span>&nbsp; 젊음과 낭만의 길목, 양화로 6길</p><br><br>
       <img src="/resources/img/tab_1_1_3_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
       <img src="/resources/img/tab_1_1_3_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -167,7 +173,10 @@
     </div>  
     <br><br><br>
 
-    <div class="cd-main-content">                                        
+    <div class="cd-main-content">
+    <form action ="/seoulTour/updatebigpark" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>                                        
       <p id="L3" style="text-align:left; font-size:1.5em; color: #f1d310"><span style="color:black">세번째 명소</span>&nbsp; 나들이와 소풍의 명소, 어린이대공원</p><br><br>
      <br><br><img src="/resources/img/tab_1_1_4_1.jpg" style= "float:left; margin-left: 150px;margin-right: 0px; margin-bottom: 10px; " />
       <img src="/resources/img/tab_1_1_4_2.jpg" style= "float:left; margin-left: 10px;margin-right: 30px; margin-bottom: 10px; " />
@@ -192,6 +201,9 @@
     <br><br><br>
 
     <div class="cd-main-content">
+    <form action ="/seoulTour/updatedonggyo" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
       <p id="L4" style="text-align:left; font-size:1.5em; color: #f1d310"><span style="color:black">네번째 명소</span>&nbsp; 소소한 즐거움의 발견, 동교로 41길</p><br><br>
       <img src="/resources/img/tab_1_1_5_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
       <img src="/resources/img/tab_1_1_5_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -207,7 +219,10 @@
     </div> 
     <br><br><br>
     
-    <div class="cd-main-content">                                          
+    <div class="cd-main-content">
+    <form action ="/seoulTour/updateansan" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>                                          
       <p id="L5" style="text-align:left; font-size:1.5em; color: #f1d310"><span style="color:black">다섯번째 명소</span>&nbsp; 봄꽃 트레킹 명소, 안산 자락길</p><br><br>
     <br><br><img src="/resources/img/tab_1_1_6_3.jpg" style= " margin-left: 110px;margin-right: 110px; margin-bottom: 10px; " />
       <img src="/resources/img/tab_1_1_6_2.jpg" style= "float:left; margin-left: 110px;margin-right: 10px; margin-bottom: 10px; " />

@@ -128,8 +128,11 @@
            <a href=https://www.youtube.com/watch?v=WDAPcnJJteY target="_blank">
            <span style="text-align:left; font-size:0.5em; color: #E1A89F">가을이 오면 눈부신 아침 햇살에 비친 그대의 미소가 아름다워요♬</span>
            </a>
-           </p><br>    
-                                            
+           </p><br>
+               
+       <form action ="/seoulTour/updatenamsan" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	   </form>                                     
        <p id="L1" style="text-align:left; font-size:1.5em; color: #E1A89F"><span style="color:black">첫번째 명소</span>&nbsp; 남산둘레길</p>
         <br><br><img src="/resources/img/tab_1_3_1_1.jpg" style= "float:left; margin-left: 200px;margin-right: 0px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_3_1_2.jpg" style= "float:left; margin-left: 10px;margin-right: 30px; margin-bottom: 10px; " />
@@ -148,7 +151,10 @@
        </div>
        <br><br>      
                                                
-       <div class="cd-main-content">                                        
+       <div class="cd-main-content">    
+       <form action ="/seoulTour/updateyangjae" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>                                    
        <p id="L2" style="text-align:left; font-size:1.5em; color: #E1A89F"><span style="color:black">두번째 명소</span>&nbsp; 양재시민의 숲</p><br><br>
        <br><br><img src="/resources/img/tab_1_3_2_1.jpg" style= " margin-left: 150px;margin-right: 110px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_3_2_2.jpg" style= "float:left; margin-left: 150px;margin-right: 10px; margin-bottom: 10px; " />
@@ -166,6 +172,9 @@
        <br><br>                        
              
        <div class="cd-main-content">
+       <form action ="/seoulTour/updateseochopark" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
         <p id="L3" style="text-align:left; font-size:1.5em; color: #E1A89F"><span style="color:black">세번째 명소</span>&nbsp; 서초문화예술공원</p><br><br>
         <br><br><img src="/resources/img/tab_1_3_3_3.jpg" style= "float:left; margin-left: 200px;margin-right: 0px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_3_3_2.jpg" style= "float:left; margin-left: 10px;margin-right: 30px; margin-bottom: 10px; " />
@@ -183,6 +192,9 @@
        <br><br>                                               
              
        <div class="cd-main-content">
+       <form action ="/seoulTour/updatesalgoji" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
         <p id="L4" style="text-align:left; font-size:1.5em; color: #E1A89F"><span style="color:black">네번째 명소</span>&nbsp; 성동구 은행나무길, 살곶이길</p><br><br>
        <br><br><img src="/resources/img/tab_1_3_4_1.jpg" style= " margin-left: 150px;margin-right: 110px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_3_4_2.jpg" style= "float:left; margin-left: 150px;margin-right: 10px; margin-bottom: 10px; " />
@@ -198,6 +210,9 @@
        <br><br>    		
    
        <div class="cd-main-content">
+       <form action ="/seoulTour/updatewestseoul" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
        <p id="L5" style="text-align:left; font-size:1.5em; color: #E1A89F"><span style="color:black">다섯번째 명소</span>&nbsp; 서서울호수공원</p><br><br>
        <br><br><img src="/resources/img/tab_1_3_5_1.jpg" style= " margin-left: 150px;margin-right: 110px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_3_5_2.jpg" style= "float:left; margin-left: 150px;margin-right: 10px; margin-bottom: 10px; " />
@@ -216,6 +231,9 @@
        <br><br>                                              
              
        <div class="cd-main-content">
+       <form action ="/seoulTour/updateseosunra" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
        <p id="L6" style="text-align:left; font-size:1.5em; color: #E1A89F"><span style="color:black">여섯번째 명소</span>&nbsp; 종묘 옆 돌담길, 서순라길</p><br><br>
             <br><br><img src="/resources/img/tab_1_3_6_1.jpg" style= "float:left; margin-left: 200px;margin-right: 0px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_3_6_2.png" style= "float:left; margin-left: 10px;margin-right: 30px; margin-bottom: 10px; " />

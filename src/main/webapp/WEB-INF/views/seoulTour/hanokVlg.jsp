@@ -103,7 +103,10 @@
         </div>
       </nav>
 
-      <div class="cd-main-content">        
+      <div class="cd-main-content">
+      <form action ="/seoulTour/updatewestkyungbok" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>        
     <br><br>
    <p style="text-align:left; font-size:2em; color: #E5DC92; padding:15px">&emsp;경복궁 서측 한옥마을&emsp;
  

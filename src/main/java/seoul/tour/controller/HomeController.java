@@ -14,10 +14,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import seoul.tour.domain.LoginVO;
 import seoul.tour.service.LoginService;
+import seoul.tour.domain.WishVO;
+import seoul.tour.service.WishService;
 
 /**
  * Handles requests for the application home page.
@@ -28,6 +31,9 @@ public class HomeController {
 	
 	@Inject
 	private LoginService loginService;
+	@Inject
+	private WishService wishService;
+	
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -68,5 +74,14 @@ public class HomeController {
 		session.invalidate();
 				
 		return "redirect:/";
+	}
+	@RequestMapping(value = "/getWishList", method = RequestMethod.GET)
+	public String getUserList(Model model, HttpSession session) throws Exception {
+		
+		String user_id = (String)session.getAttribute("uid");
+
+		model.addAttribute("wishList", wishService.getWishList(user_id));
+		return "getWishList";
+
 	}
 }

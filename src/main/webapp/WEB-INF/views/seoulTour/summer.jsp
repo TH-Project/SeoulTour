@@ -127,8 +127,11 @@
            <span style="text-align:left; font-size:0.5em; color: #EAB277">
             여름아 부탁해 나의 사랑을 이루게 해줘 많이 힘겨웠던 나의 지난 추억 버리게♬</span>
             </a>
-            </p><br>    
-            
+            </p><br>
+                
+        <form action ="/seoulTour/updatebaeksasil" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+		</form>    
         <p id="L1" style="text-align:left; font-size:1.5em; color: #EAB277"><span style="color:black">첫번째 명소</span>&nbsp; 도롱뇽의 시크릿 가든, 백사실 계곡</p><br><br>
         <img src="/resources/img/tab_1_2_1_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
         <img src="/resources/img/tab_1_2_1_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>       
@@ -143,6 +146,9 @@
         <br><br>                                         
               
         <div class="cd-main-content">
+        <form action ="/seoulTour/updateworldcup" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+		</form>
         <p id="L2" style="text-align:left; font-size:1.5em; color: #EAB277"><span style="color:black">두번째 명소</span>&nbsp; 자연이 그린 산책로, 월드컵공원</p><br><br>
          <br><br><img src="/resources/img/tab_1_2_2_2.jpg" style= "float:left; margin-left: 200px;margin-right: 0px; margin-bottom: 10px; " />
         <img src="/resources/img/tab_1_2_2_1.jpg" style= "float:left; margin-left: 10px;margin-right: 30px; margin-bottom: 10px; " />
@@ -161,6 +167,9 @@
 
         
         <div class="cd-main-content">
+        <form action ="/seoulTour/updateyongma" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+		</form>
         <p id="L3" style="text-align:left; font-size:1.5em; color: #EAB277"><span style="color:black">세번째 명소</span>&nbsp; 어른이들의 인스타그램 성지, 용마랜드</p><br><br>
         <img src="/resources/img/tab_1_2_3_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
         <img src="/resources/img/tab_1_2_3_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>       
@@ -177,6 +186,9 @@
               
 
         <div class="cd-main-content">
+        <form action ="/seoulTour/updatebulam" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+		</form>
         <p id="L4" style="text-align:left; font-size:1.5em; color: #EAB277"><span style="color:black">네번째 명소</span>&nbsp; 나비정원나비과 철쭉동산꽃, 불암산 힐링타운</p><br><br>
         <img src="/resources/img/tab_1_2_4_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
         <img src="/resources/img/tab_1_2_4_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    
@@ -192,6 +204,9 @@
         <br><br>                                             
               
         <div class="cd-main-content">
+        <form action ="/seoulTour/updatechanggyung" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+		</form>
         <p id="L5" style="text-align:left; font-size:1.5em; color: #EAB277"><span style="color:black">다섯번째 명소</span>&nbsp; 100년 역사가 머문 곳, 창경궁 대온실</p><br><br>
          <br><br><img src="/resources/img/tab_1_2_5_2.jpg" style= "float:left; margin-left: 200px;margin-right: 0px; margin-bottom: 10px; " />
         <img src="/resources/img/tab_1_2_5_1.jpg" style= "float:left; margin-left: 10px;margin-right: 30px; margin-bottom: 10px; " />

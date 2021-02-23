@@ -7,13 +7,13 @@
 
 <body>
 
-<%
+<%-- <%
 		if(session.getAttribute("member")==null)
 		{
 			response.sendRedirect("/login");
 		}
 		
-	%>
+	%> --%>
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
@@ -112,7 +112,10 @@
       </nav>       
       
 
-      <div class="cd-main-content">           
+      <div class="cd-main-content"> 
+      <form action ="/seoulTour/updateheohyun" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>          
 <p style="text-align:left; font-size:2em; color: #E5DC92; padding:15px">&emsp;회현동&emsp;
  
    <br><br><img src="/resources/img/tab_2_2_5_1.jpg" style= "float:right; margin-left: 30px; margin-bottom: 10px; " />   

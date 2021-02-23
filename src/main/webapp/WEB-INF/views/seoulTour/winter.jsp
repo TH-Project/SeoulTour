@@ -126,7 +126,10 @@
            </p><br>
         </div>  
    
-        <div class="cd-main-content"> 
+        <div class="cd-main-content">
+        <form action ="/seoulTour/updategaehwa" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form> 
        <p id="L1" style="text-align:left; font-size:1.5em; color: #8D4645"><span style="color:black">첫번째 명소</span>&nbsp; 개화산</p><br><br>
        <img src="/resources/img/tab_1_4_1_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_4_1_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    
@@ -141,6 +144,9 @@
        <br><br>      
             
        <div class="cd-main-content">
+       <form action ="/seoulTour/updatemongchon" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
        <p id="L2" style="text-align:left; font-size:1.5em; color: #8D4645"><span style="color:black">두번째 명소</span>&nbsp; 몽촌토성 (망월봉)</p><br><br>
        <img src="/resources/img/tab_1_4_3_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_4_3_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    
@@ -159,6 +165,9 @@
        <br><br>  
    
        <div class="cd-main-content">
+       <form action ="/seoulTour/updatehaneul" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
        <p id="L3" style="text-align:left; font-size:1.5em; color: #8D4645"><span style="color:black">세번째 명소</span>&nbsp; 하늘공원</p><br><br>
        <img src="/resources/img/tab_1_4_4_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_4_4_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    
@@ -175,6 +184,9 @@
        <br><br>   
        
        <div class="cd-main-content">
+       <form action ="/seoulTour/updateacha" method = "post">
+			<button class="btn btn-primary btn-xs" type = "submit" name = "submit">위시리스트 추가</button>		
+	</form>
        <p id="L4" style="text-align:left; font-size:1.5em; color: #8D4645"><span style="color:black">네번째 명소</span>&nbsp; 아차산</p><br><br>
        <img src="/resources/img/tab_1_4_5_1.jpg" style= "float:left; margin-left: 150px; margin-right: 20px; margin-bottom: 10px; " />
        <img src="/resources/img/tab_1_4_5_2.jpg" style= "float:left; margin-right: 10px; margin-bottom: 10px; " /> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    
