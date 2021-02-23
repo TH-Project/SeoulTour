@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,9 @@ public class HomeController {
 	private WishService wishService;
 	
 	
+	@Inject
+	BCryptPasswordEncoder pwdEncoder;
+	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -46,22 +50,23 @@ public class HomeController {
 	public void getLogin(LoginVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{ }
   
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String postLogin(LoginVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
-		logger.info("post login");
+	public String postLogin(LoginVO vo, HttpSession session, RedirectAttributes rttr) throws Exception{
+				
+		session.getAttribute("member");
+		LoginVO login = loginService.login(vo);
 		
-		String ip = req.getRemoteAddr();
-		
-		HttpSession session = req.getSession();
-		LoginVO login = loginService.login(vo);			
-					
-		if(login == null) {
-			session.setAttribute("member", null);
-			rttr.addFlashAttribute("msg", false);
-		}else {
-			session.setAttribute("member", login);
-			session.setAttribute("uid", login.getLogin_ID());
-			rttr.addFlashAttribute("msg", true);
+		boolean pwdMatch;
+		if(login != null) {
+		pwdMatch = pwdEncoder.matches(vo.getPassword(), login.getPassword());
+		} else {
+		pwdMatch = false;
+		}
 
+		if(login != null && pwdMatch == true) {
+		session.setAttribute("member", login);
+		} else {
+		session.setAttribute("member", null);
+		rttr.addFlashAttribute("msg", false);
 		}
 		
 		return "redirect:/";
@@ -75,6 +80,7 @@ public class HomeController {
 				
 		return "redirect:/";
 	}
+
 	@RequestMapping(value = "/getWishList", method = RequestMethod.GET)
 	public String getUserList(Model model, HttpSession session) throws Exception {
 		
@@ -84,4 +90,11 @@ public class HomeController {
 		return "getWishList";
 
 	}
+
+	
+	@RequestMapping(value = "/maptest", method = RequestMethod.GET)
+	public String home2(Locale locale, Model model) {
+		return "maptest";
+	}
+	
 }

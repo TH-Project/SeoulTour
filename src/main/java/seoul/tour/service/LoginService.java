@@ -8,6 +8,10 @@ import seoul.tour.domain.WishVO;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 public interface LoginService {
 		
 	public void register(LoginVO vo) throws Exception;

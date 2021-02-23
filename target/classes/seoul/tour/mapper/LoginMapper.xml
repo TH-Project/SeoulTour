@@ -39,13 +39,14 @@ SELECT COUNT(*) FROM TBL_USER WHERE LOGIN_ID=#{login_ID}
 <select id="idAuth" resultType="seoul.tour.domain.LoginVO">
 
 SELECT LOGIN_ID, PASSWORD FROM TBL_USER
-WHERE LOGIN_ID=#{login_ID} AND PASSWORD=#{password}
+WHERE LOGIN_ID=#{login_ID} <!--AND PASSWORD=#{password} -->
 
 </select>
 
 <select id="login" resultType="seoul.tour.domain.LoginVO">
 
-	SELECT LOGIN_ID, PASSWORD, NAME FROM TBL_USER WHERE LOGIN_ID=#{login_ID} AND PASSWORD = #{password}
+	SELECT LOGIN_ID, PASSWORD, NAME FROM TBL_USER WHERE LOGIN_ID=#{login_ID} 
+	<!-- AND PASSWORD = #{password}  -->
 
 </select>
 

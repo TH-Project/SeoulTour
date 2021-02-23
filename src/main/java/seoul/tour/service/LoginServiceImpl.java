@@ -1,7 +1,5 @@
 package seoul.tour.service;
 
-//�쉶�썝媛��엯
-
 import java.util.List;
 //import javax.inject.Inject;
 
@@ -30,6 +28,7 @@ public class LoginServiceImpl implements LoginService{
 	@Setter(onMethod_ = @Autowired)
 	private WishMapper mappers;
 	
+	
 	/*
 	 * @Override public List<LoginVO> getUserList() throws Exception{ return
 	 * loginDAO.getUserList(); }
@@ -47,7 +46,7 @@ public class LoginServiceImpl implements LoginService{
 	 * loginDAO.deleteUser(login_ID); }
 	 */
 	@Override
-	public void register(LoginVO vo) throws Exception{
+	public void register(LoginVO vo) throws Exception{		
 		mapper.register(vo);
 	}
 	@Override
