@@ -61,11 +61,13 @@ public class LoginController {
             vo.setPassword(pwd);
             
             loginService.register(vo);
+            String user_id = request.getParameter("login_ID");
+			loginService.wishRegister(user_id);
          }
       }catch(Exception e) {
          throw new RuntimeException();
       }
-      return "index";
+      return "redirect:/";
    }
    
    @RequestMapping(value="/getUserList", method=RequestMethod.GET)

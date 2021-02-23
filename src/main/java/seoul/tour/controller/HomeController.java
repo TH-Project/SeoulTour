@@ -64,6 +64,7 @@ public class HomeController {
 
 		if(login != null && pwdMatch == true) {
 		session.setAttribute("member", login);
+		session.setAttribute("uid", login.getLogin_ID());
 		} else {
 		session.setAttribute("member", null);
 		rttr.addFlashAttribute("msg", false);

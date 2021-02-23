@@ -112,7 +112,80 @@
 			<c:when test="${!empty wishList}"> 
 				<c:forEach var="list" items="${wishList}"> 
 					<tr> 
-						<td><c:out value="${list.column_name}"/></td> 
+						<td>
+						<c:if test="${list.HYUNCHUNG == 1}">
+							<p style="color: black;">국립현충원</p>
+						</c:if>
+						<c:if test="${list.HOEHYUN == 1}">
+							<p style="color: black;">회현동</p>
+						</c:if>
+						<c:if test="${list.DONGGYO == 1}">
+							<p style="color: black;">동교로 41길</p>
+						</c:if>	
+						<c:if test="${list.BIGPARK == 1}">
+							<p style="color: black;">어린이 대공원</p>
+						</c:if>	
+						<c:if test="${list.BAEKSASIL == 1}">
+							<p style="color: black;">백사실 계곡</p>
+						</c:if>	
+						<c:if test="${list.WORLDCUP == 1}">
+							<p style="color: black;">월드컵공원</p>
+						</c:if>	
+						<c:if test="${list.YONGMA == 1}">
+							<p style="color: black;">용마랜드</p>
+						</c:if>	
+						<c:if test="${list.BULAM == 1}">
+							<p style="color: black;">불안산 힐링타운</p>
+						</c:if>	
+						<c:if test="${list.CHANGGYUNG == 1}">
+							<p style="color: black;">창경궁 대온실</p>
+						</c:if>	
+						<c:if test="${list.WESTSEOUL == 1}">
+							<p style="color: black;">서서울 호수공원</p>
+						</c:if>	
+						<c:if test="${list.SALGOJI == 1}">
+							<p style="color: black;">살곶이길</p>
+						</c:if>	
+						<c:if test="${list.SEOCHOPARK == 1}">
+							<p style="color: black;">서초문화예술공원</p>
+						</c:if>	
+						<c:if test="${list.YANGJAE == 1}">
+							<p style="color: black;">양재 시민의 숲</p>
+						</c:if>	
+						<c:if test="${list.NAMSAN == 1}">
+							<p style="color: black;">남산 둘레길</p>
+						</c:if>	
+						<c:if test="${list.SEOSUNRA == 1}">
+							<p style="color: black;">서순라길</p>
+						</c:if>	
+						<c:if test="${list.ACHA == 1}">
+							<p style="color: black;">아차산</p>
+						</c:if>	
+						<c:if test="${list.HANEUL == 1}">
+							<p style="color: black;">하늘공원</p>
+						</c:if>	
+						<c:if test="${list.MONGCHON == 1}">
+							<p style="color: black;">몽촌토성</p>
+						</c:if>	
+						<c:if test="${list.GAEHWA == 1}">
+							<p style="color: black;">개화산</p>
+						</c:if>	
+						<c:if test="${list.ANSAN == 1}">
+							<p style="color: black;">안산자락길</p>
+						</c:if>	
+						<c:if test="${list.YANGHWA == 1}">
+							<p style="color: black;">양화로 6길</p>
+						</c:if>	
+						<c:if test="${list.BUKJUNG == 1}">
+							<p style="color: black;">북정마을</p>
+						</c:if>	
+						<c:if test="${list.BUAM == 1}">
+							<p style="color: black;">부암동</p>
+						</c:if>	
+						<c:if test="${list.WESTKYUNGBOK == 1}">
+							<p style="color: black;">경복궁 서측 한옥마을</p>
+						</c:if>							
+						</td>						 
 					</tr> 
 				</c:forEach> 
 			</c:when> 
