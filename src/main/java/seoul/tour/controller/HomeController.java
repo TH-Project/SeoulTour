@@ -83,17 +83,118 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/getWishList", method = RequestMethod.GET)
-	public String getUserList(Model model, HttpSession session) throws Exception {
+	public String getUserList(Model model,HttpSession session ,HttpServletRequest request) throws Exception {
 		
-		String user_id = (String)session.getAttribute("uid");
-
+		String user_id = (String)session.getAttribute("uid");	
+		
+		
+		String perHyunchung = request.getParameter("onHyunchung"); 
+		String perHoehyun = request.getParameter("onHoehyun");
+		String perAnsan = request.getParameter("onAnsan");
+		String perDonggyo = request.getParameter("onDonggyo");
+		String perYanghwa = request.getParameter("onYanghwa");
+		String perBigpark = request.getParameter("onBigpark");
+		String perBaeksasil = request.getParameter("onBaeksasil");
+		String perWorldcup = request.getParameter("onWorldcup");
+		String perYongma = request.getParameter("onYongma");
+		String perBulam = request.getParameter("onBulam");
+		String perChanggyung = request.getParameter("onChanggyung");
+		String perNamsan = request.getParameter("onNamsan");
+		String perYangjae = request.getParameter("onYangjae");
+		String perSeochopark = request.getParameter("onSeochopark");
+		String perSalgoji = request.getParameter("onSalgoji");
+		String perWestseoul = request.getParameter("onWestseoul");
+		String perSeosunra = request.getParameter("onSeosunra");
+		String perGaehwa = request.getParameter("onGaehwa");
+		String perMongchon = request.getParameter("onMongchon");
+		String perHaneul = request.getParameter("onHaneul");
+		String perAcha = request.getParameter("onAcha");
+		String perBukjung = request.getParameter("onBukjung");
+		String perBuam = request.getParameter("onBuam");
+		String perWestkyungbok = request.getParameter("onWestkyungbok");
+		
+		
 		model.addAttribute("wishList", wishService.getWishList(user_id));
+		
+		if(perHyunchung != null) {
+			model.addAttribute("pHyunchung", perHyunchung);
+		}
+		if(perHoehyun != null) {
+		model.addAttribute("pHoehyun", perHoehyun);
+		}
+		if(perAnsan != null) {
+		model.addAttribute("pAnsan", perAnsan);
+		}
+		if(perDonggyo != null) {
+		model.addAttribute("pDonggyo", perDonggyo);
+		}
+		if(perYanghwa != null) {
+		model.addAttribute("pYanghwa", perYanghwa);
+		}
+		if(perBigpark != null) {
+		model.addAttribute("pBigpark", perBigpark);
+		}
+		if(perBaeksasil != null) {
+		model.addAttribute("pBaeksasil", perBaeksasil);
+		}
+		if(perWorldcup != null) {
+		model.addAttribute("pWorldcup", perWorldcup);
+		}
+		if(perYongma != null) {
+		model.addAttribute("pYongma", perYongma);
+		}
+		if(perBulam != null) {
+		model.addAttribute("pBulam", perBulam);
+		}
+		if(perChanggyung != null) {
+		model.addAttribute("pChanggyung", perChanggyung);
+		}
+		if(perNamsan != null) {
+		model.addAttribute("pNamsan", perNamsan);
+		}
+		if(perYangjae != null) {
+		model.addAttribute("pYangjae", perYangjae);
+		}
+		if(perSeochopark != null) {
+		model.addAttribute("pSeochopark", perSeochopark);
+		}
+		if(perSalgoji != null) {
+		model.addAttribute("pSalgoji", perSalgoji);
+		}
+		if(perWestseoul != null) {
+		model.addAttribute("pWestseoul", perWestseoul);
+		}
+		if(perSeosunra != null) {
+		model.addAttribute("pSeosunra", perSeosunra);
+		}
+		if(perGaehwa != null) {
+		model.addAttribute("pGaehwa", perGaehwa);
+		}
+		if(perMongchon != null) {
+		model.addAttribute("pMongchon", perMongchon);
+		}
+		if(perHaneul != null) {
+		model.addAttribute("pHaneul", perHaneul);
+		}
+		if(perAcha != null) {
+		model.addAttribute("pAcha", perAcha);
+		}
+		if(perBukjung != null) {
+		model.addAttribute("pBukjung", perBukjung);
+		}
+		if(perBuam != null) {
+		model.addAttribute("pBuam", perBuam);
+		}
+		if(perWestkyungbok != null) {
+		model.addAttribute("pWestkyungbok", perWestkyungbok);
+		}
+		
 		return "getWishList";
 
 	}
 
 	
-	@RequestMapping(value = "/maptest", method = RequestMethod.GET)
+	@RequestMapping(value = "/mapmarking", method = RequestMethod.POST)
 	public String home2(Locale locale, Model model) {
 		return "maptest";
 	}
