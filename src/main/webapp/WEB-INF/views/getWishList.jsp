@@ -132,7 +132,7 @@ var positions = [];
 		positions.push({title : '회현동', latlng : new kakao.maps.LatLng(37.55853236852948, 126.97821937965439), permission: "${pHoehyun}"});
 		positions.push({title : '북정마을', latlng : new kakao.maps.LatLng(37.592577640937044, 126.99240733592326), permission: "${pBukjung}"});
 		positions.push({title : '부암동', latlng : new kakao.maps.LatLng(37.59477129152775, 126.96327220258027), permission: "${pBuam}"});
-		positions.push({title : '경복궁 서측 한옥마을', latlng : new kakao.maps.LatLng(37.58242971547526, 126.98360015562176), permission: "${pWestKyungbok}"});
+		positions.push({title : '경복궁 서측 한옥마을', latlng : new kakao.maps.LatLng(37.58242971547526, 126.98360015562176), permission: "${pWestkyungbok}"});
 		
 		for(var i=0; i<positions.length; i++){
 			if(positions[i].permission == "1"){
