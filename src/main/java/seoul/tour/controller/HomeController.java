@@ -53,7 +53,7 @@ public class HomeController {
 	public String postLogin(LoginVO vo, HttpSession session, RedirectAttributes rttr) throws Exception{
 				
 		session.getAttribute("member");
-		LoginVO login = loginService.login(vo);
+		LoginVO login = loginService.login(vo);		
 		
 		boolean pwdMatch;
 		if(login != null) {
@@ -64,7 +64,7 @@ public class HomeController {
 
 		if(login != null && pwdMatch == true) {
 		session.setAttribute("member", login);
-		session.setAttribute("uid", login.getLogin_ID());
+		session.setAttribute("uid", login.getLogin_ID());		
 		} else {
 		session.setAttribute("member", null);
 		rttr.addFlashAttribute("msg", false);

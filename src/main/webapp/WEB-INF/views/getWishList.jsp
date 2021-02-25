@@ -95,7 +95,7 @@ var positions = [];
 		var container = document.getElementById('map');
 		var options = {
 			center: new kakao.maps.LatLng(37.56569137951313, 126.9780094709593),
-			level: 8
+			level: 9
 		};
 
 		var map = new kakao.maps.Map(container, options);
@@ -175,7 +175,8 @@ var positions = [];
 	<thead> 
 		<tr> 			
 			<th>WishPlaces</th>
-			<th>지도에 표시하기</th> 			
+			<th>지도에 표시하기</th>
+			<th>제거하기</th> 			
 		</tr> 
 	</thead>
 		                                
@@ -199,6 +200,11 @@ var positions = [];
 							<input type="hidden" id="onHyunchung" name="onHyunchung" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deletehyunchung" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
 						</td>						 						 
 						</c:if>
 						</tr>		
@@ -211,6 +217,11 @@ var positions = [];
 						<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onHoehyun" name="onHoehyun" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deleteheohyun" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>						
 						</c:if>
@@ -226,6 +237,11 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deletedonggyo" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
 						</tr>
 						<tr>	
@@ -237,6 +253,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onBigpark" name="onBigpark" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deletebigpark" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -251,7 +272,12 @@ var positions = [];
 							<input type="hidden" id="onBaeksasil" name="onBaeksasil" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
-						</td>						
+						</td>	
+						<td>
+						<form action ="/seoulTour/deletebaeksasil" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>					
 						</c:if>	
 						</tr>
 						<tr>
@@ -263,6 +289,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onWorldcup" name="onWorldcup" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deleteworldcup" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -278,6 +309,11 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deleteyongma" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
 						</tr>
 						<tr>
@@ -289,6 +325,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onBulam" name="onBulam" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deletebulam" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -304,6 +345,11 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deletechanggyung" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
 						</tr>
 						<tr>	
@@ -315,6 +361,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onWestseoul" name="onWestseoul" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deletewestseoul" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -330,6 +381,11 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deletesalgoji" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
 						</tr>
 						<tr>	
@@ -341,6 +397,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onSeochopark" name="onSeochopark" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deleteseochopark" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -356,6 +417,11 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deleteyangjae" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
 						</tr>
 						<tr>	
@@ -367,6 +433,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onNamsan" name="onNamsan" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deletenamsan" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -382,6 +453,11 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deleteseosunra" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
 						</tr>
 						<tr>	
@@ -393,6 +469,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onAcha" name="onAcha" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deleteacha" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -408,6 +489,11 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deletehaneul" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
 						</tr>
 						<tr>	
@@ -419,6 +505,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onMongchon" name="onMongchon" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deletemongchon" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -434,6 +525,11 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deletegaehwa" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
 						</tr>
 						<tr>	
@@ -445,6 +541,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onAnsan" name="onAnsan" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deleteansan" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -460,6 +561,11 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deleteyanghwa" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
 						</tr>
 						<tr>	
@@ -473,8 +579,14 @@ var positions = [];
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
 						</form>	
 						</td>
+						<td>
+						<form action ="/seoulTour/deletebukjung" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
+						</form>	
+						</td>
 						</c:if>
-						</tr>	
+						</tr>
+						<tr>	
 						<c:if test="${list.BUAM == 1}">
 							<td>
 							<p style="color: black;">부암동</p>
@@ -483,6 +595,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onBuam" name="onBuam" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deletebuam" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>
@@ -496,6 +613,11 @@ var positions = [];
 							<form action ="/getWishList" method = "get">
 							<input type="hidden" id="onWestkyungbok" name="onWestkyungbok" value= 1>
 							<button class="btn btn-primary" type = "submit" name = "submit">지도에 표시</button>
+						</form>	
+						</td>
+						<td>
+						<form action ="/seoulTour/deletewestkyungbok" method = "get">							
+							<button class="btn btn-primary" type = "submit" name = "submit">제거</button>
 						</form>	
 						</td>
 						</c:if>

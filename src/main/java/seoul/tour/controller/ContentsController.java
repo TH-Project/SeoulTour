@@ -99,10 +99,7 @@ public class ContentsController {
 	
 	
 	@RequestMapping(value = "/heohyun", method = RequestMethod.GET)
-	public String heohyun(Locale locale, Model model, HttpSession session) throws Exception{		
-			
-		String user_id=(String) session.getAttribute("uid");
-		wishService.updateWish_heohyun(user_id);
+	public String heohyun(Locale locale, Model model) throws Exception{		
 		
 		return "seoulTour/heohyun";	
 	}
@@ -166,6 +163,8 @@ public class ContentsController {
 		
 		return "seoulTour/winter";	
 	}
+	
+	
 	@RequestMapping(value = "/updatedonggyo", method = RequestMethod.POST)
 	public String update_donggyo(HttpSession session, RedirectAttributes rttr) throws Exception {
 
@@ -405,5 +404,248 @@ public class ContentsController {
 
 		wishService.updateWish_gaehwa(user_id);
 		return "redirect:/seoulTour/winter#L1";
+	}	
+	
+	@RequestMapping(value = "/deletedonggyo", method = RequestMethod.GET)
+	public String delete_donggyo(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_donggyo(user_id);
+		return "redirect:/getWishList";
 	}
+	@RequestMapping(value = "/deletebigpark", method = RequestMethod.GET)
+	public String delete_bigpark(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_bigpark(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deleteyanghwa", method = RequestMethod.GET)
+	public String delete_yanghwa(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_yanghwa(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletehyunchung", method = RequestMethod.GET)
+	public String delete_hyunchung(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_hyunchung(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletebaeksasil", method = RequestMethod.GET)
+	public String delete_baeksasil(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_baeksasil(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deleteworldcup", method = RequestMethod.GET)
+	public String delete_worldcup(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_worldcup(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deleteyongma", method = RequestMethod.GET)
+	public String delete_yongma(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_yongma(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletebulam", method = RequestMethod.GET)
+	public String delete_bulam(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_bulam(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deleteansan", method = RequestMethod.GET)
+	public String delete_ansan(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_ansan(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletechanggyung", method = RequestMethod.GET)
+	public String delete_changgyung(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_changgyung(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletewestkyungbok", method = RequestMethod.GET)
+	public String delete_westkyungbok(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_westkyungbok(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletewestseoul", method = RequestMethod.GET)
+	public String delete_westseoul(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_westseoul(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletesalgoji", method = RequestMethod.GET)
+	public String delete_salgoji(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_salgoji(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deleteseochopark", method = RequestMethod.GET)
+	public String delete_seochopark(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_seochopark(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deleteyangjae", method = RequestMethod.GET)
+	public String delete_yangjae(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_yangjae(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletenamsan", method = RequestMethod.GET)
+	public String delete_namsan(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_namsan(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletebuam", method = RequestMethod.GET)
+	public String delete_buam(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_buam(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deleteseosunra", method = RequestMethod.GET)
+	public String delete_seosunra(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_seosunra(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletebukjung", method = RequestMethod.GET)
+	public String delete_bukjung(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_bukjung(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deleteacha", method = RequestMethod.GET)
+	public String delete_acha(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_acha(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deleteheohyun", method = RequestMethod.GET)
+	public String delete_heohyun(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_heohyun(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletehaneul", method = RequestMethod.GET)
+	public String delete_haneul(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_haneul(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletemongchon", method = RequestMethod.GET)
+	public String delete_mongchon(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_mongchon(user_id);
+		return "redirect:/getWishList";
+	}
+	@RequestMapping(value = "/deletegaehwa", method = RequestMethod.GET)
+	public String delete_gaehwa(HttpSession session, RedirectAttributes rttr) throws Exception {
+
+		rttr.addFlashAttribute("msg", true);
+		
+		String user_id=(String) session.getAttribute("uid");
+
+		wishService.deleteWish_gaehwa(user_id);
+		return "redirect:/getWishList";
+	}
+	
+	
 }
