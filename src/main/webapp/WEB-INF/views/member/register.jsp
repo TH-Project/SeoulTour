@@ -135,16 +135,54 @@ a:hover {
     
     
     $("#submit").on("click", function(){
+    	
+		    if($("#name").val()==""){
+				alert("이름을 입력해주세요.");
+				$("#name").focus();
+				return false;
+	       	}    	
 			if($("#login_ID").val()==""){
 				alert("아이디를 입력해주세요.");
 				$("#login_ID").focus();
 				return false;
 			}
+	        //아이디 길이 체크 (4~12자)
+		       if ($("#login_ID").val().length<4 ||$("#login_ID").val().length>14) {
+		            alert("아이디를 4~14자까지 입력해주세요.")
+					 $("#login_ID").focus();
+		             $("#login_ID").select();
+		            return false;
+		        }
+	        //아이디 유효성 검사 (영문소문자, 숫자만 허용)
+		    for (var i = 0; i <$("#login_ID").val().length; i++) {
+		        ch = $("#login_ID").val().charAt(i)
+		        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
+		             alert("아이디는 영문 대소문자, 숫자만 입력가능합니다.")
+					 $("#login_ID").focus();
+		             $("#login_ID").select();
+		             return false;
+		            }
+		    }
+	        //아이디에 공백 사용하지 않기
+	        if ($("#login_ID").val().indexOf(" ") >= 0) {
+	            alert("아이디에 공백문자는 사용할 수 없습니다.")
+				$("#login_ID").focus();
+		        $("#login_ID").select();
+	            return false;
+	        }	        
+	        
 			if($("#password").val()==""){
 				alert("비밀번호를 입력해주세요.");
 				$("#password").focus();
 				return false;
 			}
+	        //비밀번호 길이 체크(4~8자 까지 허용)
+	        if ($("#password").val().length<4 || $("#password").val().length>14) {
+	            alert("비밀번호를 4~14자까지 입력해주세요.")
+				$("#password").focus();
+				$("#password").select();
+	            return false;
+	        }		
 			if($("#re_password").val()==""){
 				alert("비밀번호를 입력해주세요.");
 				$("#re_password").focus();
@@ -160,7 +198,7 @@ a:hover {
 				$("#email").focus();
 				return false;
 			}
-			if($("#gender").val()==""){
+			if($("#gender").val()=="N"){
 				alert("성별을 선택해주세요.");
 				$("#gender").focus();
 				return false;
@@ -196,7 +234,7 @@ a:hover {
 					alert("중복된 아이디입니다.");
 				}else if(data == 0){
 					$("#idCheck").attr("value", "Y");
-					alert("사용가능한 아이디입니다.");
+					alert("중복되지 않은 아이디입니다.");
 				}
 			}
 		})

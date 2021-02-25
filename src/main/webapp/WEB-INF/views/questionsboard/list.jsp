@@ -225,7 +225,7 @@
 					value='<c:out value="${ pageMaker.cri.keyword }"/>'>
 			</form>
 
-			<!-- Modal  추가 -->
+			<!--
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 				aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
@@ -243,11 +243,9 @@
 								changes</button>
 						</div>
 					</div>
-					<!-- /.modal-content -->
 				</div>
-				<!-- /.modal-dialog -->
 			</div>
-			<!-- /.modal -->
+			 -->
 
 		</div>
 		<!--  end panel-body -->
