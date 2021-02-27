@@ -1,3 +1,8 @@
+---
+
+
+---
+
 <h1 id="seoultour---2인-팀-프로젝트">SeoulTour - 2인 팀 프로젝트</h1>
 <p>스프링 레거시로 개발한 서울의 관광명소를 소개하는 웹 프로젝트.<br>
 공부목적의 비상업적 사이트입니다. (This is a non-commercial site for study purposes.)</p>
@@ -38,25 +43,38 @@
 <h2 id="seoultour-주요-화면">SeoulTour 주요 화면</h2>
 <h3 id="홈-화면">홈 화면</h3>
 <p><img src="md/%ED%99%88%ED%99%94%EB%A9%B4.gif" alt="Alt"></p>
+<hr>
 <h3 id="회원가입-화면">회원가입 화면</h3>
 <ul>
 <li>이메일인증<br>
 <img src="md/%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%9D%B8%EC%A6%9D.gif" alt="Alt"></li>
+</ul>
+<hr>
+<ul>
 <li>회원가입<br>
 <img src="md/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif" alt="Alt"></li>
 </ul>
+<hr>
 <h3 id="seoultour-서울관광지-소개">SeoulTour 서울관광지 소개</h3>
 <p><img src="md/%EC%84%9C%EC%9A%B8%EC%BD%98%ED%85%90%EC%B8%A0.gif" alt="Alt"></p>
+<hr>
 <h3 id="위시리스트">위시리스트</h3>
 <p><img src="md/%EC%9C%84%EC%8B%9C%EB%A6%AC%EC%8A%A4%ED%8A%B8.gif" alt="Alt"></p>
+<hr>
 <h3 id="글쓰기">글쓰기</h3>
 <ul>
 <li>리스트, 글쓰기, 글보기<br>
-<img src="md/%EA%B8%80%EC%93%B0%EA%B8%B0.gif" alt="Alt"></li><br><br>
+<img src="md/%EA%B8%80%EC%93%B0%EA%B8%B0.gif" alt="Alt"></li>
+</ul>
+<hr>
+<ul>
 <li>첨부파일<br>
-<img src="md/%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC.gif" alt="Alt"></li><br><br>
+<img src="md/%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC.gif" alt="Alt"></li>
+</ul>
+<hr>
+<ul>
 <li>게시물 검색<br>
-<img src="md/%EA%B2%80%EC%83%89.gif" alt="Alt"></li><br><br>
+<img src="md/%EA%B2%80%EC%83%89.gif" alt="Alt"></li>
 </ul>
 <h2 id="참고문헌--사이트">참고문헌 &amp; 사이트</h2>
 <ul>
