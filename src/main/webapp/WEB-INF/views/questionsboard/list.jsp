@@ -25,7 +25,6 @@
 
 <body>
 
- <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" style="color:black;" href="/">See you in Seoul</a>
@@ -37,7 +36,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/seoulTour/itaewonClass">서울과 문화</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="#GuideBooks">서울 여행 가이드북</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/questionsboard/list">문의사항</a></li>                        
-                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Join us</a></li> -->
+                        
                      <li>    
 					<c:if test="${member != null}">
 					<c:if test="${member.login_ID == 'admin' }">
@@ -173,8 +172,7 @@
 						</c:if>
 						</div>
 					</ul>
-				</div>
-				<!--  end Pagination -->
+				</div>				
 			</div>
 
 			<form id='actionForm' action="/questionsboard/list" method='get'>

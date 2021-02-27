@@ -46,8 +46,7 @@ a:hover {
 </style>
 
     <script type="text/javascript">
-    $(document).ready(function(){
-    	// 취소
+    $(document).ready(function(){    
     	$(".cencle").on("click", function(){
     		
     		location.href = "/";
@@ -67,15 +66,12 @@ a:hover {
     		}
     	});
     	
-    		
-    	
     })
     </script>
 	<body>
 	
 	<div class="d-flex" id="wrapper">
 
-    <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="/">See You In Seoul</a>
@@ -145,7 +141,6 @@ a:hover {
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->
         <section id="container">
 		<div class="wrapper">
 			<div class="inner">

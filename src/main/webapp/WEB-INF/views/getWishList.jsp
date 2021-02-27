@@ -10,14 +10,9 @@
 }
 </style>
 <body>
-<!-- <script>
-var positions = [];
-</script> -->
-
 
 <div class="d-flex" id="wrapper">
 
-    <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="#">See You In Seoul</a>
@@ -87,10 +82,9 @@ var positions = [];
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper --> 
    
     <div class = "map" id="map" style="width:50%;height:630px;"></div>    
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0bcfa1a1b06baad7bbf0b6be2648e9b5"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=카카오 API 키"></script>
 	<script>
 		var container = document.getElementById('map');
 		var options = {
@@ -148,10 +142,7 @@ var positions = [];
 			});
 			}
 			
-		}			
-		
-		
-		
+		}	
 		
 	</script>
    

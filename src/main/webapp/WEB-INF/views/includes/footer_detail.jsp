@@ -1,5 +1,12 @@
 <!-- Footer  -->
 <!-- Bootstrap core JavaScript -->
+
+<footer class="bg-light py-5">
+    <div class="container">
+    	<div class="small text-center text-muted">Copyright © 2020 - Start Bootstrap</div>
+    	<div class="small text-center text-muted">This templates was made by Colorlib (https://colorlib.com)</div>
+    </div>
+</footer>
 <script src="/resources/vendor/jquery/jquerys.min.js"></script>
 <script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

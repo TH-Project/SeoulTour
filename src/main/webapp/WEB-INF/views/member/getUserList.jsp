@@ -18,8 +18,7 @@
 
 <body>
 <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
+    
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="#">See You In Seoul</a>
@@ -89,7 +88,7 @@
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->
+
 
 <div id="content">
 	<div class="container-fluid">

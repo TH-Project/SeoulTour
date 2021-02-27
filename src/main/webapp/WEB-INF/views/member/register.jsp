@@ -122,11 +122,10 @@ a:hover {
 
     <script type="text/javascript">
     
-    var mailnumCheck = false;		// 이메일 인증번호 확인
+    var mailnumCheck = false;		
 	
     
-    $(document).ready(function(){
-		// 취소
+    $(document).ready(function(){		
 		$(".cencle").on("click", function(){
 			
 			location.href = "/";
@@ -146,14 +145,14 @@ a:hover {
 				$("#login_ID").focus();
 				return false;
 			}
-	        //아이디 길이 체크 (4~12자)
+	       
 		       if ($("#login_ID").val().length<4 ||$("#login_ID").val().length>14) {
 		            alert("아이디를 4~14자까지 입력해주세요.")
 					 $("#login_ID").focus();
 		             $("#login_ID").select();
 		            return false;
 		        }
-	        //아이디 유효성 검사 (영문소문자, 숫자만 허용)
+	        
 		    for (var i = 0; i <$("#login_ID").val().length; i++) {
 		        ch = $("#login_ID").val().charAt(i)
 		        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
@@ -163,7 +162,7 @@ a:hover {
 		             return false;
 		            }
 		    }
-	        //아이디에 공백 사용하지 않기
+	        
 	        if ($("#login_ID").val().indexOf(" ") >= 0) {
 	            alert("아이디에 공백문자는 사용할 수 없습니다.")
 				$("#login_ID").focus();
@@ -176,7 +175,7 @@ a:hover {
 				$("#password").focus();
 				return false;
 			}
-	        //비밀번호 길이 체크(4~8자 까지 허용)
+	       
 	        if ($("#password").val().length<4 || $("#password").val().length>14) {
 	            alert("비밀번호를 4~14자까지 입력해주세요.")
 				$("#password").focus();
@@ -253,8 +252,7 @@ a:hover {
 	<body>
 	
 	<div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
+    
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="/">See You In Seoul</a>
@@ -324,7 +322,6 @@ a:hover {
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->
     
     <section id="container">
 		<div class="wrapper">
@@ -404,17 +401,15 @@ a:hover {
         
  <script>
  
- var code = "";				//이메일전송 인증번호 저장위한 코드
-
- /* 인증번호 이메일 전송 */
+ var code = "";				
+ 
  $(".mail_check_button").click(function(){
  	
- 	var email = $(".mail_input").val();			// 입력한 이메일
- 	var cehckBox = $(".mail_check_input");		// 인증번호 입력란
- 	var boxWrap = $(".mail_check_input_box");	// 인증번호 입력란 박스
- 	var warnMsg = $(".mail_input_box_warn");	// 이메일 입력 경고글
+ 	var email = $(".mail_input").val();			
+ 	var cehckBox = $(".mail_check_input");		
+ 	var boxWrap = $(".mail_check_input_box");	
+ 	var warnMsg = $(".mail_input_box_warn"); 	
  	
- 	/* 이메일 형식 유효성 검사 */
  	if(mailFormCheck(email)){
  		warnMsg.html("이메일이 전송 되었습니다. 이메일을 확인해주세요.");
  		warnMsg.css("display", "inline-block");
@@ -428,9 +423,8 @@ a:hover {
  		
  		type:"GET",
  		url:"mailCheck?email=" + email,
- 		success:function(data){
+ 		success:function(data){ 			
  			
- 			//console.log("data : " + data);
  			cehckBox.attr("disabled",false);
  			boxWrap.attr("id", "mail_check_input_box_true");
  			code = data;
@@ -441,17 +435,17 @@ a:hover {
  	
  });
  
- /* 인증번호 비교 */
+
  $(".mail_check_input").blur(function(){
  	
- 	var inputCode = $(".mail_check_input").val();		// 입력코드	
- 	var checkResult = $("#mail_check_input_box_warn");	// 비교 결과 	
+ 	var inputCode = $(".mail_check_input").val();			
+ 	var checkResult = $("#mail_check_input_box_warn");	 	
  	
- 	if(inputCode == code){							// 일치할 경우
+ 	if(inputCode == code){							
  		checkResult.html("인증번호가 일치합니다.");
  		checkResult.attr("class", "correct");		
  		mailnumCheck = true;
- 	} else {											// 일치하지 않을 경우
+ 	} else {											
  		checkResult.html("인증번호를 다시 확인해주세요.");
  		checkResult.attr("class", "incorrect");
  		mailnumCheck = false;
@@ -460,8 +454,6 @@ a:hover {
  });
  	
  
- 
- /* 입력 이메일 형식 유효성 검사 */
  function mailFormCheck(email){
 	var form = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	return form.test(email);
@@ -471,7 +463,6 @@ a:hover {
  
  </script>       
         
-        
-	<%@include file="../includes/footer_detail.jsp"%>
+<%@include file="../includes/footer_detail.jsp"%>
 
        

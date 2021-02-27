@@ -8,7 +8,6 @@
 
   <div class="d-flex" id="wrapper">
 
-    <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="#">See You In Seoul</a>
@@ -78,9 +77,7 @@
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
+    
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg">
@@ -223,10 +220,6 @@
         </div>       
         <br><br>
 
-
-    <!-- /#page-content-wrapper -->
-
   </div>
-  <!-- /#wrapper -->
   
 <%@include file="../includes/footer_detail.jsp"%>

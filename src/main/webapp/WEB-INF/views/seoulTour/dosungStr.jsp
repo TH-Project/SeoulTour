@@ -7,8 +7,7 @@
 <body>
 
   <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
+   
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="#">See You In Seoul</a>
@@ -78,9 +77,7 @@
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
+    
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg">
@@ -240,11 +237,7 @@
      비밀리에 군사를 이동하거나 군수물자 조달을 위해 만든 작은 문. 평소에 는 돌로 막아 두었다가 전시에만 사용하는 비밀 통로다. 현재 서울 한양도 성에는 모두 여덟 곳의 암문이 있다.</p><br><br><br>         
     
     </div> 
-      
-      
-    <!-- /#page-content-wrapper -->
 
   </div>
-  <!-- /#wrapper -->
   
 <%@include file="../includes/footer_detail.jsp"%>

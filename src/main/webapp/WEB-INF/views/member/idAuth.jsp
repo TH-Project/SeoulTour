@@ -1,5 +1,4 @@
 <!-- 회원가입 -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
@@ -48,8 +47,7 @@ a:hover {
 </style>
 
     <script type="text/javascript">
-    $(document).ready(function(){
-    	// 취소
+    $(document).ready(function(){    	
     	$(".cencle").on("click", function(){
     		
     		location.href = "/";
@@ -76,13 +74,11 @@ a:hover {
 	<body>
 	
 	<div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
+    
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="/">See You In Seoul</a>
-      </div>
-           
+      </div>           
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeasons"
             aria-expanded="true" aria-controls="collapseSeasons">
@@ -146,8 +142,7 @@ a:hover {
             </div>
         </div>
       </li>
-    </div>
-    <!-- /#sidebar-wrapper -->
+    </div>    
     
     <section id="container">
 		<div class="wrapper">

@@ -8,7 +8,6 @@
 
   <div class="d-flex" id="wrapper">
 
-    <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="#">See You In Seoul</a>
@@ -78,9 +77,7 @@
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
+   
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg">
@@ -159,11 +156,8 @@
          <br><br><p style = "font-size:1em; line-height:1.5em; color : black;"><span style = "color: #A3CFFF">홍지문 및 탕춘대성</span><br><br>
         <서울특별시 유형문화재 제33호> 탕춘대성은 한양도성과 북한산성을 연결하는 성이다. 인왕산 동북쪽에서 시작해 북쪽 능선을 따라 북한산 비봉 아래까지 일(一)자로 연결되어 있다. 숙종 44년(1718)에 쌓기 시작하여 이듬해 완공하였다. 탕춘대성의 성문이 숙종 41년(1715)에 축조된
      홍지문이며 그 옆 홍제천 물길 위에는 오간수문을 내었다.</p><br><br><br>
-         </div>
-      
-    <!-- /#page-content-wrapper -->
+         </div> 
 
   </div>
-  <!-- /#wrapper -->
   
 <%@include file="../includes/footer_detail.jsp"%>l>
