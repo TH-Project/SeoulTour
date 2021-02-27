@@ -88,18 +88,14 @@
 						<div class="panel panel-default">
 							<!-- 작성글 헤더(글 제목, 글 정보) -->
 							<div class="panel-heading">
-								<h5>글 쓰기</h5><br>
-								<input id="writer" type="hidden" class="form-control" name="writer" value="${member.uid}">
+								<h5>글 쓰기</h5><br>								
 							</div>
 							<!-- 작성글 바디(글 내용) -->
 							<div class="panel-body">
 								<!-- 글 작성 폼 -->
 								<!-- <div class="row"> -->
 									<form role="form" action="/questionsboard/register" method="post">
-										<!-- <div class="input-group">
-											<span class="input-group-addon">
-												<i class="glyphicon glyphicon-user"></i>
-											</span>										</div> -->
+										<span><input id="writer" type="hidden" class="form-control" name="writer" value="${member.name}"></span>
 										<div class="input-group">
 											<!-- <span class="input-group-addon">제목</span> -->
 											<h5>제목&nbsp;&nbsp;&nbsp;</h5>
