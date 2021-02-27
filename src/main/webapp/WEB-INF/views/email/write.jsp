@@ -7,7 +7,6 @@
 
 <h2>문의 보내기</h2>
 <form method="post" action="${path}/email/send.do"> 
-<!-- post방식으로 자료를 컨트롤러로 보냄 -->
  
 발신자 이름 : <input name="senderName"><br>
 발신자 이메일 : <input name="senderMail"><br>

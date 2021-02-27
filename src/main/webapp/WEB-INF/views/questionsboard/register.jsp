@@ -22,7 +22,12 @@
 } 
 
 </style>
-
+<c:if test="${member == null }">
+<script>
+    alert("로그인 후 이용가능합니다.");
+    location.href = "/questionsboard/list";
+</script>
+</c:if>
 <body>
 
  <!-- Navigation-->
