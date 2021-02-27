@@ -54,8 +54,12 @@
 <li>4-2-2. 회원가입<br>
 <img src="md/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif" alt="Alt"></li>
 </ul>
+<hr>
+<br>
 <h3 id="seoultour-서울관광지-소개">4-3. SeoulTour 서울관광지 소개</h3>
 <p><img src="md/%EC%84%9C%EC%9A%B8%EC%BD%98%ED%85%90%EC%B8%A0.gif" alt="Alt"></p>
+<hr>
+<br>
 <h3 id="위시리스트">4-4. 위시리스트</h3>
 <p><img src="md/%EC%9C%84%EC%8B%9C%EB%A6%AC%EC%8A%A4%ED%8A%B8.gif" alt="Alt"></p>
 <hr>
@@ -74,6 +78,8 @@
 <li>4-5-3. 게시물 검색<br>
 <img src="md/%EA%B2%80%EC%83%89.gif" alt="Alt"></li>
 </ul>
+<hr>
+<br>
 <h2 id="참고문헌--사이트">5. 참고문헌 &amp; 사이트</h2>
 <ul>
 <li>코드로 배우는 스프링 웹 프로젝트 (구멍가게 코딩단)</li>
