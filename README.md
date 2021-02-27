@@ -1,3 +1,8 @@
+---
+
+
+---
+
 <h1 id="seoultour---2인-팀-프로젝트">SeoulTour - 2인 팀 프로젝트</h1>
 <p>스프링 레거시로 개발한 서울의 관광명소를 소개하는 웹 프로젝트</p>
 <h2 id="개발환경">개발환경</h2>
@@ -37,7 +42,12 @@
 <h3 id="홈-화면">홈 화면</h3>
 <p><img src="md/%ED%99%88%ED%99%94%EB%A9%B4.gif" alt="Alt"></p>
 <h3 id="회원가입-화면">회원가입 화면</h3>
-<p><img src="md/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif" alt="Alt"></p>
+<ul>
+<li>이메일인증<br>
+<img src="md/%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%9D%B8%EC%A6%9D.gif" alt="Alt"></li>
+<li>회원가입<br>
+<img src="md/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif" alt="Alt"></li>
+</ul>
 <h3 id="seoultour-서울관광지-소개">SeoulTour 서울관광지 소개</h3>
 <p><img src="md/%EC%84%9C%EC%9A%B8%EC%BD%98%ED%85%90%EC%B8%A0.gif" alt="Alt"></p>
 <h3 id="위시리스트">위시리스트</h3>
