@@ -23,7 +23,6 @@
 
 </head>
 
-<!-- 로그인 실패 시  -->
 <c:if test="${msg==false}">
 <script>
     alert("로그인 실패! 아이디와 비밀번호를 확인해주세요.");
@@ -47,7 +46,6 @@
 </c:if>
 
 <body id="page-top">
-        <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">See you in Seoul</a>
@@ -58,8 +56,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#HanyangDosung">서울 한양도성</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Culture">서울과 문화</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#GuideBooks">서울 여행 가이드북</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/questionsboard/list">문의사항</a></li>                        
-                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Join us</a></li> -->
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/questionsboard/list">문의사항</a></li>
                      <li>    
 					<c:if test="${member != null}">
 					<c:if test="${member.login_ID == 'admin' }">
@@ -84,8 +81,7 @@
                 </div>
             </div>
         </nav>
-        
-        <!-- Masthead-->
+
         <header class="masthead">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
@@ -117,9 +113,7 @@
         <div class="col-lg-8 align-self-baseline">
             <p class="text-black-50 font-weight-light mb-5">-Spring  Summer Autumn  Winter-</p>
         </div>  
-        </div>      
-        <!-- FourSeasons-->
-        <!-- <div id="FourSeasons"> -->
+        </div> 
         <section class="page-section" id="FourSeasons">    
             <div class="container-fluid p-0">
                 <div class="row no-gutters">
@@ -173,9 +167,8 @@
                     </div>
                 </div>
             </div>
-        </section>    
+        </section> 
         
-        <!-- Services-->
         <div class="row h-25 align-items-center justify-content-center text-center" id="HanyangDosung">
             <div class="col-lg-10 align-self-end">
                 <h1 class="text-uppercase text-black-50 font-weight-bold"><br>Beautiful Palaces in Seoul</h1>
@@ -210,8 +203,7 @@
             </div>  
         </div>
         <br> 
-        
-        <!-- Cultures-->
+
         <div id="Cultures">
             <div class="container-fluid p-0">
                 <div class="row no-gutters">
@@ -272,7 +264,6 @@
                 </div>
             </div>
         </div>
-        <!-- Call to action-->
         <div class="row h-25 align-items-center justify-content-center text-center" id="GuideBooks">
             <div class="col-lg-10 align-self-end">
                 <h1 class="text-uppercase text-black-50 font-weight-bold"><br>Seoul Tour GuideBooks</h1>
@@ -282,14 +273,7 @@
                 <p class="text-black-50 font-weight-light mb-5">-서울 관광,  한류 관광,  서울Best100,  서울 도보 관광,  서울 속 세계여행,  서울 골목길 명소-</p>
             </div>  
         </div>
-        <br>
-        <!-- <section class="page-section bg-light text-dark">
-            <div class="container text-center">
-                <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
-            </div>
-        </section> -->
-        <!-- Cultures-->
+        <br>        
         <div id="GuideBook">
             <div class="container-fluid p-0">
                 <div class="row no-gutters">
@@ -350,8 +334,7 @@
                 </div>
             </div>
         </div>
-        <br>
-        <!-- Contact-->
+        <br>        
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="row justify-content-center">
@@ -368,18 +351,15 @@
                     </div>
                     <div class="col-lg-4 mr-auto text-center">
                         <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-                        <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                        <a class="d-block" href="mailto:contact@yourwebsite.com">europejumin@gmail.com</a><br>
-                        <a class="d-block" href="mailto:contact@yourwebsite.com">leski779@gmail.com</a>
+                       
+                        <a class="d-block" href="mailto:contact@yourwebsite.com">europeeee@gmail.com</a><br>
+                        <a class="d-block" href="mailto:contact@yourwebsite.com">donggukcomputer21@gmail.com</a>
                     </div>
                 </div>
                 <br>
                 <div class="row h-25 align-items-center justify-content-center text-center">                    
-                    <div class="col-lg-8 align-self-baseline">
-                        <a href="">
-                        <!-- <p class="text-black-50 font-weight-light mb-5"><br>문의하러 가기</p> -->
-                        <a class="btn btn-info btn-sm js-scroll-trigger" href="">문의하러 가기</a>
-                        </a>
+                    <div class="col-lg-8 align-self-baseline">                  
+                        <a class="btn btn-info btn-sm js-scroll-trigger" href="/questionsboard/list">문의하러 가기</a>                        
                     </div>  
                 </div>
             </div>

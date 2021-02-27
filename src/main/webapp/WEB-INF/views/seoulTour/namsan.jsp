@@ -8,7 +8,6 @@
 
   <div class="d-flex" id="wrapper">
 
-    <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="#">See You In Seoul</a>
@@ -78,9 +77,7 @@
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg">
@@ -173,10 +170,7 @@
            <p> 소의문은 광희문과 함께 도성 밖으로 상여를 내보내던 문이었다. 소의문은 사형수를 처형장으로 끌고 나갈 때에도 사용되었다. 소의문 밖 넓은 마당은 조선시대 사형 집행장이었다. 천주교 순교자들 다수도 이 문 밖에서 처형당했기 때문에 외국인들 사이에서는 순교자의 문으로도 불렸다. 현재 서소문역사공원 안에 있는 순교자 현양탑은 이와 관련한 기념물이다.</p>
            </font></div><br><br>   
         </div>
-      
-    <!-- /#page-content-wrapper -->
 
   </div>
-  <!-- /#wrapper -->
   
 <%@include file="../includes/footer_detail.jsp"%>

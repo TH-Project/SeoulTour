@@ -43,9 +43,7 @@
 	
 	<script src="/resources/js/owl.carousel.min.js"></script>
 	<script src="/resources/js/modernizr-custom.js"></script>
-	
-	    <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-       <script src="/resources/js/jquery.min.js"></script>
+    <script src="/resources/js/jquery.min.js"></script>
 	
 	<style>
 	img{ overflow: hidden; background-repeat: no-repeat; alt=""; margin : auto;display : block;

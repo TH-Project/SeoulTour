@@ -30,7 +30,6 @@
 </c:if>
 <body>
 
- <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" style="color:black;" href="/">See you in Seoul</a>
@@ -41,8 +40,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/seoulTour/heohyun">서울 한양도성</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/seoulTour/itaewonClass">서울과 문화</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="#GuideBooks">서울 여행 가이드북</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/questionsboard/list">문의사항</a></li>                        
-                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Join us</a></li> -->
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/questionsboard/list">문의사항</a></li> 
                      <li>    
 					<c:if test="${member != null}">
 					<c:if test="${member.login_ID == 'admin' }">
@@ -58,9 +56,7 @@
                     	
                     </c:if>                    
                     <c:if test="${member == null }">
-                    	
-                    		<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/login">Join us</a>                  	
-                    	
+                    		<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/login">Join us</a>   
                     </c:if>					
 				</li>
                     </ul>
@@ -77,7 +73,6 @@
                 </div>
             </div>
         </header>
-        <!-- Header End -->
         
         <div class="container-fluid">
 
@@ -88,33 +83,28 @@
                                 문의사항                                
                             </div>
 				<div class="card-body">
-				<!-- <div class="row"> -->
+				
 					<div class="panel-group">
 						<div class="panel panel-default">
-							<!-- 작성글 헤더(글 제목, 글 정보) -->
+							
 							<div class="panel-heading">
 								<h5>글 쓰기</h5><br>								
 							</div>
-							<!-- 작성글 바디(글 내용) -->
+							
 							<div class="panel-body">
-								<!-- 글 작성 폼 -->
-								<!-- <div class="row"> -->
+								
 									<form role="form" action="/questionsboard/register" method="post">
 										<span><input id="writer" type="hidden" class="form-control" name="writer" value="${member.name}"></span>
 										<div class="input-group">
-											<!-- <span class="input-group-addon">제목</span> -->
 											<h5>제목&nbsp;&nbsp;&nbsp;</h5>
 											<input id="title" type="text" name="title" size=40 placeholder="글 제목">
 										</div><br><br>
-										<!-- 네이버 스마트 에디터 -->
 										<textarea name="content" id="content" rows="10" cols="130"></textarea>
 										<div>
 										 <button type="submit" class="btn btn-success btn-xs" style="height:30px; width: 70px;">작성</button>
 										 </div><br>
 									</form>
-								<!-- </div> -->
 							</div>
-							<!-- 작성글 푸터(댓글) -->
 							<div class="panel-footer"></div>
 							
 							<div class="row">
@@ -122,7 +112,6 @@
     <div class="panel panel-default">
 
       <div class="panel-heading">파일 & 이미지 첨부</div>
-      <!-- /.panel-heading -->
       <div class="panel-body">
         <div class="form-group uploadDiv">
             <input type="file" name='uploadFile' multiple>
@@ -141,7 +130,6 @@
 			
 			</div>
 			</div>
-			<!-- </div> -->
 			</div></div>
 			</div></div>
 			
@@ -151,19 +139,6 @@
 <script>
 
 $(document).ready(function(e){
-
-	/* 
-  var formObj = $("form[role='form']");
-  
-  $("button[type='submit']").on("click", function(e){
-    
-    e.preventDefault();
-    
-    console.log("submit clicked");
-    
-  }); */
-
-  
   var formObj = $("form[role='form']");
   
   $("button[type='submit']").on("click", function(e){
@@ -198,7 +173,7 @@ $(document).ready(function(e){
 
   
   var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
-  var maxSize = 5242880; //5MB
+  var maxSize = 5242880;
   
   function checkExtension(fileName, fileSize){
     
@@ -239,10 +214,10 @@ $(document).ready(function(e){
       dataType:'json',
         success: function(result){
           console.log(result); 
-		  showUploadResult(result); //업로드 결과 처리 함수 
+		  showUploadResult(result); 
 
       }
-    }); //$.ajax
+    }); 
     
   });  
   
@@ -307,16 +282,12 @@ $(document).ready(function(e){
            
            targetLi.remove();
          }
-    }); //$.ajax
+    }); 
    });
-
-
-  
 });
 </script>
 
-
- 	<jsp:include page="../includes/footer.jsp" />
+<jsp:include page="../includes/footer.jsp" />
 
 </body>
 

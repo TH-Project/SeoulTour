@@ -8,7 +8,7 @@
 
   <div class="d-flex" id="wrapper">
 
-    <!-- Sidebar -->
+ 
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="#">See You In Seoul</a>
@@ -78,9 +78,7 @@
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
+    
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg">
@@ -156,10 +154,7 @@
         <br><br><p style = "font-size:1em; line-height:1.5em; color : black;"><span style = "color: #DDB8CF">도시와 자연의 어울림</span> 천만 도시, 서울을 품은 한양 도성<br><br>
         인왕산 곡성 주변에서 내려다보면 인왕산 자락을 따라 내려간 한양도성이 돈의문과 숭례문을 지나 목멱산으로 이어졌던 옛 모습을 짐작할 수 있다. 사진은 인왕산 서쪽 자락 한양도성의 모습이다</p><br><br><br><br><br><br>
          </div>
-      
-    <!-- /#page-content-wrapper -->
 
   </div>
-  <!-- /#wrapper -->
   
 <%@include file="../includes/footer_detail.jsp"%>

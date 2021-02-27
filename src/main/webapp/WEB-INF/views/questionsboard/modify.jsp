@@ -25,7 +25,7 @@
 
 <body>
 
- <!-- Navigation-->
+
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" style="color:black;" href="/">See you in Seoul</a>
@@ -36,8 +36,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/seoulTour/heohyun">서울 한양도성</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/seoulTour/itaewonClass">서울과 문화</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="#GuideBooks">서울 여행 가이드북</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/questionsboard/list">문의사항</a></li>                        
-                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Join us</a></li> -->
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/questionsboard/list">문의사항</a></li>
                      <li>    
 					<c:if test="${member != null}">
 					<c:if test="${member.login_ID == 'admin' }">
@@ -53,9 +52,7 @@
                     	
                     </c:if>                    
                     <c:if test="${member == null }">
-                    	
-                    		<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/login">Join us</a>                  	
-                    	
+                    		<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/login">Join us</a> 
                     </c:if>					
 				</li>
                     </ul>
@@ -72,7 +69,6 @@
                 </div>
             </div>
         </header>
-        <!-- Header End -->
 
 <div class="container-fluid">
 
@@ -83,7 +79,7 @@
                                 문의사항                                
                             </div>
     <div class="card-body">
-      <!-- /.panel-heading -->
+     
       <div class="panel-body">
 
       <form role="form" action="/questionsboard/modify" method="post">
@@ -138,14 +134,12 @@
 
 
       </div>
-      <!--  end panel-body -->
 
     </div>
-    <!--  end panel-body -->
+   
   </div>
-  <!-- end panel -->
+
 </div>
-<!-- /.row -->
 
 <div class='bigPictureWrapper'>
   <div class='bigPicture'>
@@ -221,14 +215,12 @@
           </ul>
         </div>
       </div>
-      <!--  end panel-body -->
   
     </div>
-    <!--  end panel-body -->
+   
   </div>
-  <!-- end panel -->
+ 
 </div>
-<!-- /.row -->
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -247,8 +239,7 @@ $(document).ready(function() {
 	    if(operation === 'remove'){
 	      formObj.attr("action", "/questionsboard/remove");
 	      
-	    }else if(operation === 'list'){
-	      //move to list
+	    }else if(operation === 'list'){	      
 	      formObj.attr("action", "/questionsboard/list").attr("method","get");
 	      
 	      var pageNumTag = $("input[name='pageNum']").clone();
@@ -307,7 +298,6 @@ $(document).ready(function() {
 
       $(arr).each(function(i, attach){
           
-          //image type
           if(attach.fileType){
             var fileCallPath =  encodeURIComponent( attach.uploadPath+ "/s_"+attach.uuid +"_"+attach.fileName);
             
@@ -335,8 +325,8 @@ $(document).ready(function() {
       
       $(".uploadResult ul").html(str);
       
-    });//end getjson
-  })();//end function
+    });
+  })();
   
   
   $(".uploadResult").on("click", "button", function(e){
@@ -351,7 +341,7 @@ $(document).ready(function() {
   });  
   
   var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
-  var maxSize = 5242880; //5MB
+  var maxSize = 5242880; 
   
   function checkExtension(fileName, fileSize){
     
@@ -392,10 +382,10 @@ $(document).ready(function() {
       dataType:'json',
         success: function(result){
           console.log(result); 
-		  showUploadResult(result); //업로드 결과 처리 함수 
+		  showUploadResult(result); 
 
       }
-    }); //$.ajax
+    });
     
   });    
 
@@ -442,10 +432,5 @@ $(document).ready(function() {
 });
 
 </script>
-
-  
-
-
-
 
 <%@include file="../includes/footer_board.jsp"%>

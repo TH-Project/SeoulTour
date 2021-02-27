@@ -32,7 +32,6 @@
 
 <body>
 
- <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" style="color:black;" href="/">See you in Seoul</a>
@@ -44,7 +43,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/seoulTour/itaewonClass">서울과 문화</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="#GuideBooks">서울 여행 가이드북</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/questionsboard/list">문의사항</a></li>                        
-                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Join us</a></li> -->
+                        
                      <li>    
 					<c:if test="${member != null}">
 					<c:if test="${member.login_ID == 'admin' }">
@@ -78,8 +77,7 @@
                     </div>                   
                 </div>
             </div>
-        </header>
-        <!-- Header End -->
+        </header>        
     
     <div class="container-fluid">
 
@@ -120,18 +118,12 @@
   <input type='hidden' name='type' value='<c:out value="${cri.type}"/>'>  
  
 </form>
-
-
-
-      </div>
-      <!--  end panel-body -->
-
-    </div>
-    <!--  end panel-body -->
+</div>
+      
+ </div>
+   
   </div>
-  <!-- end panel -->
-<!-- </div> -->
-<!-- /.row -->
+
 </div>
 
 
@@ -198,7 +190,7 @@
     <div class="panel panel-default">
 
       <div class="panel-heading">Files</div>
-      <!-- /.panel-heading -->
+      
       <div class="panel-body">
         
         <div class='uploadResult'> 
@@ -206,52 +198,39 @@
           </ul>
         </div>
       </div>
-      <!--  end panel-body -->
+      
     </div>
-    <!--  end panel-body -->
+    
   </div>
-  <!-- end panel -->
+ 
 </div>
-<!-- /.row -->
+
 
 
 <div class='row'>
 
   <div class="col-lg-12">
-
-    <!-- /.panel -->
     <div class="panel panel-default">
-<!--       <div class="panel-heading">
-        <i class="fa fa-comments fa-fw"></i> Reply
-      </div> -->
-      
       <div class="panel-heading">
         <i class="fa fa-comments fa-fw"></i> Reply<br>
         <button id='addReplyBtn' class='btn btn-primary btn-xs pull-right'>New Reply</button>
-      </div>      
-      
-      
-      <!-- /.panel-heading -->
+      </div>   
+
       <div class="panel-body">        
       
-        <ul class="chat">
-
-        </ul>
-        <!-- ./ end ul -->
+        <ul class="chat"> </ul>
+     
       </div>
-      <!-- /.panel .chat-panel -->
+      
 
    <div class="panel-footer"></div>
 
 
       </div>
-  </div>
-  <!-- ./ end row -->
+  </div>  
 </div>
 
 
-
-<!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
         aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -281,12 +260,10 @@
         <button id='modalRemoveBtn' type="button" class="btn btn-danger">Remove</button>
         <button id='modalRegisterBtn' type="button" class="btn btn-primary">Register</button>
         <button id='modalCloseBtn' type="button" class="btn btn-default">Close</button>
-      </div>          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
+      </div>          </div>         
+        </div>   
       </div>
-      <!-- /.modal -->
+  
 
 
 
@@ -337,9 +314,9 @@ $(document).ready(function () {
          showReplyPage(replyCnt);
 
      
-       });//end function
+       });
          
-     }//end showList
+     }
     
     var pageNum = 1;
     var replyPageFooter = $(".panel-footer");
@@ -397,33 +374,7 @@ $(document).ready(function () {
         pageNum = targetPageNum;
         
         showList(pageNum);
-      });     
-
-    
-/*     function showList(page){
-      
-      replyService.getList({bno:bnoValue,page: page|| 1 }, function(list) {
-        
-        var str="";
-       if(list == null || list.length == 0){
-        
-        replyUL.html("");
-        
-        return;
-      }
-       for (var i = 0, len = list.length || 0; i < len; i++) {
-           str +="<li class='left clearfix' data-rno='"+list[i].rno+"'>";
-           str +="  <div><div class='header'><strong class='primary-font'>"+list[i].replyer+"</strong>"; 
-           str +="    <small class='pull-right text-muted'>"+replyService.displayTime(list[i].created_date)+"</small></div>";
-           str +="    <p>"+list[i].reply+"</p></div></li>";
-         }
-
-
-    replyUL.html(str);
-
-      });//end function
-      
-   }//end showList */
+      });  
    
     var modal = $(".modal");
     var modalInputReply = modal.find("input[name='reply']");
@@ -465,8 +416,7 @@ $(document).ready(function () {
         
         modal.find("input").val("");
         modal.modal("hide");
-        
-        //showList(1);
+       
         showList(-1);
         
       });
@@ -474,7 +424,6 @@ $(document).ready(function () {
     });
 
 
-  //댓글 조회 클릭 이벤트 처리 
     $(".chat").on("click", "li", function(e){
       
       var rno = $(this).data("rno");
@@ -495,35 +444,6 @@ $(document).ready(function () {
             
       });
     });
-  
-    
-/*     modalModBtn.on("click", function(e){
-      
-      var reply = {rno:modal.data("rno"), reply: modalInputReply.val()};
-      
-      replyService.update(reply, function(result){
-            
-        alert(result);
-        modal.modal("hide");
-        showList(1);
-        
-      });
-      
-    });
-
-    modalRemoveBtn.on("click", function (e){
-         
-       var rno = modal.data("rno");
-       
-       replyService.remove(rno, function(result){
-             
-           alert(result);
-           modal.modal("hide");
-           showList(1);
-           
-       });
-       
-     }); */
 
     modalModBtn.on("click", function(e){
          
@@ -559,65 +479,6 @@ $(document).ready(function () {
 
 </script>
 
-
-
-<script>
-
-/* console.log("===============");
-console.log("JS TEST");
-
-var bnoValue = '<c:out value="${board.bno}"/>'; */
-
-//for replyService add test
-/* replyService.add(
-    
-    {reply:"JS Test", replyer:"tester", bno:bnoValue}
-    ,
-    function(result){ 
-      alert("RESULT: " + result);
-    }
-); */
-
-
-//reply List Test
-/* replyService.getList({bno:bnoValue, page:1}, function(list){
-    
-     for(var i = 0,  len = list.length||0; i < len; i++ ){
-       console.log(list[i]);
-     }
-});
- */
-
- 
-/*  //17번 댓글 삭제 테스트 
- replyService.remove(17, function(count) {
-
-   console.log(count);
-
-   if (count === "success") {
-     alert("REMOVED");
-   }
- }, function(err) {
-   alert('ERROR...');
- });
- */
- 
-
-//12번 댓글 수정 
-/* replyService.update({
-  rno : 12,
-  bno : bnoValue,
-  reply : "Modified Reply...."
-}, function(result) {
-
-  alert("수정 완료...");
-
-});  
- */
-
-</script>  
-
-
 <script type="text/javascript">
 $(document).ready(function() {
   
@@ -648,14 +509,8 @@ $(document).ready(function(){
   
   (function(){
   
-    var bno = '<c:out value="${board.bno}"/>';
+    var bno = '<c:out value="${board.bno}"/>';    
     
-    /* $.getJSON("/questionsboard/getAttachList", {bno: bno}, function(arr){
-    
-      console.log(arr);
-      
-      
-    }); *///end getjson
     $.getJSON("/questionsboard/getAttachList", {bno: bno}, function(arr){
         
        console.log(arr);
@@ -663,8 +518,7 @@ $(document).ready(function(){
        var str = "";
        
        $(arr).each(function(i, attach){
-       
-         //image type
+        
          if(attach.fileType){
            var fileCallPath =  encodeURIComponent( attach.uploadPath+ "/s_"+attach.uuid +"_"+attach.fileName);
            
@@ -685,10 +539,10 @@ $(document).ready(function(){
        $(".uploadResult ul").html(str);
        
        
-     });//end getjson
+     });
 
     
-  })();//end function
+  })();
   
   $(".uploadResult").on("click","li", function(e){
       
@@ -701,7 +555,7 @@ $(document).ready(function(){
     if(liObj.data("type")){
       showImage(path.replace(new RegExp(/\\/g),"/"));
     }else {
-      //download 
+     
       self.location ="/download?fileName="+path
     }
     

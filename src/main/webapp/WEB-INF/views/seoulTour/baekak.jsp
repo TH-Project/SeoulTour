@@ -7,8 +7,7 @@
 <body>
 
   <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
+  
     <div id="sidebar-wrapper">
       <div class="sidebar-heading">
         <a href="#">See You In Seoul</a>
@@ -78,9 +77,7 @@
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
+    
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg">
@@ -178,10 +175,6 @@
          <br><br><p style = "font-size:1em; line-height:1.5em; color : black;"><span style = "color: #F6A840">혜화문</span><br><br>
          한양도성의 동북문이다. 창건 당시에는 홍화문이었으나 창경궁의 정문 이름을 홍화문으로 지음에 따라 중종 6년(1511) 혜화문으로 개칭하였다. 문루가 없던 것을 영조 때에 지어올렸다. 문루는 1928년에, 홍예는 1938년에 헐렸는데 1994년 본래 자리보다 북쪽에 새로 지었다.</p><br><br><br><br><br><br>
          </div>
-      
-    <!-- /#page-content-wrapper -->
-
   </div>
-  <!-- /#wrapper -->
   
 <%@include file="../includes/footer_detail.jsp"%>
