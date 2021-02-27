@@ -54,20 +54,11 @@
 <p><img src="md/%EC%9C%84%EC%8B%9C%EB%A6%AC%EC%8A%A4%ED%8A%B8.gif" alt="Alt"></p>
 <h3 id="글쓰기">글쓰기</h3>
 <ul>
-<li>리스트, 글쓰기, 글보기
-<ul>
-<li><img src="md/%EA%B8%80%EC%93%B0%EA%B8%B0.gif" alt="Alt"></li>
-</ul>
-</li>
-<li>첨부파일
-<ul>
-<li><img src="md/%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC.gif" alt="Alt"></li>
-</ul>
-</li>
-<li>게시물 검색
-<ul>
-<li><img src="md/%EA%B2%80%EC%83%89.gif" alt="Alt"></li>
-</ul>
-</li>
+<li>리스트, 글쓰기, 글보기<br>
+<img src="md/%EA%B8%80%EC%93%B0%EA%B8%B0.gif" alt="Alt"></li>
+<li>첨부파일<br>
+<img src="md/%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC.gif" alt="Alt"></li>
+<li>게시물 검색<br>
+<img src="md/%EA%B2%80%EC%83%89.gif" alt="Alt"></li>
 </ul>
 
