@@ -52,11 +52,11 @@
 <h3 id="글쓰기">글쓰기</h3>
 <ul>
 <li>리스트, 글쓰기, 글보기<br>
-<img src="md/%EA%B8%80%EC%93%B0%EA%B8%B0.gif" alt="Alt"></li>
+<img src="md/%EA%B8%80%EC%93%B0%EA%B8%B0.gif" alt="Alt"></li><br><br>
 <li>첨부파일<br>
-<img src="md/%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC.gif" alt="Alt"></li>
+<img src="md/%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC.gif" alt="Alt"></li><br><br>
 <li>게시물 검색<br>
-<img src="md/%EA%B2%80%EC%83%89.gif" alt="Alt"></li>
+<img src="md/%EA%B2%80%EC%83%89.gif" alt="Alt"></li><br><br>
 </ul>
 <h2 id="참고문헌--사이트">참고문헌 &amp; 사이트</h2>
 <ul>
