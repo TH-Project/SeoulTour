@@ -59,6 +59,8 @@ public String register(QuestionsBoardVO board, RedirectAttributes rttr, Model mo
 	if (board.getAttachList() != null) {
 		board.getAttachList().forEach(attach -> log.info(attach));
 	}
+	
+	log.info("register ddd" + board);
 
 	service.register(board);
 	rttr.addFlashAttribute("result", board.getBno());
