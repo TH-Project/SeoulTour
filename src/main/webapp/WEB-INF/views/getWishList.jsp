@@ -3,11 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 
 <%@include file="/WEB-INF/views/includes/header_detail.jsp"%>
-<!-- <style>
-input{
-display: inline-block;
+<style>
+.map{
+	padding-top : 5rem;
+	margin-top : 5rem:
 }
-</style> -->
+</style>
 <body>
 <!-- <script>
 var positions = [];
@@ -86,10 +87,9 @@ var positions = [];
         </div>
       </li>
     </div>
-    <!-- /#sidebar-wrapper -->           
-       
+    <!-- /#sidebar-wrapper --> 
    
-    <div id="map" style="width:50%;height:630px;"></div>
+    <div class = "map" id="map" style="width:50%;height:630px;"></div>    
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0bcfa1a1b06baad7bbf0b6be2648e9b5"></script>
 	<script>
 		var container = document.getElementById('map');

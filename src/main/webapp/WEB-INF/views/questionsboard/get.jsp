@@ -1,355 +1,115 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@include file="../includes/header_board.jsp"%>
+    pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
+
+<%@include file="../includes/header_question.jsp"%>
+<head>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+</head>
 <style>
-.wrapper {
+.cd-main-content {
   min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  margin:0 auto; }
+  width:80%;
+  margin: 10px auto;
+  background-color: seashell;
+  opacity: 0.9;
+  border-radius: 0.5rem;
+  margin-top : 3rem;
+  margin-bottom : 3rem;
+  /* background: rgba(133, 130, 130, 0.3);  padding: 300px;
+  border-radius: 0.5em;
+} 
 
- .inner {
-  padding: 20px;
-  background: #fff;
-  width: 1000px;
-  margin: 0 auto;
-  display: flex; }
- .inner .image-holder {
-    width: 50%;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    padding: 10px; 
-    margin: 0 auto;}
-  .inner form {
-    width: 50%;
-    padding-top: 36px;
-    padding-left: 45px;
-    padding-right: 45px; }
-  .inner h3 {
-    text-transform: uppercase;
-    font-size: 20px;
-    font-family: "Poppins-SemiBold";
-    text-align: center;
-    margin-top : 3px; }
-    .inner .control-label {
-    padding: 2px; }
-    .inner .image-holder a{color: #000000;}
-
-.form-group {
-  display: flex; }
-  .form-group input {
-    width: 50%; }
-    .form-group input:first-child {
-      margin-right: 25px; }
-
-.form-wrapper {
-  position: relative; }
-  .form-wrapper i {
-    position: absolute;
-    bottom: 9px;
-    right: 0; }
-
-.form-control {
-  border: 1px solid #333;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  display: block;
-  width: 100%;
-  height: 20px;
-  padding: 0;
-  margin-bottom: 10px; }
-  .form-control::-webkit-input-placeholder {
-    font-size: 10px;
-    color: #333;
-    font-family: "Poppins-Regular"; }
-  .form-control::-moz-placeholder {
-    font-size: 13px;
-    color: #333;
-    font-family: "Poppins-Regular"; }
-  .form-control:-ms-input-placeholder {
-    font-size: 13px;
-    color: #333;
-    font-family: "Poppins-Regular"; }
-  .form-control:-moz-placeholder {
-    font-size: 13px;
-    color: #333;
-    font-family: "Poppins-Regular"; }
-
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  padding-left: 20px; }
-  select option[value=""][disabled] {
-    display: none; }
-    
-    button {
-  border: none;
-  width: 164px;
-  height: 51px;
-  margin: auto;
-  margin-top: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  background: #333;
-  font-size: 15px;
-  color: #fff;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s; }
-  button i {
-    margin-left: 10px;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0); }
-  button:hover i, button:focus i, button:active i {
-    -webkit-animation-name: hvr-icon-wobble-horizontal;
-    animation-name: hvr-icon-wobble-horizontal;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1; }
-
-@-webkit-keyframes hvr-icon-wobble-horizontal {
-  16.65% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px); }
-  33.3% {
-    -webkit-transform: translateX(-5px);
-    transform: translateX(-5px); }
-  49.95% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px); }
-  66.6% {
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px); }
-  83.25% {
-    -webkit-transform: translateX(1px);
-    transform: translateX(1px); }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
-@keyframes hvr-icon-wobble-horizontal {
-  16.65% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px); }
-  33.3% {
-    -webkit-transform: translateX(-5px);
-    transform: translateX(-5px); }
-  49.95% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px); }
-  66.6% {
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px); }
-  83.25% {
-    -webkit-transform: translateX(1px);
-    transform: translateX(1px); }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
-@media (max-width: 1199px) {
-  .wrapper {
-    background-position: center; } }
-@media (max-width: 991px) {
-  .inner form {
-    padding-top: 10px;
-    padding-left: 30px;
-    padding-right: 30px; } }
-@media (max-width: 767px) {
-  .inner {
-    display: block; }
-    .inner .image-holder {
-      width: 100%; }
-    .inner form {
-      width: 100%;
-      padding: 40px 0 30px; }
-
-  button {
-    margin-top: 60px; } }
+.invisible{
+	clear: none;
+	border: 0px none;
+	flaot:none;
+	background-color:transparent;
+}
 
 </style>
-<style>
-@font-face {
-  font-family: "Poppins-Regular";
-  src: url("../fonts/poppins/Poppins-Regular.ttf"); }
-@font-face {
-  font-family: "Poppins-SemiBold";
-  src: url("../fonts/poppins/Poppins-SemiBold.ttf"); }
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
 
-body {
-  font-family: "Poppins-Regular";
-  color: #333;
-  font-size: 13px;
-  margin: 0; }
+<body>
 
-input, textarea, select, button {
-  font-family: "Poppins-Regular";
-  color: #333;
-  font-size: 13px; }
-
-p, h1, h2, h3, h4, h5, h6, ul {
-  margin: 0; }
-
-img {
-  max-width: 100%; }
-
-ul {
-  padding-left: 0;
-  margin-bottom: 0; }
-
-a:hover {
-  text-decoration: none; }
-
-:focus {
-  outline: none; }
-
-</style>
- 
- <body>
- 
- <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-      <div class="sidebar-heading">
-        <a href="/">See You In Seoul</a>
-      </div>
-           
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeasons"
-            aria-expanded="true" aria-controls="collapseSeasons">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>서울의 사계절</span>
-        </a>
-        <div id="collapseSeasons" class="collapse" aria-labelledby="headingTwo" data-parent="#sidebar-wrapper">
-            <div class="bg-light py-2 collapse-inner rounded">                
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/spring">Spring</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/summer">Summer</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/autumn">Autumn</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/winter">Winter</a>
+ <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" style="color:black;" href="/">See you in Seoul</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0" float="left">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="#FourSeasons">서울의 사계절</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/seoulTour/heohyun">서울 한양도성</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/seoulTour/itaewonClass">서울과 문화</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="#GuideBooks">서울 여행 가이드북</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/questionsboard/list">문의사항</a></li>                        
+                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Join us</a></li> -->
+                     <li>    
+					<c:if test="${member != null}">
+					<c:if test="${member.login_ID == 'admin' }">
+						<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/member/getUserList">관리자</a></li>
+						<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/logout">Logout</a></li>
+                    		 <p style="color: black;">${member.name}님 환영합니다.</p>
+					</c:if>
+					<c:if test="${member.login_ID != 'admin' }">											
+                    		 <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/member/idAuth">MyAccount</a></li>
+                    		 <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/logout">Logout</a></li>
+                    		 <p style="color: black;">${member.name}님 환영합니다.</p>
+                    </c:if>                    	  	
+                    	
+                    </c:if>                    
+                    <c:if test="${member == null }">
+                    	
+                    		<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:black;" href="/login">Join us</a>                  	
+                    	
+                    </c:if>					
+				</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDosung"
-            aria-expanded="true" aria-controls="collapseDosung">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>한양도성</span>
-        </a>
-        <div id="collapseDosung" class="collapse" aria-labelledby="headingTwo" data-parent="#sidebar-wrapper">
-            <div class="bg-light py-2 collapse-inner rounded">                
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/beautiDosung">도성소개</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/heohyun">성곽마을</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/inwang">도성구간안내</a>
+        </nav> 
+	
+	<header class="masthead">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-10 align-self-end">
+                        <h2 class="text-uppercase text-black font-weight-bold" style="margin-top:0rem;">Feel   free   to   ask!</h2>                        
+                    </div>                   
+                </div>
             </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCultures"
-            aria-expanded="true" aria-controls="collapseCultures">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>서울 & 문화</span>
-        </a>
-        <div id="collapseCultures" class="collapse" aria-labelledby="headingTwo" data-parent="#sidebar-wrapper">
-            <div class="bg-light py-2 collapse-inner rounded">               
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/itaewonClass">이태원 클라쓰</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/theKing">더 킹</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/deluna">호텔 델루나</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/kingdom">킹덤</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/parasite">기생충</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="/seoulTour/goblin">도깨비</a>
-            </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGuide"
-            aria-expanded="true" aria-controls="collapseGuide">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>서울 여행 가이드북</span>
-        </a>
-        <div id="collapseGuide" class="collapse" aria-labelledby="headingTwo" data-parent="#sidebar-wrapper">
-            <div class="bg-light py-2 collapse-inner rounded">                
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="buttons.html">서울 관광가이드</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="buttons.html">한류 관광</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="cards.html">서울 BEST100</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="cards.html">서울 도보관광</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="cards.html">서울 속 세계여행</a>
-                <a class="nav-link form-control-sm text-dark font-weight-bold" href="cards.html">서울 골목길 명소</a>
-            </div>
-        </div>
-      </li>
-    </div>
-    <!-- /#sidebar-wrapper -->
+        </header>
+        <!-- Header End -->
     
-    <section id="container">
-      <div class="wrapper">
-         <div class="inner">
-            
-<div class="row">
-  <div class="col-lg-12">
-    <h1 class="page-header">Board Read</h1>
-  </div>
-  <!-- /.col-lg-12 -->
-</div>
-<!-- /.row -->
+    <div class="container-fluid">
 
-<div class="row">
+	<div class="card mb-4">        
+        
+			<div class="card-header">
+                  <i class="fas fa-table mr-1"></i>
+                      문의사항                                
+            </div>
+<div class="card-body">
+<!-- <div class="row"> -->
   <div class="col-lg-12">
     <div class="panel panel-default">
-
-      <div class="panel-heading">Board Read Page</div>
       <!-- /.panel-heading -->
       <div class="panel-body">
-
-          <div class="form-group">
-          <label>Bno</label> <input class="form-control" name='bno'
-            value='<c:out value="${board.bno }"/>' readonly="readonly">
+      
+      		<div style="float:right;"> 작성자 : ${board.writer}&nbsp; &nbsp; &nbsp; 작성일 : <fmt:formatDate pattern="MM-dd / hh:mm" value="${board.created_date}" />&nbsp; &nbsp; &nbsp; 조회수 : ${board.hit_content}</div>
+      		<div style="float:left;"> 글 번호 : ${board.bno}</div><br><br>
+			<div class="card-header"> 내용 </div>
+        <div class="cart-body">          
+          <textarea style="border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" rows="3" name='content'
+            readonly="readonly">${board.content}</textarea>
         </div>
 
-        <div class="form-group">
-          <label>Title</label> <input class="form-control" name='title'
-            value='<c:out value="${board.title }"/>' readonly="readonly">
-        </div>
 
-        <div class="form-group">
-          <label>Text area</label>
-          <textarea class="form-control" rows="3" name='content'
-            readonly="readonly"><c:out value="${board.content}" /></textarea>
-        </div>
-
-        <div class="form-group">
-          <label>Writer</label> <input class="form-control" name='writer'
-            value='<c:out value="${board.writer }"/>' readonly="readonly">
-        </div>
-
-<%--       <button data-oper='modify' class="btn btn-default">
-        <a href="/questionsboard/modify?bno=<c:out value="${board.bno}"/>">Modify</a></button>
-        <button data-oper='list' class="btn btn-info">
-        <a href="/questionsboard/list">List</a></button> --%>
-
-
-<button data-oper='modify' class="btn btn-default">Modify</button>
+<div style="float:right;">
+<button data-oper='modify' class="btn btn-info">Modify</button>
 <button data-oper='list' class="btn btn-info">List</button>
+</div>
 
-<%-- <form id='operForm' action="/boad/modify" method="get">
-  <input type='hidden' id='bno' name='bno' value='<c:out value="${board.bno}"/>'>
-</form> --%>
 
 
 <form id='operForm' action="/boad/modify" method="get">
@@ -370,8 +130,9 @@ a:hover {
     <!--  end panel-body -->
   </div>
   <!-- end panel -->
-</div>
+<!-- </div> -->
 <!-- /.row -->
+</div>
 
 
 
@@ -465,7 +226,7 @@ a:hover {
       </div> -->
       
       <div class="panel-heading">
-        <i class="fa fa-comments fa-fw"></i> Reply
+        <i class="fa fa-comments fa-fw"></i> Reply<br>
         <button id='addReplyBtn' class='btn btn-primary btn-xs pull-right'>New Reply</button>
       </div>      
       
