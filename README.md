@@ -4,7 +4,8 @@
 ---
 
 <h1 id="seoultour---2인-팀-프로젝트">SeoulTour - 2인 팀 프로젝트</h1>
-<p>스프링 레거시로 개발한 서울의 관광명소를 소개하는 웹 프로젝트</p>
+<p>스프링 레거시로 개발한 서울의 관광명소를 소개하는 웹 프로젝트.<br>
+공부목적의 비상업적 사이트입니다. (This is a non-commercial site for study purposes.)</p>
 <h2 id="개발환경">개발환경</h2>
 <blockquote>
 <p>언어</p>
@@ -18,9 +19,10 @@
 <ul>
 <li>Spring 5.0.7</li>
 <li>Spring Security</li>
-<li>JQuery  3.0</li>
+<li>JQuery  3.3.1</li>
 <li>lombok 1.18.12</li>
 <li>Mybatis 3-5-4</li>
+<li>BootStrap 4.5.3</li>
 </ul>
 <blockquote>
 <p>IDE</p>
@@ -60,5 +62,10 @@
 <img src="md/%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC.gif" alt="Alt"></li>
 <li>게시물 검색<br>
 <img src="md/%EA%B2%80%EC%83%89.gif" alt="Alt"></li>
+</ul>
+<h2 id="참고문헌--사이트">참고문헌 &amp; 사이트</h2>
+<ul>
+<li>코드로 배우는 스프링 웹 프로젝트 (구멍가게 코딩단)</li>
+<li>멜론피치 스프링프레임워크  <a href="https://melonpeach.tistory.com/">https://melonpeach.tistory.com/</a></li>
 </ul>
 
