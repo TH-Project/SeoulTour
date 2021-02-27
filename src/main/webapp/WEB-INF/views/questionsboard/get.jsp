@@ -303,7 +303,7 @@ a:hover {
             
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">Board Read</h1>
+    <h1 class="page-header">글쓰기</h1>
   </div>
   <!-- /.col-lg-12 -->
 </div>
@@ -313,28 +313,28 @@ a:hover {
   <div class="col-lg-12">
     <div class="panel panel-default">
 
-      <div class="panel-heading">Board Read Page</div>
+      <div class="panel-heading"></div>
       <!-- /.panel-heading -->
       <div class="panel-body">
 
           <div class="form-group">
-          <label>Bno</label> <input class="form-control" name='bno'
+          <label>글 번호</label> <input class="form-control" name='bno'
             value='<c:out value="${board.bno }"/>' readonly="readonly">
         </div>
 
         <div class="form-group">
-          <label>Title</label> <input class="form-control" name='title'
+          <label>제목</label> <input class="form-control" name='title'
             value='<c:out value="${board.title }"/>' readonly="readonly">
         </div>
 
         <div class="form-group">
-          <label>Text area</label>
+          <label>내용</label>
           <textarea class="form-control" rows="3" name='content'
             readonly="readonly"><c:out value="${board.content}" /></textarea>
         </div>
 
         <div class="form-group">
-          <label>Writer</label> <input class="form-control" name='writer'
+          <label>글쓴이</label> <input class="form-control" name='writer'
             value='<c:out value="${board.writer }"/>' readonly="readonly">
         </div>
 
@@ -344,8 +344,8 @@ a:hover {
         <a href="/questionsboard/list">List</a></button> --%>
 
 
-<button data-oper='modify' class="btn btn-default">Modify</button>
-<button data-oper='list' class="btn btn-info">List</button>
+<button data-oper='modify' class="btn btn-default">글 수정</button>
+<button data-oper='list' class="btn btn-info">리스트로</button>
 
 <%-- <form id='operForm' action="/boad/modify" method="get">
   <input type='hidden' id='bno' name='bno' value='<c:out value="${board.bno}"/>'>
@@ -436,7 +436,7 @@ a:hover {
   <div class="col-lg-12">
     <div class="panel panel-default">
 
-      <div class="panel-heading">Files</div>
+      <div class="panel-heading">첨부파일</div>
       <!-- /.panel-heading -->
       <div class="panel-body">
         
@@ -502,12 +502,12 @@ a:hover {
             </div>
             <div class="modal-body">
               <div class="form-group">
-                <label>Reply</label> 
-                <input class="form-control" name='reply' value='New Reply!!!!'>
+                <label>댓글</label> 
+                <input class="form-control" name='댓글' value='New Reply!!!!'>
               </div>      
               <div class="form-group">
                 <label>Replyer</label> 
-                <input class="form-control" name='replyer' value='replyer'>
+                <input class="form-control" name='글쓴이' value='replyer'>
               </div>
               <div class="form-group">
                 <label>Reply Date</label> 

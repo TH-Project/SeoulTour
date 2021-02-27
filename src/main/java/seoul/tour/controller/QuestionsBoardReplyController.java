@@ -31,12 +31,7 @@ public class QuestionsBoardReplyController {
 
 	@PostMapping(value = "/new", consumes = "application/json", produces = { MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> create(@RequestBody QuestionsBoardReplyVO vo) {
-
-		log.info("ReplyVO: " + vo);
-
 		int insertCount = service.register(vo);
-
-		log.info("Reply INSERT COUNT: " + insertCount);
 
 		return insertCount == 1  
 				?  new ResponseEntity<>("success", HttpStatus.OK)
@@ -47,9 +42,6 @@ public class QuestionsBoardReplyController {
 			produces = { MediaType.APPLICATION_XML_VALUE, 
 					     MediaType.APPLICATION_JSON_UTF8_VALUE })
 	public ResponseEntity<QuestionsBoardReplyVO> get(@PathVariable("rno") Long rno) {
-
-		log.info("get: " + rno);
-
 		return new ResponseEntity<>(service.get(rno), HttpStatus.OK);
 	}
 
@@ -61,10 +53,6 @@ public class QuestionsBoardReplyController {
 			 @PathVariable("rno") Long rno) {
 
 		vo.setRno(rno);
-
-		log.info("rno: " + rno);
-		log.info("modify: " + vo);
-
 		return service.modify(vo) == 1 
 				? new ResponseEntity<>("success", HttpStatus.OK)
 				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -73,8 +61,6 @@ public class QuestionsBoardReplyController {
 
 	@DeleteMapping(value = "/{rno}", produces = { MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> remove(@PathVariable("rno") Long rno) {
-
-		log.info("remove: " + rno);
 
 		return service.remove(rno) == 1 
 				? new ResponseEntity<>("success", HttpStatus.OK)
@@ -89,10 +75,6 @@ public class QuestionsBoardReplyController {
 	public ResponseEntity<ReplyPageDTO> getList(@PathVariable("page") int page, @PathVariable("bno") Long bno) {
 
 		Criteria cri = new Criteria(page, 10);
-		
-		log.info("get Reply List bno: " + bno);
-
-		log.info("cri:" + cri);
 
 		return new ResponseEntity<>(service.getListPage(cri, bno), HttpStatus.OK);
 	}

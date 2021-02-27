@@ -1,8 +1,5 @@
 package seoul.tour.domain;
 
-//회원가입
-
-//import java.util.Date;
 import lombok.Data;
 import java.util.Date;
 

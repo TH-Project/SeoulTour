@@ -41,50 +41,29 @@ private QuestionsBoardService service;
 	
 
 @GetMapping("/register")
-public void register() {
-
-}
+public void register() {}
 
 
 @GetMapping("/list")
 public void list(Criteria cri, Model model) {
 
-	log.info("list: " + cri);
 	model.addAttribute("list", service.getList(cri));
-	// model.addAttribute("pageMaker", new PageDTO(cri, 123));
-
 	int total = service.getTotal(cri);
-
-	log.info("total: " + total);
-
 	model.addAttribute("pageMaker", new PageDTO(cri, total));
-
 }
 
 
 @PostMapping("/register")
 public String register(QuestionsBoardVO board, RedirectAttributes rttr, Model model, Criteria cri) {
 
-	log.info("==========================");
-
-	log.info("register: " + board);
-
 	if (board.getAttachList() != null) {
-
 		board.getAttachList().forEach(attach -> log.info(attach));
-
 	}
 
-	log.info("==========================");
-
 	service.register(board);
-
 	rttr.addFlashAttribute("result", board.getBno());
-	
 	int total = service.getTotal(cri);
-	
 	model.addAttribute("pageMaker", new PageDTO(cri, total));
-
 	return "redirect:/questionsboard/list";
 }
 
@@ -92,19 +71,16 @@ public String register(QuestionsBoardVO board, RedirectAttributes rttr, Model mo
 @GetMapping({ "/get", "/modify" })
 public void get(@RequestParam("bno") Long bno, @ModelAttribute("cri") Criteria cri, Model model) {
 
-	log.info("/get or modify");
 	model.addAttribute("board", service.get(bno));
 }
 
 
 @PostMapping("/modify")
 public String modify(QuestionsBoardVO board, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
-	log.info("modify:" + board);
 
 	if (service.modify(board)) {
 		rttr.addFlashAttribute("result", "success");
 	}
-
 	rttr.addAttribute("pageNum", cri.getPageNum());
 	rttr.addAttribute("amount", cri.getAmount());
 	rttr.addAttribute("type", cri.getType());
@@ -117,15 +93,10 @@ public String modify(QuestionsBoardVO board, @ModelAttribute("cri") Criteria cri
 @PostMapping("/remove")
 public String remove(@RequestParam("bno") Long bno, Criteria cri, RedirectAttributes rttr) {
 
-	log.info("remove..." + bno);
-
 	List<QuestionsBoardAttachVO> attachList = service.getAttachList(bno);
 
 	if (service.remove(bno)) {
-
-		// delete Attach Files
 		deleteFiles(attachList);
-
 		rttr.addFlashAttribute("result", "success");
 	}
 	return "redirect:/questionsboard/list" + cri.getListLink();
@@ -137,39 +108,27 @@ private void deleteFiles(List<QuestionsBoardAttachVO> attachList) {
       return;
     }
     
-    log.info("delete attach files...................");
-    log.info(attachList);
     
     attachList.forEach(attach -> {
       try {        
         Path file  = Paths.get("C:\\upload\\"+attach.getUploadPath()+"\\" + attach.getUuid()+"_"+ attach.getFileName());
-        
         Files.deleteIfExists(file);
-        
         if(Files.probeContentType(file).startsWith("image")) {
-        
           Path thumbNail = Paths.get("C:\\upload\\"+attach.getUploadPath()+"\\s_" + attach.getUuid()+"_"+ attach.getFileName());
-          
           Files.delete(thumbNail);
         }
 
       }catch(Exception e) {
-        log.error("delete file error" + e.getMessage());
-      }//end catch
-    });//end foreachd
+        log.error("file error while delete processing" + e.getMessage());
+      }
+    });
   }
-
-
 
 @GetMapping(value = "/getAttachList",
 		    produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 @ResponseBody
 public ResponseEntity<List<QuestionsBoardAttachVO>> getAttachList(Long bno) {
-
-	log.info("getAttachList " + bno);
-
 	return new ResponseEntity<>(service.getAttachList(bno), HttpStatus.OK);
-
-}
+	}
 
 }

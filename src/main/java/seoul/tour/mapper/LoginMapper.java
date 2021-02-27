@@ -1,6 +1,5 @@
 package seoul.tour.mapper;
 
-//�쉶�썝媛��엯
 
 import seoul.tour.domain.LoginVO;
 

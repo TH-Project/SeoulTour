@@ -4,11 +4,7 @@ import javax.mail.Authenticator;
 
 import javax.mail.PasswordAuthentication;
 
-
-
 public class Gmail extends Authenticator {
-
-
 
     @Override
 
@@ -17,8 +13,5 @@ public class Gmail extends Authenticator {
         return new PasswordAuthentication("아이디","비밀번호");
 
     }
-
-    
-
 }
 

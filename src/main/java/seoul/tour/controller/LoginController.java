@@ -1,7 +1,5 @@
 package seoul.tour.controller;
 
-// 쉶 썝媛  엯
-
 import java.util.HashMap;
 import java.util.Random;
 
@@ -93,12 +91,6 @@ public class LoginController {
       return "index";
    }
    
-   /*
-    * @ResponseBody
-    * 
-    * @RequestMapping(value="/wishRegister", method=RequestMethod.POST) public void
-    * wishRegister(WishVO vo) throws Exception{ loginService.wishRegister(vo); }
-    */
    
    @ResponseBody
    @RequestMapping(value="/idCheck", method=RequestMethod.POST)
@@ -110,11 +102,9 @@ public class LoginController {
    @RequestMapping(value = "/idAuth", method = RequestMethod.GET) 
      public void getidAuth(LoginVO vo) throws Exception{ }
    
-     
    
      @RequestMapping(value = "/idAuth", method = RequestMethod.POST) 
      public String postidAuth(LoginVO vo) throws Exception{ 
-        //logger.info("post login");
         LoginVO Auth = loginService.idAuth(vo);
      
         if(Auth == null) { 
@@ -125,33 +115,25 @@ public class LoginController {
      return "/member/update"; 
      }
      
-     /* 이메일 인증 */
       @RequestMapping(value="/mailCheck", method=RequestMethod.GET)
       @ResponseBody
       public String mailCheckGET(String email) throws Exception{
-         
-         /* 뷰(View)로부터 넘어온 데이터 확인 */
-         logger.info("이메일 데이터 전송 확인");
-         logger.info("이메일 : " + email);
-               
-         /* 인증번호(난수) 생성 */
+
          Random random = new Random();
          int checkNum = random.nextInt(888888) + 111111;
          logger.info("인증번호 " + checkNum);
          
-         /* 이메일 보내기 */
          String setFrom = "donggukcomputer21@gmail.com";
          String toMail = email;
-         String title = "Seoultour 회원가입 인증 이메일 입니다.";
+         String title = "Seoultour 회원가입 인증 이메일이 도착했습니다.";
          String content = 
-               "Seoultour를 방문해주셔서 감사합니다." +
-               "<br><br>" + 
+               "Seoultour에 방문해주셔서 감사합니다." +
+               "<br><br><br>" + 
                "인증 번호는 " + checkNum + "입니다." + 
                "<br>" + 
-               "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";      
+               "해당 인증번호를 인증번호 확인란에 기입하시고 회원가입 절차를 진행해주세요.";      
          
-         try {
-            
+         try {           
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
             helper.setFrom(setFrom);
@@ -160,17 +142,13 @@ public class LoginController {
             helper.setText(content,true);
             mailSender.send(message);
             
-         }catch(Exception e) {
+         } catch(Exception e) {
             e.printStackTrace();
-         }      
-         
+         }            
          String num = Integer.toString(checkNum);
-         
-         return num;
-         
+         return num;         
       }
       
-      // 회원 탈퇴 post
       @RequestMapping(value="/memberDelete", method = RequestMethod.POST)
       public String memberDelete(LoginVO vo, HttpSession session, RedirectAttributes rttr) throws Exception{
          
@@ -179,7 +157,5 @@ public class LoginController {
          
          loginService.memberDelete(vo);
          return "redirect:/member/getUserList";
-      }
-     
-   
+      } 
 }

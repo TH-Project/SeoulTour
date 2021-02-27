@@ -28,23 +28,6 @@ public class LoginServiceImpl implements LoginService{
 	@Setter(onMethod_ = @Autowired)
 	private WishMapper mappers;
 	
-	
-	/*
-	 * @Override public List<LoginVO> getUserList() throws Exception{ return
-	 * loginDAO.getUserList(); }
-	 * 
-	 * @Override public LoginVO getUserInfo(String login_ID) throws Exception{
-	 * return loginDAO.getUserInfo(login_ID); }
-	 * 
-	 * @Override public void insertUser(LoginVO loginVO) throws Exception{
-	 * loginDAO.insertUser(loginVO); }
-	 * 
-	 * @Override public void updateUser(LoginVO loginVO) throws Exception{
-	 * loginDAO.updateUser(loginVO); }
-	 * 
-	 * @Override public void deleteUser(String login_ID) throws Exception{
-	 * loginDAO.deleteUser(login_ID); }
-	 */
 	@Override
 	public void register(LoginVO vo) throws Exception{		
 		mapper.register(vo);
