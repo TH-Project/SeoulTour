@@ -23,9 +23,6 @@ import seoul.tour.service.LoginService;
 import seoul.tour.domain.WishVO;
 import seoul.tour.service.WishService;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 @RequestMapping(value="/*")
 public class HomeController {
@@ -190,13 +187,6 @@ public class HomeController {
 		}
 		
 		return "getWishList";
-
-	}
-
-	
-	@RequestMapping(value = "/mapmarking", method = RequestMethod.POST)
-	public String home2(Locale locale, Model model) {
-		return "maptest";
 	}
 	
 }

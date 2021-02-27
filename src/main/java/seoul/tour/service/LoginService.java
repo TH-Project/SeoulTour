@@ -1,8 +1,5 @@
 package seoul.tour.service;
 
-//�쉶�썝媛��엯
-
-//import java.util.List;
 import seoul.tour.domain.LoginVO;
 import seoul.tour.domain.WishVO;
 
@@ -24,5 +21,4 @@ public interface LoginService {
 	public void wishRegister(String user_id) throws Exception;	
 	public void memberDelete(LoginVO vo) throws Exception;
 	
-
 }

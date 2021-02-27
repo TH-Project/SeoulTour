@@ -8,8 +8,6 @@ import seoul.tour.domain.QuestionsBoardVO;
 
 public interface QuestionsBoardService {
 	
-	//public List<FreeBoardVO> getList();
-	
 	public List<QuestionsBoardVO> getList (Criteria cri);
 	
 	public void register(QuestionsBoardVO board);

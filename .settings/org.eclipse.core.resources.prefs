@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/seoul/tour/controller/EmailController.java=UTF-8
 encoding//src/main/java/seoul/tour/controller/LoginController.java=UTF-8
 encoding//src/main/java/seoul/tour/mapper/LoginMapper.java=UTF-8
 encoding//src/main/java/seoul/tour/service/LoginService.java=UTF-8

@@ -19,8 +19,6 @@ import seoul.tour.domain.LoginVO;
 import seoul.tour.service.LoginService;
 import seoul.tour.service.WishService;
 
-
-
 @Controller
 @Log4j
 @RequestMapping("/seoulTour/*")
@@ -646,6 +644,4 @@ public class ContentsController {
 		wishService.deleteWish_gaehwa(user_id);
 		return "redirect:/getWishList";
 	}
-	
-	
 }
