@@ -1,70 +1,83 @@
----
-
-
----
-
-<h1 id="ocr-식품-원재료-분석기">OCR 식품 원재료 분석기</h1>
-<p>본 프로젝트는 다양한 가공식품들의 원재료를 분석하여 사용자들이 본인에게 위험하지 않은 식품들을 섭취할 수 있도록 도와주기 위해서 진행되었다. 식품의 원재료부분을 찍으면 사용자들이 앓고 있는 질병 및 알레르기 등을 토대로 먹어도 건강에 해가 되지 않는 식품인지 판단하여 정보를 제공해주는 안드로이드 어플로 제작된 프로젝트이다.</p>
-<p>This project is for letting users know what is healthy food for them based on their own deaseases and allergies. people take a picture of food’s ingredient on surface of food and the application analyze and check if there are some unhealthy ingredient for users and provide their analyzation result to users.</p>
-<h2 id="contributor">Contributor</h2>
-<p><a href="https://github.com/SuHoTan">SuHoTan</a> : OCR 연구, 데이터베이스 설계 및 구축, 안드로이드 기능구현</p>
-<p><a href="https://github.com/LuneRemer">LuneRemer</a> : OCR연구, OCR 후처리 알고리즘 개발</p>
-<p><a href="https://github.com/DevYJKwon">DevYJKwon</a> : OCR연구, 기능통합</p>
-<p><a href="https://github.com/Sujinkim-625">Sujinkim-625</a> : 데이터 수집, 화면 레이아웃 개발</p>
+<h1 id="seoultour---2인-팀-프로젝트">SeoulTour - 2인 팀 프로젝트</h1>
+<p>스프링 레거시로 개발한 서울의 관광명소를 소개하는 웹 프로젝트.<br>
+공부목적의 비상업적 사이트입니다. (This is a non-commercial site for study purposes.)</p>
 <h2 id="개발환경">1. 개발환경</h2>
-<p><img src="md/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD.PNG" alt="Alt"></p>
 <blockquote>
-<p>라이브러리</p>
+<p>언어</p>
 </blockquote>
 <ul>
-<li>Google vision</li>
-<li>java-string-similarity-2.0.0</li>
-<li>LCS(Longest Common Subsequence)</li>
+<li>Java 1.8</li>
 </ul>
-<h2 id="시스템-구성도--프로세스">2. 시스템 구성도 &amp; 프로세스</h2>
-<p><img src="md/%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%84%B1%EB%8F%84.PNG" alt="Alt"></p>
-<hr>
-<p><img src="md/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4.PNG" alt="Alt"></p>
-<h2 id="패키지-구조--데이터베이스">3. 패키지 구조 &amp; 데이터베이스</h2>
-<p><img src="md/%ED%8C%A8%ED%82%A4%EC%A7%80%EA%B5%AC%EC%A1%B0.PNG" alt="Alt"></p>
+<blockquote>
+<p>프레임워크 &amp; 라이브러리</p>
+</blockquote>
+<ul>
+<li>Spring 5.0.7</li>
+<li>Spring Security</li>
+<li>JQuery  3.3.1</li>
+<li>lombok 1.18.12</li>
+<li>Mybatis 3-5-4</li>
+<li>BootStrap 4.5.3</li>
+</ul>
+<blockquote>
+<p>IDE</p>
+</blockquote>
+<ul>
+<li>Eclipse</li>
+</ul>
+<blockquote>
+<p>데이터베이스</p>
+</blockquote>
+<ul>
+<li>Oracle 11g</li>
+</ul>
+<h2 id="데이터베이스-모델링">2. 데이터베이스 모델링</h2>
 <p><img src="md/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8%EB%A7%81.PNG" alt="Alt"></p>
-<h2 id="ocr-식품-원재료-분석기-주요-화면">4. OCR 식품 원재료 분석기 주요 화면</h2>
-<h3 id="사용자-알레르기질병-정보-입력">4-1. 사용자 알레르기/질병 정보 입력</h3>
-<p><img src="md/%EC%A7%88%EB%B3%91%EC%A0%95%EB%B3%B4%EC%9E%85%EB%A0%A5.PNG" alt="Alt"></p>
+<h2 id="패키지-구조">3. 패키지 구조</h2>
+<p><img src="md/%ED%8C%A8%ED%82%A4%EC%A7%80%EA%B5%AC%EC%A1%B01.PNG" alt="Alt"> <img src="md/%ED%8C%A8%ED%82%A4%EC%A7%80%EA%B5%AC%EC%A1%B02.PNG" alt="Alt"></p>
+<h2 id="seoultour-주요-화면">4. SeoulTour 주요 화면</h2>
+<h3 id="홈-화면">4-1. 홈 화면</h3>
+<p><img src="md/%ED%99%88%ED%99%94%EB%A9%B4.gif" alt="Alt"></p>
 <hr>
-<h3 id="카메라를-통한-원재료명-스캔">4-2. 카메라를 통한 원재료명 스캔</h3>
+<h3 id="회원가입-화면">4-2. 회원가입 화면</h3>
 <ul>
-<li>4-2-1. 카메라를 통한 원재료 스캔<br>
-<img src="md/%EC%9B%90%EC%9E%AC%EB%A3%8C%EB%B6%84%EC%84%9D.gif" alt="Alt"></li>
+<li>4-2-1. 이메일인증<br>
+<img src="md/%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%9D%B8%EC%A6%9D.gif" alt="Alt"></li>
 </ul>
 <hr>
 <ul>
-<li>4-2-2. 갤러리를 통한 원재료 스캔<br>
-<img src="md/%EA%B0%A4%EB%9F%AC%EB%A6%AC%EC%9B%90%EC%9E%AC%EB%A3%8C%EB%B6%84%EC%84%9D.gif" alt="Alt"></li>
+<li>4-2-2. 회원가입<br>
+<img src="md/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif" alt="Alt"></li>
 </ul>
-<h2 id="setting-for-execution">5. Setting for execution</h2>
+<hr>
+<br>
+<h3 id="seoultour-서울관광지-소개">4-3. SeoulTour 서울관광지 소개</h3>
+<p><img src="md/%EC%84%9C%EC%9A%B8%EC%BD%98%ED%85%90%EC%B8%A0.gif" alt="Alt"></p>
+<hr>
+<br>
+<h3 id="위시리스트">4-4. 위시리스트</h3>
+<p><img src="md/%EC%9C%84%EC%8B%9C%EB%A6%AC%EC%8A%A4%ED%8A%B8.gif" alt="Alt"></p>
+<hr>
+<h3 id="글쓰기">4-5. 글쓰기</h3>
 <ul>
-<li>Project structure -&gt; Dependencies -&gt; jar Dependencies -&gt; directory of java-string-similarity-2.0.0.jar import</li>
-<li>Gradle Synchronize<br>
-<img src="md/%EC%84%B8%ED%8C%85.PNG" alt="Alt"></li>
+<li>4-5-1. 리스트, 글쓰기, 글보기<br>
+<img src="md/%EA%B8%80%EC%93%B0%EA%B8%B0.gif" alt="Alt"></li>
 </ul>
-<h2 id="image-cropper-license">6. Image Cropper License</h2>
-<p>Copyright 2017, Yalantis</p>
-<p>Licensed under the Apache License, Version 2.0 (the “License”);<br>
-you may not use this file except in compliance with the License.<br>
-You may obtain a copy of the License at</p>
-<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
-<p>Unless required by applicable law or agreed to in writing, software<br>
-distributed under the License is distributed on an “AS IS” BASIS,<br>
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br>
-See the License for the specific language governing permissions and<br>
-limitations under the License.</p>
+<hr>
 <ul>
-<li>com.theartofdev.edmodo.cropper</li>
+<li>4-5-2. 첨부파일<br>
+<img src="md/%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC.gif" alt="Alt"></li>
 </ul>
-<p>Originally forked from edmodo/cropper.</p>
-<p>Copyright 2016, Arthur Teplitzki, 2013, Edmodo, Inc.</p>
-<p>Licensed under the Apache License, Version 2.0 (the “License”); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:</p>
-<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
-<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+<hr>
+<ul>
+<li>4-5-3. 게시물 검색<br>
+<img src="md/%EA%B2%80%EC%83%89.gif" alt="Alt"></li>
+</ul>
+<hr>
+<br>
+<h2 id="참고문헌--사이트">5. 참고문헌 &amp; 사이트</h2>
+<ul>
+<li>코드로 배우는 스프링 웹 프로젝트 (구멍가게 코딩단)</li>
+<li>멜론피치 스프링프레임워크  <a href="https://melonpeach.tistory.com/">https://melonpeach.tistory.com/</a></li>
+</ul>
 
