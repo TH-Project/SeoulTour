@@ -1,5 +1,5 @@
 <h1 id="seoultour---2인-팀-프로젝트">SeoulTour - 2인 팀 프로젝트</h1>
-<p>스프링 레거시로 개발한 서울의 관광명소를 소개하는 웹 프로젝트.<br>
+<p>스프링 레거시로 개발한 서울의 관광명소를 소개하는 웹 프로젝트입니다.<br>
 공부목적의 비상업적 사이트입니다. (This is a non-commercial site for study purposes.)</p>
 <h2 id="개발환경">1. 개발환경</h2>
 <blockquote>
