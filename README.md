@@ -13,10 +13,10 @@
 </blockquote>
 <ul>
 <li>Spring 5.0.7</li>
-<li>Spring Security</li>
 <li>JQuery  3.3.1</li>
 <li>lombok 1.18.12</li>
 <li>Mybatis 3-5-4</li>
+<li>SHA-256</li>
 <li>BootStrap 4.5.3</li>
 </ul>
 <blockquote>
